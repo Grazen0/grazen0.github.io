@@ -13,5 +13,13 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install dependencies
         run: yarn install
-      - name: Publish to GitHub Pages
-        run: yarn deploy
+      - name: Run build
+        run: yarn build
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: build
+          CLEAN: true
+

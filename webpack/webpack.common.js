@@ -3,23 +3,18 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const BUILD_PATH = path.resolve(__dirname, 'build');
-
 /** @type {webpack.Configuration} */
 module.exports = {
-	entry: path.resolve(__dirname, 'src', 'index.jsx'),
+	context: path.resolve(__dirname, '..'),
+	entry: path.resolve(__dirname, '../src/index.jsx'),
 	output: {
-		filename: '[name].[contenthash:8].js',
+		filename: '[name].[contenthash].js',
+		chunkFilename: '[name].[contenthash].chunk.js',
 		publicPath: '/',
-		path: BUILD_PATH,
+		path: path.resolve(__dirname, '../build'),
 	},
 	resolve: {
 		extensions: ['.js', '.jsx'],
-	},
-	devServer: {
-		hot: true,
-		port: 3000,
-		contentBase: BUILD_PATH,
 	},
 	module: {
 		rules: [
@@ -39,7 +34,8 @@ module.exports = {
 	},
 	plugins: [
 		new CleanWebpackPlugin(),
-		new HtmlWebpackPlugin({ template: 'index.html' }),
-		new webpack.HotModuleReplacementPlugin(),
+		new HtmlWebpackPlugin({
+			template: path.resolve(__dirname, '../public/index.html'),
+		}),
 	],
 };

@@ -16,12 +16,12 @@ function copyFolder(folder, out) {
 		const outPath = path.join(out, file);
 
 		if (fs.statSync(filePath).isDirectory()) copyFolder(filePath, outPath);
-		else fs.copyFileSync(filePath, outPath);
+		else if (!fs.existsSync(outPath)) fs.copyFileSync(filePath, outPath);
 	});
 }
 
 // Run webpack command
-exec('yarn -v && yarn webpack', (stdErr, stdOut) => {
+exec('yarn webpack --config ./webpack/webpack.prod.js', (stdErr, stdOut) => {
 	console.error(stdErr);
 	console.log(stdOut);
 

@@ -14,4 +14,4 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Publish to GitHub Pages
-        run: yarn publish
+        run: yarn deploy

@@ -20,13 +20,16 @@ function copyFolder(folder, out) {
 }
 
 // Run webpack command
-exec('yarn webpack --config ./webpack/webpack.prod.js', (stdErr, stdOut) => {
-	console.error(stdErr);
-	console.log(stdOut);
+exec(
+	'yarn -v && yarn webpack --config ./webpack/webpack.prod.js',
+	(stdErr, stdOut) => {
+		console.error(stdErr);
+		console.log(stdOut);
 
-	// Copy files from public folder
-	console.log('Copying public folder...');
-	copyFolder('public', 'build');
+		// Copy files from public folder
+		console.log('Copying public folder...');
+		copyFolder('public', 'build');
 
-	console.log('Build complete!');
-});
+		console.log('Build complete!');
+	}
+);

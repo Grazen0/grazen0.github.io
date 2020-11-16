@@ -7,7 +7,7 @@
 	"license": "MIT",
 	"private": true,
 	"scripts": {
-		"build": "scripts/build.js",
+		"build": "node ./scripts/build.js",
 		"prepublish": "yarn build",
 		"publish": "gh-pages -d build",
 		"start": "webpack serve --config ./webpack/webpack.dev.js"

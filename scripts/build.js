@@ -26,6 +26,9 @@ exec(
 		console.error(stdErr);
 		console.log(stdOut);
 
+		// Copy index.html to 404.html
+		fs.copyFileSync('./build/index.html', './build/404.html');
+
 		// Copy files from public folder
 		console.log('Copying public folder...');
 		copyFolder('public', 'build');

@@ -1,6 +1,13 @@
 import React from 'react';
 
-function LazyImage({ src = '', alt = '', fallback, className = '' }) {
+interface Props {
+	src: string;
+	alt: string;
+	fallback: any;
+	className?: string;
+}
+
+const LazyImage: React.FC<Props> = ({ src, alt, fallback, className }) => {
 	const [loaded, setLoaded] = React.useState(false);
 
 	return (
@@ -16,6 +23,6 @@ function LazyImage({ src = '', alt = '', fallback, className = '' }) {
 			{!loaded && fallback}
 		</>
 	);
-}
+};
 
 export default LazyImage;

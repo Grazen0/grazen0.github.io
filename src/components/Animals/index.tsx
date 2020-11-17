@@ -4,12 +4,14 @@ import Button from 'react-bootstrap/Button';
 import LazyImage from '../LazyImage';
 import './Animals.scss';
 
-function Animals() {
+const Animals: React.FC = () => {
 	const [cat, setCat] = React.useState('');
 	const [dog, setDog] = React.useState('');
 
-	const handleClick = ({ target }) => {
-		if (target.name === 'cat-btn') searchCat();
+	const handleClick = ({
+		currentTarget,
+	}: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+		if (currentTarget.name === 'cat-btn') searchCat();
 		else searchDog();
 	};
 
@@ -74,6 +76,6 @@ function Animals() {
 			</div>
 		</div>
 	);
-}
+};
 
 export default Animals;

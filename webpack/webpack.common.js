@@ -2,11 +2,12 @@ const webpack = require('webpack');
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
 
 /** @type {webpack.Configuration} */
 module.exports = {
 	context: path.resolve(__dirname, '..'),
-	entry: path.resolve(__dirname, '../src/index.jsx'),
+	entry: path.resolve(__dirname, '../src/index.tsx'),
 	output: {
 		filename: '[name].[contenthash].js',
 		chunkFilename: '[name].[contenthash].chunk.js',
@@ -14,13 +15,21 @@ module.exports = {
 		path: path.resolve(__dirname, '../build'),
 	},
 	resolve: {
-		extensions: ['.js', '.jsx'],
+		extensions: ['.js', '.jsx', '.ts', '.tsx'],
 	},
 	module: {
 		rules: [
 			{
-				test: /\.jsx?$/,
-				loader: 'babel-loader',
+				test: /\.tsx?$/,
+				use: [
+					'babel-loader',
+					{
+						loader: 'ts-loader',
+						options: {
+							transpileOnly: true,
+						},
+					},
+				],
 			},
 			{
 				test: /\.(s[ac]|c)ss$/,
@@ -37,6 +46,7 @@ module.exports = {
 	},
 	plugins: [
 		new CleanWebpackPlugin(),
+		new ForkTsCheckerPlugin({ async: false }),
 		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, '../public/index.html'),
 		}),

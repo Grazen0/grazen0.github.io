@@ -1,7 +1,7 @@
 import React from 'react';
 import Animals from '../components/Animals';
 
-const Home = () => (
+const Home: React.FC = () => (
 	<>
 		<h1>Hello there</h1>
 		<hr />

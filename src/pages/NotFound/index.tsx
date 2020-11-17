@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import Fireplace from '../../assets/Fireplace.gif';
 import './NotFound.scss';
 
-const NotFound = () => {
+const NotFound: React.FC = () => {
 	const history = useHistory();
 
 	return (

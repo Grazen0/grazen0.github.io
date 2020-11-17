@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import { useHistory } from 'react-router-dom';
-import Fireplace from '../../assets/Fireplace.gif';
+import Fireplace from '../../assets/fireplace.gif';
 import './NotFound.scss';
 
 const NotFound: React.FC = () => {

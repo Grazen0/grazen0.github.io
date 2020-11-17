@@ -15,7 +15,7 @@ const NotFound = () => {
 			<Button
 				className="back-button"
 				variant="success"
-				onClick={() => history.back()}>
+				onClick={() => window.history.back()}>
 				Go Back
 			</Button>
 			<br />

@@ -8,10 +8,11 @@ const NotFound: React.FC = () => {
 	const history = useHistory();
 
 	return (
-		<>
+		<div className="p-4">
 			<h1>End of the road 🚗</h1>
-			<hr />
+			<br />
 			<h4>Looks like you're lost! Try some of these out:</h4>
+			<br />
 			<Button
 				className="back-button"
 				variant="success"
@@ -29,7 +30,7 @@ const NotFound: React.FC = () => {
 			<br />
 
 			<img className="fireplace text-light" src={Fireplace} alt="fireplace" />
-		</>
+		</div>
 	);
 };
 

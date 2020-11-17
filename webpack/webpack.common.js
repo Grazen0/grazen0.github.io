@@ -3,6 +3,8 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 /** @type {webpack.Configuration} */
 module.exports = {
@@ -33,13 +35,13 @@ module.exports = {
 			},
 			{
 				test: /\.(s[ac]|c)ss$/,
-				use: ['style-loader', 'css-loader', 'sass-loader'],
+				use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
 			},
 			{
-				test: /\.(png|jpe?g|webp|svg|gif)$/,
+				test: /\.(png|jpe?g|webp|svg|gif|mp4|webm|mp3|ogg|wav)$/,
 				loader: 'file-loader',
 				options: {
-					name: 'assets/[name].[ext]',
+					name: 'assets/[contenthash].[ext]',
 				},
 			},
 		],
@@ -47,8 +49,16 @@ module.exports = {
 	plugins: [
 		new CleanWebpackPlugin(),
 		new ForkTsCheckerPlugin({ async: false }),
+		new MiniCssExtractPlugin(),
 		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, '../public/index.html'),
+		}),
+		new CopyWebpackPlugin({
+			patterns: [
+				{
+					from: 'public/',
+				},
+			],
 		}),
 	],
 };

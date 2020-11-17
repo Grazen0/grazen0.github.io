@@ -10,6 +10,7 @@ module.exports = merge(common, {
 		port: 3000,
 		contentBase: path.join(__dirname, '../build'),
 		stats: 'minimal',
+		overlay: true,
 	},
 	plugins: [new webpack.HotModuleReplacementPlugin()],
 });

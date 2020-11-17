@@ -29,6 +29,9 @@ module.exports = {
 			{
 				test: /\.(png|jpe?g|webp|svg|gif)$/,
 				loader: 'file-loader',
+				options: {
+					name: 'assets/[name].[ext]',
+				},
 			},
 		],
 	},

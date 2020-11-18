@@ -27,6 +27,9 @@ const Header: React.FC = () => (
 				<NavItem>
 					<NavLink href="/#/notifications">Notification Sender</NavLink>
 				</NavItem>
+				<NavItem>
+					<NavLink href="/#/mouse-tracker">Mouse Tracker</NavLink>
+				</NavItem>
 			</Nav>
 		</Navbar.Collapse>
 	</Navbar>

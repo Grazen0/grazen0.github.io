@@ -12,7 +12,7 @@ const Header: React.FC = () => (
 				src="/favicon.ico"
 				alt="favicon"
 			/>
-			My Page
+			Epic Website
 		</Navbar.Brand>
 		<Navbar.Toggle aria-controls="basic-navbar-nav" />
 		<Navbar.Collapse id="basic-navbar-nav">

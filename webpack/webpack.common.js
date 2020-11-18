@@ -24,7 +24,20 @@ module.exports = {
 			{
 				test: /\.tsx?$/,
 				use: [
-					'babel-loader',
+					{
+						loader: 'babel-loader',
+						options: {
+							cacheDirectory: true,
+							presets: [
+								'@babel/preset-env',
+								'@babel/preset-react',
+								'@babel/preset-typescript',
+							],
+							plugins: [
+								['@babel/plugin-transform-runtime', { regenerator: true }],
+							],
+						},
+					},
 					{
 						loader: 'ts-loader',
 						options: {

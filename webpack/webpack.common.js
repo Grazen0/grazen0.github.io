@@ -28,11 +28,7 @@ module.exports = {
 						loader: 'babel-loader',
 						options: {
 							cacheDirectory: true,
-							presets: [
-								'@babel/preset-env',
-								'@babel/preset-react',
-								'@babel/preset-typescript',
-							],
+							presets: ['@babel/env', '@babel/react', '@babel/typescript'],
 							plugins: [
 								['@babel/plugin-transform-runtime', { regenerator: true }],
 							],

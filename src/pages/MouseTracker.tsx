@@ -10,13 +10,18 @@ const MouseTracker: React.FC = () => {
 		currentTarget,
 	}: React.MouseEvent<HTMLCanvasElement, MouseEvent>) => {
 		const { left, top } = currentTarget.getBoundingClientRect();
-		setCoords({ x: clientX - left, y: clientY - top });
+		setCoords({
+			x: clientX - left,
+			y: clientY - top,
+		});
 	};
 
+	// Canvas rendering
 	React.useEffect(() => {
 		const ctx = canvasRef.current?.getContext('2d');
 		if (!ctx) return;
 
+		// Background color
 		const { width, height } = ctx.canvas;
 		ctx.fillStyle = 'lightgray';
 		ctx.fillRect(0, 0, width, height);
@@ -29,7 +34,7 @@ const MouseTracker: React.FC = () => {
 		for (let y = 0; y < height; y += gridSize) {
 			ctx.beginPath();
 			ctx.moveTo(0.5, y + 0.5);
-			ctx.lineTo(width, y + 0.5);
+			ctx.lineTo(width + 0.5, y + 0.5);
 			ctx.stroke();
 		}
 
@@ -37,7 +42,7 @@ const MouseTracker: React.FC = () => {
 		for (let x = 0; x < width; x += gridSize) {
 			ctx.beginPath();
 			ctx.moveTo(x + 0.5, 0.5);
-			ctx.lineTo(x + 0.5, height);
+			ctx.lineTo(x + 0.5, height + 0.5);
 			ctx.stroke();
 		}
 

@@ -9,6 +9,7 @@ const Header: React.FC = () => (
 		<Navbar.Brand>
 			<img
 				className="rounded-circle bg-secondary mr-3"
+				style={{ height: 50 }}
 				src="/favicon.ico"
 				alt="favicon"
 			/>
@@ -22,6 +23,9 @@ const Header: React.FC = () => (
 				</NavItem>
 				<NavItem>
 					<NavLink href="/#/meme-generator">Meme Generator</NavLink>
+				</NavItem>
+				<NavItem>
+					<NavLink href="/#/notifications">Notification Sender</NavLink>
 				</NavItem>
 			</Nav>
 		</Navbar.Collapse>

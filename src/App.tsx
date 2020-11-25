@@ -6,6 +6,7 @@ const Home = React.lazy(() => import('./pages/Home'));
 const MemeGen = React.lazy(() => import('./pages/MemeGen'));
 const Notifications = React.lazy(() => import('./pages/Notifications'));
 const MouseTracker = React.lazy(() => import('./pages/MouseTracker'));
+const Canvas = React.lazy(() => import('./pages/Canvas'));
 
 const App: React.FC = () => (
 	<React.Suspense fallback={<h1>Loading...</h1>}>
@@ -15,6 +16,7 @@ const App: React.FC = () => (
 			<Route exact path="/meme-generator" component={MemeGen} />
 			<Route exact path="/notifications" component={Notifications} />
 			<Route exact path="/mouse-tracker" component={MouseTracker} />
+			<Route exact path="/canvas" component={Canvas} />
 
 			<Redirect to="/" />
 		</Switch>

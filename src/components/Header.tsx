@@ -30,6 +30,9 @@ const Header: React.FC = () => (
 				<NavItem>
 					<NavLink href="/#/mouse-tracker">Mouse Tracker</NavLink>
 				</NavItem>
+				<NavItem>
+					<NavLink href="/#/canvas">Canvas</NavLink>
+				</NavItem>
 			</Nav>
 		</Navbar.Collapse>
 	</Navbar>

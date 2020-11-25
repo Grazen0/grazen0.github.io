@@ -10,17 +10,18 @@ const defaultOptions = {
 
 const Canvas: React.FC = () => {
 	const canvasRef = React.useRef<HTMLCanvasElement>(null);
+
 	const [prev, setPrev] = React.useState<{ x: number; y: number } | null>(null);
 	const [options, setOptions] = React.useState(defaultOptions);
 	const [mouseDown, setMouseDown] = React.useState(false);
 
-	const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
+	const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>) =>
 		setOptions(prev => ({ ...prev, [target.name]: target.value }));
-	};
 
 	const fillCanvas = (color: string) => {
 		const ctx = canvasRef.current?.getContext('2d');
 		if (!ctx) return;
+
 		const { width, height } = ctx.canvas;
 		ctx.fillStyle = color;
 		ctx.fillRect(0, 0, width, height);
@@ -60,6 +61,7 @@ const Canvas: React.FC = () => {
 
 	React.useEffect(() => fillCanvas('white'), []);
 
+	const { color, width } = options;
 	return (
 		<div
 			className="p-3 canvas-div"
@@ -68,19 +70,26 @@ const Canvas: React.FC = () => {
 			<canvas
 				ref={canvasRef}
 				onMouseMove={handleMove}
+				onMouseEnter={() => setPrev(null)}
 				width={document.body.clientWidth * 0.5}
 				height={500}></canvas>
 
 			<Form id="canvasOptions">
 				<Form.Group>
 					<Form.Label htmlFor="color">Color:</Form.Label>
-					<Form.Control type="color" name="color" onChange={handleChange} />
+					<Form.Control
+						type="color"
+						name="color"
+						value={color}
+						onChange={handleChange}
+					/>
 				</Form.Group>
 
 				<Form.Group>
 					<Form.Label htmlFor="width">Line width:</Form.Label>
 					<Form.Control
 						type="range"
+						value={width}
 						onChange={handleChange}
 						min="1"
 						max="30"

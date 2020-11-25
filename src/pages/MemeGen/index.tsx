@@ -66,9 +66,9 @@ const MemeGen: React.FC = () => {
 			return;
 		}
 
-		// (Image has been selected)
 		if (!files?.length) return;
 
+		// Image has been selected
 		files[0].arrayBuffer().then(buffer => {
 			const blob = new Blob([buffer]);
 			const url = URL.createObjectURL(blob);

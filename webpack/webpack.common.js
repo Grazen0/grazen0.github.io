@@ -22,7 +22,7 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.tsx?$/,
+				test: /\.tsx?$/i,
 				use: [
 					{
 						loader: 'babel-loader',
@@ -43,15 +43,8 @@ module.exports = {
 				],
 			},
 			{
-				test: /\.(s[ac]|c)ss$/,
+				test: /\.(s[ac]|c)ss$/i,
 				use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
-			},
-			{
-				test: /\.(png|jpe?g|webp|svg|gif|mp4|webm|mp3|ogg|wav)$/,
-				loader: 'file-loader',
-				options: {
-					name: 'assets/[contenthash].[ext]',
-				},
 			},
 		],
 	},

@@ -18,11 +18,11 @@ const Canvas: React.FC = () => {
 		setOptions(prev => ({ ...prev, [target.name]: target.value }));
 	};
 
-	const clearCanvas = () => {
+	const fillCanvas = (color: string) => {
 		const ctx = canvasRef.current?.getContext('2d');
 		if (!ctx) return;
 		const { width, height } = ctx.canvas;
-		ctx.fillStyle = 'white';
+		ctx.fillStyle = color;
 		ctx.fillRect(0, 0, width, height);
 	};
 
@@ -58,7 +58,7 @@ const Canvas: React.FC = () => {
 
 	const onMouseUp = () => setMouseDown(false);
 
-	React.useEffect(clearCanvas, []);
+	React.useEffect(() => fillCanvas('white'), []);
 
 	return (
 		<div
@@ -88,8 +88,15 @@ const Canvas: React.FC = () => {
 					/>
 				</Form.Group>
 
-				<Button onClick={clearCanvas} variant="secondary">
+				<Button
+					className="my-3"
+					onClick={() => fillCanvas('white')}
+					variant="secondary">
 					Clear canvas
+				</Button>
+				<br />
+				<Button variant="info" onClick={() => fillCanvas(options.color)}>
+					Fill canvas
 				</Button>
 			</Form>
 		</div>

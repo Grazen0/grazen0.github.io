@@ -2,7 +2,6 @@ import React from 'react';
 
 const MouseTracker: React.FC = () => {
 	const canvasRef = React.useRef<HTMLCanvasElement>(null);
-	const [coords, setCoords] = React.useState({ x: 0, y: 0 });
 
 	const handleMove = ({
 		clientX,
@@ -10,14 +9,10 @@ const MouseTracker: React.FC = () => {
 		currentTarget,
 	}: React.MouseEvent<HTMLCanvasElement, MouseEvent>) => {
 		const { left, top } = currentTarget.getBoundingClientRect();
-		setCoords({
-			x: clientX - left,
-			y: clientY - top,
-		});
-	};
+		const x = clientX - left;
+		const y = clientY - top;
 
-	// Canvas rendering
-	React.useEffect(() => {
+		// Render canvas
 		const ctx = canvasRef.current?.getContext('2d');
 		if (!ctx) return;
 
@@ -46,7 +41,6 @@ const MouseTracker: React.FC = () => {
 			ctx.stroke();
 		}
 
-		const { x, y } = coords;
 		ctx.strokeStyle = 'gray';
 		ctx.lineWidth = 4;
 
@@ -80,7 +74,7 @@ const MouseTracker: React.FC = () => {
 		// Coordinates text
 		ctx.fillText(`X: ${x}`, 10, 10);
 		ctx.fillText(`Y: ${y}`, 10, fontSize + 20);
-	}, [coords]);
+	};
 
 	return (
 		<canvas

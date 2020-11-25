@@ -55,9 +55,7 @@ const Canvas: React.FC = () => {
 		setMouseDown(true);
 	};
 
-	const onMouseUp = () => {
-		setMouseDown(false);
-	};
+	const onMouseUp = () => setMouseDown(false);
 
 	return (
 		<div
@@ -69,6 +67,7 @@ const Canvas: React.FC = () => {
 				onMouseMove={handleMove}
 				width={document.body.clientWidth * 0.5}
 				height={500}></canvas>
+
 			<Form id="canvasOptions">
 				<Form.Group>
 					<Form.Label htmlFor="color">Color:</Form.Label>

@@ -22,7 +22,8 @@ const Canvas: React.FC = () => {
 		const ctx = canvasRef.current?.getContext('2d');
 		if (!ctx) return;
 		const { width, height } = ctx.canvas;
-		ctx.clearRect(0, 0, width, height);
+		ctx.fillStyle = 'white';
+		ctx.fillRect(0, 0, width, height);
 	};
 
 	const handleMove = (e: React.MouseEvent<HTMLCanvasElement, MouseEvent>) => {
@@ -56,6 +57,8 @@ const Canvas: React.FC = () => {
 	};
 
 	const onMouseUp = () => setMouseDown(false);
+
+	React.useEffect(clearCanvas, []);
 
 	return (
 		<div

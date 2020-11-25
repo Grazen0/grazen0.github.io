@@ -9,7 +9,7 @@ const MouseTracker = React.lazy(() => import('./pages/MouseTracker'));
 const Canvas = React.lazy(() => import('./pages/Canvas'));
 
 const App: React.FC = () => (
-	<React.Suspense fallback={<h1>Loading...</h1>}>
+	<React.Suspense fallback={<h1 className="m-4">Loading...</h1>}>
 		<Header />
 		<Switch>
 			<Route exact path="/" component={Home} />

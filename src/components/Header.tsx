@@ -5,7 +5,7 @@ import NavItem from 'react-bootstrap/NavItem';
 import NavLink from 'react-bootstrap/NavLink';
 
 const Header: React.FC = () => (
-	<Navbar variant="dark" bg="dark">
+	<Navbar variant="dark" bg="dark" expand="md">
 		<Navbar.Brand>
 			<img
 				className="rounded-circle bg-secondary mr-3"

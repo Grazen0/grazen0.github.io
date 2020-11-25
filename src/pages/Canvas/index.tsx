@@ -83,7 +83,7 @@ const Canvas: React.FC = () => {
 						type="range"
 						onChange={handleChange}
 						min="1"
-						max="10"
+						max="30"
 						name="width"
 					/>
 				</Form.Group>

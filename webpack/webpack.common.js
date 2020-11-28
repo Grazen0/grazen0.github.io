@@ -54,7 +54,7 @@ module.exports = {
 		new ForkTsCheckerPlugin({ async: false }),
 		new MiniCssExtractPlugin(),
 		new HtmlWebpackPlugin({
-			template: path.resolve(__dirname, '../public/index.html'),
+			template: join(context, 'public/index.html'),
 		}),
 		new CopyWebpackPlugin({
 			patterns: [

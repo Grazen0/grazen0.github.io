@@ -1,21 +1,19 @@
-$size: 400px;
-
 .animals {
 	display: flex;
 	flex-wrap: wrap;
 	width: 95%;
 	justify-content: space-between;
+}
 
-	img {
-		height: $size;
-		margin: 20px;
-		border-radius: 10px;
-	}
+.animal-img {
+	height: 400px;
+	margin: 20px;
+	border-radius: 10px;
 }
 
 .loading {
-	width: $size;
-	height: $size;
+	width: 400px;
+	height: 400px;
 	justify-content: center;
 	display: flex;
 	align-items: center;

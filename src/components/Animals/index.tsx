@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import LazyImage from '../LazyImage';
-import './Animals.scss';
+import './Animals.css';
 
 const Animals: React.FC = () => {
 	const [cat, setCat] = React.useState('');
@@ -40,7 +40,7 @@ const Animals: React.FC = () => {
 		<div className="animals">
 			<div className="cat-section">
 				<LazyImage
-					className="cat"
+					className="cat animal-img"
 					src={cat}
 					alt="cat"
 					fallback={
@@ -58,7 +58,7 @@ const Animals: React.FC = () => {
 			</div>
 			<div className="dog-section">
 				<LazyImage
-					className="dog"
+					className="dog animal-img"
 					src={dog}
 					alt="dog"
 					fallback={

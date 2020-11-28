@@ -9,6 +9,7 @@ module.exports = merge(common, {
 	devServer: {
 		hot: true,
 		port: 3000,
+		open: true,
 		historyApiFallback: true,
 		contentBase: path.resolve(__dirname, '../build'),
 		stats: 'minimal',

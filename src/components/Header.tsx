@@ -33,6 +33,9 @@ const Header: React.FC = () => (
 				<NavItem>
 					<NavLink href="/#/canvas">Canvas</NavLink>
 				</NavItem>
+				<NavItem>
+					<NavLink href="/#/zalgo">Zalgo Text</NavLink>
+				</NavItem>
 			</Nav>
 		</Navbar.Collapse>
 	</Navbar>

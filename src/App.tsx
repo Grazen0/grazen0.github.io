@@ -1,6 +1,5 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import './App.css';
 import Header from './components/Header';
 
 const Home = React.lazy(() => import('./pages/Home'));
@@ -8,6 +7,7 @@ const MemeGen = React.lazy(() => import('./pages/MemeGen'));
 const Notifications = React.lazy(() => import('./pages/Notifications'));
 const MouseTracker = React.lazy(() => import('./pages/MouseTracker'));
 const Canvas = React.lazy(() => import('./pages/Canvas'));
+const ZalgoText = React.lazy(() => import('./pages/ZalgoText'));
 
 const App: React.FC = () => (
 	<React.Suspense fallback={<h1 className="m-4">Loading...</h1>}>
@@ -18,6 +18,7 @@ const App: React.FC = () => (
 			<Route exact path="/notifications" component={Notifications} />
 			<Route exact path="/mouse-tracker" component={MouseTracker} />
 			<Route exact path="/canvas" component={Canvas} />
+			<Route exact path="/zalgo" component={ZalgoText} />
 
 			<Redirect to="/" />
 		</Switch>

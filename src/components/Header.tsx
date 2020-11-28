@@ -6,7 +6,7 @@ import NavLink from 'react-bootstrap/NavLink';
 
 const Header: React.FC = () => (
 	<Navbar variant="dark" bg="dark" expand="md">
-		<Navbar.Brand>
+		<Navbar.Brand href="/#/">
 			<img
 				className="rounded-circle bg-secondary mr-3"
 				style={{ height: 50 }}
@@ -18,9 +18,6 @@ const Header: React.FC = () => (
 		<Navbar.Toggle aria-controls="basic-navbar-nav" />
 		<Navbar.Collapse id="basic-navbar-nav">
 			<Nav className="mr-auto">
-				<NavItem>
-					<NavLink href="/#/">Home</NavLink>
-				</NavItem>
 				<NavItem>
 					<NavLink href="/#/meme-generator">Meme Generator</NavLink>
 				</NavItem>

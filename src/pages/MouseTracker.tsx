@@ -3,6 +3,10 @@ import React from 'react';
 const MouseTracker: React.FC = () => {
 	const canvasRef = React.useRef<HTMLCanvasElement>(null);
 
+	const handleTouch = (e: React.TouchEvent<HTMLCanvasElement>) => {
+		console.log('Touch:', e.touches[0]);
+	};
+
 	const handleMove = ({
 		clientX,
 		clientY,
@@ -79,6 +83,7 @@ const MouseTracker: React.FC = () => {
 	return (
 		<canvas
 			onMouseMove={handleMove}
+			onTouchMove={handleTouch}
 			ref={canvasRef}
 			width={document.body.clientWidth}
 			height={550}></canvas>

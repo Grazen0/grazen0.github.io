@@ -1,6 +1,7 @@
 import React from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import NavItem from 'react-bootstrap/NavItem';
 import NavLink from 'react-bootstrap/NavLink';
 
@@ -18,20 +19,22 @@ const Header: React.FC = () => (
 		<Navbar.Toggle aria-controls="basic-navbar-nav" />
 		<Navbar.Collapse id="basic-navbar-nav">
 			<Nav className="mr-auto">
-				<NavItem>
-					<NavLink href="/#/meme-generator">Meme Generator</NavLink>
-				</NavItem>
+				<NavDropdown title="Epic Generators" id="basic-nav-dropdown">
+					<NavDropdown.Item href="/#/meme-generator">
+						Meme Generator
+					</NavDropdown.Item>
+					<NavDropdown.Item href="/#/zalgo">Zalgo Text</NavDropdown.Item>
+				</NavDropdown>
+
+				<NavDropdown title="Canvas Stuff" id="basic-nav-dropdown">
+					<NavDropdown.Item href="/#/mouse-tracker">
+						Mouse Tracker
+					</NavDropdown.Item>
+					<NavDropdown.Item href="/#/canvas">Canvas</NavDropdown.Item>
+				</NavDropdown>
+
 				<NavItem>
 					<NavLink href="/#/notifications">Notification Sender</NavLink>
-				</NavItem>
-				<NavItem>
-					<NavLink href="/#/mouse-tracker">Mouse Tracker</NavLink>
-				</NavItem>
-				<NavItem>
-					<NavLink href="/#/canvas">Canvas</NavLink>
-				</NavItem>
-				<NavItem>
-					<NavLink href="/#/zalgo">Zalgo Text</NavLink>
 				</NavItem>
 			</Nav>
 		</Navbar.Collapse>

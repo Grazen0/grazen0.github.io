@@ -1,20 +1,21 @@
-const webpack = require('webpack');
-const path = require('path');
+const { join, resolve } = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-/** @type {webpack.Configuration} */
+const context = resolve(__dirname, '..');
+
+/** @type {import('webpack').Configuration} */
 module.exports = {
-	context: path.resolve(__dirname, '..'),
-	entry: path.resolve(__dirname, '../src/index.tsx'),
+	context,
+	entry: join(context, 'src/index.tsx'),
 	output: {
 		filename: '[name].[contenthash].js',
 		chunkFilename: '[name].[contenthash].chunk.js',
 		publicPath: '/',
-		path: path.resolve(__dirname, '../build'),
+		path: join(context, 'build'),
 	},
 	resolve: {
 		extensions: ['.js', '.jsx', '.ts', '.tsx'],
@@ -43,8 +44,8 @@ module.exports = {
 				],
 			},
 			{
-				test: /\.(s[ac]|c)ss$/i,
-				use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+				test: /\.css$/i,
+				use: [MiniCssExtractPlugin.loader, 'css-loader'],
 			},
 		],
 	},

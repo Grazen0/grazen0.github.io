@@ -2,7 +2,7 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { adjustSize } from '../../utils';
-import './MemeGen.scss';
+import './MemeGen.css';
 
 const MemeGen: React.FC = () => {
 	const canvasRef = React.useRef<HTMLCanvasElement>(null);

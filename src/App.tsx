@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import './App.scss';
+import './App.css';
 import Header from './components/Header';
 
 const Home = React.lazy(() => import('./pages/Home'));

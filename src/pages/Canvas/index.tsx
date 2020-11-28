@@ -15,6 +15,12 @@ const Canvas: React.FC = () => {
 	const [options, setOptions] = React.useState(defaultOptions);
 	const [mouseDown, setMouseDown] = React.useState(false);
 
+	const handleTouch = (e: React.TouchEvent<HTMLCanvasElement>) => {
+		const touch = e.touches[0];
+		const { left, top } = e.currentTarget.getBoundingClientRect();
+		draw(touch.clientX - left, touch.clientY - top);
+	};
+
 	const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>) =>
 		setOptions(prev => ({ ...prev, [target.name]: target.value }));
 
@@ -31,9 +37,10 @@ const Canvas: React.FC = () => {
 		if (!mouseDown) return;
 
 		const { left, top } = e.currentTarget.getBoundingClientRect();
-		const x = e.clientX - left;
-		const y = e.clientY - top;
+		draw(e.clientX - left, e.clientY - top);
+	};
 
+	const draw = (x: number, y: number) => {
 		setPrev({ x, y });
 
 		// Draw line
@@ -70,6 +77,7 @@ const Canvas: React.FC = () => {
 			<canvas
 				ref={canvasRef}
 				onMouseMove={handleMove}
+				onTouchMove={handleTouch}
 				onMouseEnter={() => setPrev(null)}
 				width={document.body.clientWidth * 0.5}
 				height={500}></canvas>

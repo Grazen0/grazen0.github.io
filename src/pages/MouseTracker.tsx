@@ -3,16 +3,22 @@ import React from 'react';
 const MouseTracker: React.FC = () => {
 	const canvasRef = React.useRef<HTMLCanvasElement>(null);
 
+	const handleTouch = (e: React.TouchEvent<HTMLCanvasElement>) => {
+		const touch = e.touches[0];
+		const { left, top } = e.currentTarget.getBoundingClientRect();
+		move(touch.clientX - left, touch.clientY - top);
+	};
+
 	const handleMove = ({
 		clientX,
 		clientY,
 		currentTarget,
 	}: React.MouseEvent<HTMLCanvasElement, MouseEvent>) => {
 		const { left, top } = currentTarget.getBoundingClientRect();
-		const x = clientX - left;
-		const y = clientY - top;
+		move(clientX - left, clientY - top);
+	};
 
-		// Render canvas
+	const move = (x: number, y: number) => {
 		const ctx = canvasRef.current?.getContext('2d');
 		if (!ctx) return;
 
@@ -72,13 +78,15 @@ const MouseTracker: React.FC = () => {
 		ctx.textBaseline = 'top';
 
 		// Coordinates text
-		ctx.fillText(`X: ${x}`, 10, 10);
-		ctx.fillText(`Y: ${y}`, 10, fontSize + 20);
+		ctx.fillText(`X: ${Math.floor(x)}`, 10, 10);
+		ctx.fillText(`Y: ${Math.floor(y)}`, 10, fontSize + 20);
 	};
 
 	return (
 		<canvas
 			onMouseMove={handleMove}
+			onTouchMove={handleTouch}
+			style={{ touchAction: 'none' }}
 			ref={canvasRef}
 			width={document.body.clientWidth}
 			height={550}></canvas>

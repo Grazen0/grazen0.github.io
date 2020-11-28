@@ -1,9 +1,10 @@
-const webpack = require('webpack');
-const path = require('path');
-const { merge } = require('webpack-merge');
-const common = require('./webpack.common');
+import path from 'path';
+import webpack from 'webpack';
+import 'webpack-dev-server';
+import { merge } from 'webpack-merge';
+import common from './webpack.common';
 
-module.exports = merge(common, {
+const config = merge(common, {
 	mode: 'development',
 	devtool: 'eval-source-map',
 	devServer: {
@@ -17,3 +18,5 @@ module.exports = merge(common, {
 	},
 	plugins: [new webpack.HotModuleReplacementPlugin()],
 });
+
+export default config;

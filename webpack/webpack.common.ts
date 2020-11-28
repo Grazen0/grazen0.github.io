@@ -1,14 +1,14 @@
-const { join, resolve } = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
+import ForkTsCheckerPlugin from 'fork-ts-checker-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { join, resolve } from 'path';
+import webpack from 'webpack';
 
 const context = resolve(__dirname, '..');
 
-/** @type {import('webpack').Configuration} */
-module.exports = {
+const config: webpack.Configuration = {
 	context,
 	entry: join(context, 'src/index.tsx'),
 	output: {
@@ -65,3 +65,5 @@ module.exports = {
 		}),
 	],
 };
+
+export default config;

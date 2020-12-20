@@ -1,19 +1,19 @@
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
-import ForkTsCheckerPlugin from 'fork-ts-checker-webpack-plugin';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { join, resolve } from 'path';
-import webpack from 'webpack';
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { join, resolve } = require('path');
 
 const context = resolve(__dirname, '..');
 
-const config: webpack.Configuration = {
+/** @type {import('webpack').Configuration} */
+const config = {
 	context,
 	entry: join(context, 'src/index.tsx'),
 	output: {
-		filename: '[name].[contenthash].js',
-		chunkFilename: '[name].[contenthash].chunk.js',
+		filename: 'js/[name].[contenthash:8].js',
+		chunkFilename: 'js/[name].[contenthash:8].chunk.js',
 		publicPath: '/',
 		path: join(context, 'build'),
 	},
@@ -52,7 +52,10 @@ const config: webpack.Configuration = {
 	plugins: [
 		new CleanWebpackPlugin(),
 		new ForkTsCheckerPlugin({ async: false }),
-		new MiniCssExtractPlugin(),
+		new MiniCssExtractPlugin({
+			filename: 'css/[name].[contenthash:8].css',
+			chunkFilename: 'css/[name].[contenthash:8].chunk.css',
+		}),
 		new HtmlWebpackPlugin({
 			template: join(context, 'public/index.html'),
 		}),
@@ -66,4 +69,4 @@ const config: webpack.Configuration = {
 	],
 };
 
-export default config;
+module.exports = config;

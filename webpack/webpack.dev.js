@@ -1,8 +1,7 @@
-import path from 'path';
-import webpack from 'webpack';
-import 'webpack-dev-server';
-import { merge } from 'webpack-merge';
-import common from './webpack.common';
+const path = require('path');
+const webpack = require('webpack');
+const { merge } = require('webpack-merge');
+const common = require('./webpack.common');
 
 const config = merge(common, {
 	mode: 'development',
@@ -19,4 +18,4 @@ const config = merge(common, {
 	plugins: [new webpack.HotModuleReplacementPlugin()],
 });
 
-export default config;
+module.exports = config;

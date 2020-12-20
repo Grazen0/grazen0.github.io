@@ -15,7 +15,12 @@ const config = merge(common, {
 		stats: 'minimal',
 		overlay: true,
 	},
-	plugins: [new webpack.HotModuleReplacementPlugin()],
+	plugins: [
+		new webpack.HotModuleReplacementPlugin(),
+		new webpack.DefinePlugin({
+			'process.env.NODE_ENV': JSON.stringify('development'),
+		}),
+	],
 });
 
 module.exports = config;

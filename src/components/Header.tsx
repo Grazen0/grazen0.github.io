@@ -4,10 +4,11 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import NavItem from 'react-bootstrap/NavItem';
 import NavLink from 'react-bootstrap/NavLink';
+import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => (
 	<Navbar variant="dark" bg="dark" expand="md">
-		<Navbar.Brand href="/#/">
+		<Navbar.Brand as={Link} to="/">
 			<img
 				className="rounded-circle bg-secondary mr-3"
 				style={{ height: 50 }}
@@ -20,21 +21,33 @@ const Header: React.FC = () => (
 		<Navbar.Collapse id="basic-navbar-nav">
 			<Nav className="mr-auto">
 				<NavDropdown title="Epic Generators" id="basic-nav-dropdown">
-					<NavDropdown.Item href="/#/meme-generator">
+					<NavDropdown.Item as={Link} to="/meme-generator">
 						Meme Generator
 					</NavDropdown.Item>
-					<NavDropdown.Item href="/#/zalgo">Zalgo Text</NavDropdown.Item>
+					<NavDropdown.Item as={Link} to="/zalgo">
+						Zalgo Text
+					</NavDropdown.Item>
 				</NavDropdown>
 
 				<NavDropdown title="Canvas Stuff" id="basic-nav-dropdown">
-					<NavDropdown.Item href="/#/mouse-tracker">
+					<NavDropdown.Item as={Link} to="/mouse-tracker">
 						Mouse Tracker
 					</NavDropdown.Item>
-					<NavDropdown.Item href="/#/canvas">Canvas</NavDropdown.Item>
+					<NavDropdown.Item as={Link} to="/canvas">
+						Canvas
+					</NavDropdown.Item>
 				</NavDropdown>
 
 				<NavItem>
-					<NavLink href="/#/notifications">Notification Sender</NavLink>
+					<NavLink as={Link} to="/notifications">
+						Notification Sender
+					</NavLink>
+				</NavItem>
+
+				<NavItem>
+					<NavLink as={Link} to="/discord">
+						Discord Perms Calculator
+					</NavLink>
 				</NavItem>
 			</Nav>
 		</Navbar.Collapse>

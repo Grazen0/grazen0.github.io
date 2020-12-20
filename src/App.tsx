@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
 
-const Home = React.lazy(() => import('./pages/Home'));
-const MemeGen = React.lazy(() => import('./pages/MemeGen'));
-const Notifications = React.lazy(() => import('./pages/Notifications'));
-const MouseTracker = React.lazy(() => import('./pages/MouseTracker'));
-const Canvas = React.lazy(() => import('./pages/Canvas'));
-const ZalgoText = React.lazy(() => import('./pages/ZalgoText'));
-const DiscordPerms = React.lazy(() => import('./pages/DiscordPerms'));
+const Home = lazy(() => import('./pages/Home'));
+const MemeGen = lazy(() => import('./pages/MemeGen'));
+const Notifications = lazy(() => import('./pages/Notifications'));
+const MouseTracker = lazy(() => import('./pages/MouseTracker'));
+const Canvas = lazy(() => import('./pages/Canvas'));
+const ZalgoText = lazy(() => import('./pages/ZalgoText'));
+const DiscordPerms = lazy(() => import('./pages/DiscordPerms'));
 
 const App: React.FC = () => (
 	<React.Suspense fallback={<h1 className="m-4">Loading...</h1>}>

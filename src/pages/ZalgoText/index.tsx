@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import { shuffle } from '../../utils';
 import zalgoChars from './zalgo.json';
@@ -12,8 +12,8 @@ const texts = [
 ];
 
 const ZalgoText: React.FC = () => {
-	const [zalgo, setZalgo] = React.useState('');
-	const [opts, setOpts] = React.useState({
+	const [zalgo, setZalgo] = useState('');
+	const [opts, setOpts] = useState({
 		text: shuffle(texts)[0],
 		zalgoLevel: 5,
 		zalgoUp: false,
@@ -21,7 +21,7 @@ const ZalgoText: React.FC = () => {
 		zalgoDown: true,
 	});
 
-	React.useEffect(() => {
+	useEffect(() => {
 		let newZalgo = '';
 		const { text, zalgoLevel } = opts;
 		for (const char of text.trim()) {

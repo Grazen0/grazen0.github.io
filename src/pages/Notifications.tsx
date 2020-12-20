@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 const Notifications: React.FC = () => {
-	const [input, setInput] = React.useState({
+	const [input, setInput] = useState({
 		title: '',
 		body: '',
 		icon: '',

@@ -1,12 +1,12 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useEffect, useState, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import LazyImage from '../LazyImage';
 import './Animals.css';
 
 const Animals: React.FC = () => {
-	const [cat, setCat] = React.useState('');
-	const [dog, setDog] = React.useState('');
+	const [cat, setCat] = useState('');
+	const [dog, setDog] = useState('');
 
 	const handleClick = ({
 		currentTarget,
@@ -31,7 +31,7 @@ const Animals: React.FC = () => {
 			.catch(console.error);
 	};
 
-	React.useEffect(() => {
+	useEffect(() => {
 		searchCat();
 		searchDog();
 	}, []);

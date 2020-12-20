@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Permission from './Permission';
 import permissions from './permissions';
 import './DiscordPerms.css';
 
 const DiscordPerms: React.FC = () => {
-	const [result, setResult] = React.useState(0);
-	const [checks, setChecks] = React.useState<{ [key: string]: boolean }>(
+	const [result, setResult] = useState(0);
+	const [checks, setChecks] = useState<{ [key: string]: boolean }>(
 		Object.keys(permissions).reduce(
 			(acc, key) => ({ ...acc, [key]: false }),
 			{}
 		)
 	);
 
-	React.useEffect(() => {
+	useEffect(() => {
 		const nums = Object.keys(checks)
 			.filter(key => checks[key])
 			.map(key => permissions[key]);

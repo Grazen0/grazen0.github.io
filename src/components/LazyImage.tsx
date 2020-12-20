@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface Props {
 	src: string;
@@ -8,7 +8,7 @@ interface Props {
 }
 
 const LazyImage: React.FC<Props> = ({ src, alt, fallback, className }) => {
-	const [loaded, setLoaded] = React.useState(false);
+	const [loaded, setLoaded] = useState(false);
 
 	return (
 		<>

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 const MouseTracker: React.FC = () => {
-	const canvasRef = React.useRef<HTMLCanvasElement>(null);
+	const canvasRef = useRef<HTMLCanvasElement>(null);
 
 	const handleTouch = (e: React.TouchEvent<HTMLCanvasElement>) => {
 		const touch = e.touches[0];

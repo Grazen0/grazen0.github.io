@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './Canvas.css';
@@ -9,11 +9,11 @@ const defaultOptions = {
 };
 
 const Canvas: React.FC = () => {
-	const canvasRef = React.useRef<HTMLCanvasElement>(null);
+	const canvasRef = useRef<HTMLCanvasElement>(null);
 
-	const [prev, setPrev] = React.useState<{ x: number; y: number } | null>(null);
-	const [options, setOptions] = React.useState(defaultOptions);
-	const [mouseDown, setMouseDown] = React.useState(false);
+	const [prev, setPrev] = useState<{ x: number; y: number } | null>(null);
+	const [options, setOptions] = useState(defaultOptions);
+	const [mouseDown, setMouseDown] = useState(false);
 
 	const handleTouch = (e: React.TouchEvent<HTMLCanvasElement>) => {
 		const touch = e.touches[0];
@@ -66,7 +66,7 @@ const Canvas: React.FC = () => {
 
 	const onMouseUp = () => setMouseDown(false);
 
-	React.useEffect(() => fillCanvas('white'), []);
+	useEffect(() => fillCanvas('white'), []);
 
 	const { color, width } = options;
 	return (

@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { useEffect, useEffect, useRef, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { adjustSize } from '../../utils';
 import './MemeGen.css';
 
 const MemeGen: React.FC = () => {
-	const canvasRef = React.useRef<HTMLCanvasElement>(null);
-	const [text, setText] = React.useState({ top: '', bottom: '' });
-	const [image, setImage] = React.useState<HTMLImageElement | null>(null);
-	const fileRef = React.useRef<HTMLInputElement>(null);
+	const canvasRef = useRef<HTMLCanvasElement>(null);
+	const fileRef = useRef<HTMLInputElement>(null);
 
-	React.useEffect(() => {
+	const [text, setText] = useState({ top: '', bottom: '' });
+	const [image, setImage] = useState<HTMLImageElement | null>(null);
+
+	useEffect(() => {
 		if (!image) return;
 
 		const { current } = canvasRef;

@@ -8,6 +8,7 @@ const Notifications = React.lazy(() => import('./pages/Notifications'));
 const MouseTracker = React.lazy(() => import('./pages/MouseTracker'));
 const Canvas = React.lazy(() => import('./pages/Canvas'));
 const ZalgoText = React.lazy(() => import('./pages/ZalgoText'));
+const DiscordPerms = React.lazy(() => import('./pages/DiscordPerms'));
 
 const App: React.FC = () => (
 	<React.Suspense fallback={<h1 className="m-4">Loading...</h1>}>
@@ -19,6 +20,7 @@ const App: React.FC = () => (
 			<Route exact path="/mouse-tracker" component={MouseTracker} />
 			<Route exact path="/canvas" component={Canvas} />
 			<Route exact path="/zalgo" component={ZalgoText} />
+			<Route exact path="/discord" component={DiscordPerms} />
 
 			<Redirect to="/" />
 		</Switch>

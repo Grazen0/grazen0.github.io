@@ -3042,10 +3042,10 @@ for-in@^1.0.2:
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
   integrity sha1-gQaNKVqBQuwKxybG4iAMMPttXoA=
 
-fork-ts-checker-webpack-plugin@^6.0.6:
-  version "6.0.6"
-  resolved "https://registry.yarnpkg.com/fork-ts-checker-webpack-plugin/-/fork-ts-checker-webpack-plugin-6.0.6.tgz#18933bb40d565eb22a94c3bd7064808018fe57f3"
-  integrity sha512-ZxtF9vwhXvoPv3rriV4NgouQy/TTUA5rh/iw60ztRxgGUVfxe4gv/LQlDkCzttiCqYlHTbUm3G6tdfdb4OBH+Q==
+fork-ts-checker-webpack-plugin@^6.0.7:
+  version "6.0.7"
+  resolved "https://registry.yarnpkg.com/fork-ts-checker-webpack-plugin/-/fork-ts-checker-webpack-plugin-6.0.7.tgz#90d36489d553c4de0d76b8a75f8734e43c6f8e9d"
+  integrity sha512-8M9q76SFQFNruI2L5Z/WmDWZsbkzAjEtUcL8QXKSuTLC+8A4MriNNIiXR9yRcKvGxaBTFzygAmUYb3huTiPraw==
   dependencies:
     "@babel/code-frame" "^7.8.3"
     "@types/json-schema" "^7.0.5"
@@ -5750,10 +5750,10 @@ type-is@~1.6.17, type-is@~1.6.18:
     media-typer "0.3.0"
     mime-types "~2.1.24"
 
-typescript@^4.1.2:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.1.2.tgz#6369ef22516fe5e10304aae5a5c4862db55380e9"
-  integrity sha512-thGloWsGH3SOxv1SoY7QojKi0tc+8FnOmiarEGMbd/lar7QOEd3hvlx3Fp5y6FlDUGl9L+pd4n2e+oToGMmhRQ==
+typescript@^4.1.3:
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.1.3.tgz#519d582bd94cba0cf8934c7d8e8467e473f53bb7"
+  integrity sha512-B3ZIOf1IKeH2ixgHhj6la6xdwR9QrLC5d1VKeCSY4tvkqhF2eqd9O7txNlS0PO3GrBAFIdr3L1ndNwteUbZLYg==
 
 typical@^5.0.0, typical@^5.2.0:
   version "5.2.0"

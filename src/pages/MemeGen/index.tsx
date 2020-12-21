@@ -1,4 +1,4 @@
-import React, { useEffect, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { adjustSize } from '../../utils';

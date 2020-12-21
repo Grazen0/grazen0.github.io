@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import LazyImage from '../LazyImage';
 import './Animals.css';

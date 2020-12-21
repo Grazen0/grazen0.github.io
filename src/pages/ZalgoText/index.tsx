@@ -1,4 +1,4 @@
-import React, { useEffect, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import { shuffle } from '../../utils';
 import zalgoChars from './zalgo.json';

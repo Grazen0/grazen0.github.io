@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const { merge } = require('webpack-merge');
-const { GenerateSW } = require('workbox-webpack-plugin');
 const common = require('./webpack.common');
 
 const config = merge(common, {
@@ -10,7 +9,6 @@ const config = merge(common, {
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify('production'),
 		}),
-		new GenerateSW({ clientsClaim: true, skipWaiting: true }),
 	],
 	optimization: {
 		splitChunks: {

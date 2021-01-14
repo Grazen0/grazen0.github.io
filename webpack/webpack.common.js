@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { join, resolve } = require('path');
 
-const context = resolve(__dirname, '..');
+const context = resolve(__dirname, '../');
 
 /** @type {import('webpack').Configuration} */
 const config = {
@@ -60,11 +60,7 @@ const config = {
 			template: join(context, 'public/index.html'),
 		}),
 		new CopyWebpackPlugin({
-			patterns: [
-				{
-					from: 'public/',
-				},
-			],
+			patterns: [{ from: 'public/' }],
 		}),
 	],
 };

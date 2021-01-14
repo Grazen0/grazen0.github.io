@@ -1344,10 +1344,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-router-dom@^5.1.6":
-  version "5.1.6"
-  resolved "https://registry.yarnpkg.com/@types/react-router-dom/-/react-router-dom-5.1.6.tgz#07b14e7ab1893a837c8565634960dc398564b1fb"
-  integrity sha512-gjrxYqxz37zWEdMVvQtWPFMFj1dRDb4TGOcgyOfSXTrEXdF92L00WE3C471O3TV/RF1oskcStkXsOU0Ete4s/g==
+"@types/react-router-dom@^5.1.7":
+  version "5.1.7"
+  resolved "https://registry.yarnpkg.com/@types/react-router-dom/-/react-router-dom-5.1.7.tgz#a126d9ea76079ffbbdb0d9225073eb5797ab7271"
+  integrity sha512-D5mHD6TbdV/DNHYsnwBTv+y73ei+mMjrkGrla86HthE4/PVvL1J94Bu3qABU+COXzpL23T1EZapVVpwHuBXiUg==
   dependencies:
     "@types/history" "*"
     "@types/react" "*"
@@ -1368,7 +1368,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^17.0.0":
+"@types/react@*", "@types/react@>=16.9.35", "@types/react@^17.0.0":
   version "17.0.0"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.0.tgz#5af3eb7fad2807092f0046a1302b7823e27919b8"
   integrity sha512-aj/L7RIMsRlWML3YB6KZiXB3fV2t41+5RBGYF8z+tAKU43Px8C3cYUZsDvf1/+Bm4FK21QWBrDutu8ZJ/70qOw==
@@ -1376,7 +1376,7 @@
     "@types/prop-types" "*"
     csstype "^3.0.2"
 
-"@types/react@^16.9.11", "@types/react@^16.9.35":
+"@types/react@^16.9.11":
   version "16.9.56"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.56.tgz#ea25847b53c5bec064933095fc366b1462e2adf0"
   integrity sha512-gIkl4J44G/qxbuC6r2Xh+D3CGZpJ+NdWTItAPmZbR5mUS+JQ8Zvzpl0ea5qT/ZT3ZNTUcDKUVqV3xBE8wv/DyQ==
@@ -2985,10 +2985,10 @@ for-in@^1.0.2:
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
   integrity sha1-gQaNKVqBQuwKxybG4iAMMPttXoA=
 
-fork-ts-checker-webpack-plugin@^6.0.8:
-  version "6.0.8"
-  resolved "https://registry.yarnpkg.com/fork-ts-checker-webpack-plugin/-/fork-ts-checker-webpack-plugin-6.0.8.tgz#437bcc0e4e1f9f56e08e61defa5df92648eef27d"
-  integrity sha512-2K6Ozamm6TSL5heFIwPhX5+VsOBiiKf9PzaPFS7kwzrILKX+jlN3DBQc5v/6YYZ2oKJyImg3bY0/uZc7cDbDYQ==
+fork-ts-checker-webpack-plugin@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/fork-ts-checker-webpack-plugin/-/fork-ts-checker-webpack-plugin-6.1.0.tgz#7581a6ccd7cbbed9ecce3de64fb1f599d7a2990b"
+  integrity sha512-xLNufWQ1dfQUdZe48TGQlER/0OkcMnUB6lfbN9Tt13wsYyo+2DwcCbnOaPBo1PoFow/WL8pJPktGIdbJaHxAnw==
   dependencies:
     "@babel/code-frame" "^7.8.3"
     "@types/json-schema" "^7.0.5"
@@ -4702,10 +4702,10 @@ raw-body@2.4.0:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-react-bootstrap@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/react-bootstrap/-/react-bootstrap-1.4.0.tgz#806a8b48b065cedfb28c6c5c7b0c0e3c3b53445d"
-  integrity sha512-0BMzgeUAxH126v7VYDzIXbHxQVHSnniPVKpz9fblumdQpWaiElMnnzk+u8h8DoELX0nCXwPlcUzgXqmpncdc2Q==
+react-bootstrap@^1.4.3:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/react-bootstrap/-/react-bootstrap-1.4.3.tgz#9a76a66800b57f422dd824c9dbe4c9dcef634790"
+  integrity sha512-4tYhk26KRnK0myMEp2wvNjOvnHMwWfa6pWFIiCtj9wewYaTxP7TrCf7MwcIMBgUzyX0SJXx6UbbDG0+hObiXNg==
   dependencies:
     "@babel/runtime" "^7.4.2"
     "@restart/context" "^2.1.4"
@@ -4713,7 +4713,7 @@ react-bootstrap@^1.4.0:
     "@types/classnames" "^2.2.10"
     "@types/invariant" "^2.2.33"
     "@types/prop-types" "^15.7.3"
-    "@types/react" "^16.9.35"
+    "@types/react" ">=16.9.35"
     "@types/react-transition-group" "^4.4.0"
     "@types/warning" "^3.0.0"
     classnames "^2.2.6"

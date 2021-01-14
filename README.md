@@ -1,5 +1,3 @@
-# My Main GitHub Page
+# elchologamer.github.io &middot; ![GitHub Pages][gh-pages]
 
-![github pages](https://github.com/ElCholoGamer/elchologamer.github.io/workflows/GitHub%20Pages/badge.svg)
-
-Poggers
+[gh-pages]: https://github.com/ElCholoGamer/elchologamer.github.io/workflows/GitHub%20Pages/badge.svg

@@ -5,7 +5,7 @@ const common = require('./webpack.common');
 
 const config = merge(common, {
 	mode: 'development',
-	devtool: 'eval-source-map',
+	devtool: 'source-map',
 	devServer: {
 		inline: true,
 		port: 3000,

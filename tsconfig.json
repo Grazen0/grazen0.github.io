@@ -10,7 +10,8 @@
 		"noImplicitAny": true,
 		"removeComments": true,
 		"moduleResolution": "node",
-		"resolveJsonModule": true
+		"resolveJsonModule": true,
+		"sourceMap": true
 	},
 	"include": ["src"]
 }

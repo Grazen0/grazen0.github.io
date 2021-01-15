@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { KeyboardEvent, useEffect, useState } from 'react';
 import { Theme } from './themes';
 import Title from './components/Title';
 import './App.css';

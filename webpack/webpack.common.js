@@ -47,6 +47,14 @@ const config = {
 				test: /\.css$/i,
 				use: [MiniCssExtractPlugin.loader, 'css-loader'],
 			},
+			{
+				test: /\.(jpe?g|png|gif|ico|svg|mp4|ttf|woff2?|otf)$/i,
+				loader: 'file-loader',
+				options: {
+					name: '[folder]/[name].[ext]',
+					outputPath: 'assets/',
+				},
+			},
 		],
 	},
 	plugins: [

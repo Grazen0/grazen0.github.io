@@ -1,5 +1,5 @@
-const path = require('path');
 const webpack = require('webpack');
+const { resolve } = require('path');
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common');
 
@@ -11,7 +11,10 @@ const config = merge(common, {
 		port: 3000,
 		open: true,
 		historyApiFallback: true,
-		contentBase: path.resolve(__dirname, '../build'),
+		contentBase: [
+			resolve(__dirname, '../build'),
+			resolve(__dirname, '../public'),
+		],
 		stats: 'minimal',
 		overlay: true,
 	},

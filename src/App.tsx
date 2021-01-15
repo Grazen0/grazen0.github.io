@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import themes, { Theme } from './themes';
+import { Theme } from './themes';
+import Title from './components/Title';
 import './App.css';
 
 const App: React.FC = () => {
-	const [cursor, setCursor] = useState(true);
-	const [theme, setTheme] = useState<Theme>(
+	const [theme, setTheme] = useState(
 		(localStorage.getItem('theme') ?? 'linux') as Theme
 	);
 
@@ -13,25 +13,9 @@ const App: React.FC = () => {
 		document.body.classList.toggle('windows-theme', theme === 'windows');
 	}, [theme]);
 
-	useEffect(() => {
-		const timer = setInterval(() => setCursor(prev => !prev), 500);
-		return () => clearInterval(timer);
-	}, []);
-
-	const { prefix, cursor: textCursor, fallback } =
-		themes[theme] ?? themes.linux;
-
 	return (
 		<div id="app">
-			<h2
-				id="title"
-				onClick={() =>
-					setTheme(prev => (prev === 'windows' ? 'linux' : 'windows'))
-				}>
-				<span id="prefix">{prefix}</span>
-				<span id="fallback">{fallback}</span>echo "Hello, world!"
-				<span className={!cursor ? 'transparent' : ''}>{textCursor}</span>
-			</h2>
+			<Title theme={theme} />
 		</div>
 	);
 };

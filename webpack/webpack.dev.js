@@ -7,7 +7,7 @@ const config = merge(common, {
 	mode: 'development',
 	devtool: 'eval-source-map',
 	devServer: {
-		hot: true,
+		inline: true,
 		port: 3000,
 		open: true,
 		historyApiFallback: true,

@@ -11,8 +11,7 @@
 }
 
 #title {
-	margin: 90px 20px;
-	width: auto;
+	margin: 120px 20px 80px;
 	text-align: center;
 	white-space: pre;
 }
@@ -22,6 +21,11 @@
 }
 
 @media screen and (max-width: 650px) {
+	#title {
+		margin-top: 80px;
+		margin-bottom: 50px;
+	}
+
 	#fallback {
 		display: inline;
 	}

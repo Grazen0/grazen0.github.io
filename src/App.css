@@ -1,7 +1,7 @@
 @font-face {
 	font-family: 'Ubuntu Mono';
 	font-weight: normal;
-	src: url(./assets/UbuntuMono-R.ttf);
+	src: url(./assets/fonts/UbuntuMono-R.ttf);
 }
 
 :root {
@@ -11,16 +11,56 @@
 
 * {
 	font-family: var(--font), monospace;
+
 	box-sizing: border-box;
-	color: white;
 	margin: 0;
+	color: white;
+}
+
+p,
+li {
+	font-size: 18px;
 }
 
 body {
 	background-color: var(--background);
+	margin-bottom: 80px;
 }
 
 .windows-theme {
 	--background: #000;
 	--font: Consolas;
+}
+
+p {
+	text-align: justify;
+	line-height: 26px;
+
+	width: 550px;
+	max-width: 90%;
+	margin: 5px auto;
+}
+
+#repos-list {
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+h3 {
+	text-align: center;
+	font-weight: normal;
+	margin: 40px 20px 20px;
+}
+
+#social {
+	width: auto;
+	max-width: 80vw;
+	padding: 5px 10px;
+
+	position: fixed;
+	bottom: 10px;
+	left: 10px;
+
+	background-color: var(--background);
+	box-shadow: 0 0 4px 1px white;
 }

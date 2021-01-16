@@ -5,8 +5,8 @@
 }
 
 :root {
-	--background: #2c001e;
-	--font: 'Ubuntu Mono';
+	--background: #000;
+	--font: Consolas;
 }
 
 * {
@@ -27,9 +27,9 @@ body {
 	margin-bottom: 80px;
 }
 
-.windows-theme {
-	--background: #000;
-	--font: Consolas;
+.linux-theme {
+	--background: #2c001e;
+	--font: 'Ubuntu Mono';
 }
 
 p {
@@ -63,4 +63,26 @@ h3 {
 
 	background-color: var(--background);
 	box-shadow: 0 0 4px 1px white;
+}
+
+#switch {
+	width: 60px;
+	height: 30px;
+	border-radius: 15px;
+
+	border: solid 1px white;
+	padding: 5px;
+	cursor: pointer;
+
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+#switch-thumb {
+	background-color: white;
+	border-radius: 50%;
+
+	height: 100%;
+	width: 40%;
 }

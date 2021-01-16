@@ -7,16 +7,25 @@ const repos = ['Dankcord', 'Ascii Converter', 'Undertale Dialogues'];
 
 const App: React.FC = () => {
 	const [theme, setTheme] = useState(
-		(localStorage.getItem('theme') ?? 'linux') as Theme
+		(localStorage.getItem('theme') ?? 'windows') as Theme
 	);
+
+	const switchTheme = () => {
+		setTheme(prev => (prev === 'windows' ? 'linux' : 'windows'));
+	};
 
 	useEffect(() => {
 		localStorage.setItem('theme', theme);
-		document.body.classList.toggle('windows-theme', theme === 'windows');
+		document.body.classList.toggle('linux-theme', theme === 'linux');
 	}, [theme]);
 
 	return (
 		<>
+			<div id="switch" onClick={switchTheme}>
+				<div
+					style={{ float: theme === 'windows' ? 'left' : 'right' }}
+					id="switch-thumb"></div>
+			</div>
 			<Title theme={theme} />
 
 			<p id="main-text">

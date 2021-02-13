@@ -9,7 +9,6 @@ const config = merge(common, {
 	devServer: {
 		inline: true,
 		port: 3000,
-		open: true,
 		historyApiFallback: true,
 		contentBase: [
 			resolve(__dirname, '../build'),

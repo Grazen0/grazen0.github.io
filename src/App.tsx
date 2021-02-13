@@ -3,7 +3,12 @@ import { Theme } from './themes';
 import Title from './components/Title';
 import './App.css';
 
-const repos = ['Dankcord', 'Ascii Converter', 'Undertale Dialogues'];
+const repos = [
+	'UserLogin',
+	'Dankcord',
+	'Ascii Converter',
+	'Undertale Dialogues',
+];
 
 const App: React.FC = () => {
 	const [theme, setTheme] = useState(
@@ -19,6 +24,14 @@ const App: React.FC = () => {
 		document.body.classList.toggle('linux-theme', theme === 'linux');
 	}, [theme]);
 
+	const birthday = new Date();
+	birthday.setMonth(7);
+	birthday.setDate(31);
+
+	const now = new Date();
+	let age = now.getFullYear() - 2006;
+	if (now < birthday) age--;
+
 	return (
 		<>
 			<div id="switch" onClick={switchTheme}>
@@ -29,7 +42,7 @@ const App: React.FC = () => {
 			<Title theme={theme} />
 
 			<p id="main-text">
-				I'm some 14-year old who likes coding. <em>A lot</em>, actually.
+				I'm some {age}-year old who likes coding. <em>A lot</em>, actually.
 				Full-stack web developer too (sort of), using primarily the MERN stack.
 				Of course, I have done other kinds of projects before apart from web
 				dev, such as Discord bots and Minecraft plugins. Also, anime

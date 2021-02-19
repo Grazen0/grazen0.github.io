@@ -45,7 +45,7 @@ const App: React.FC = () => {
 				I'm some {age}-year old who likes coding. <em>A lot</em>, actually.
 				Full-stack web developer too (sort of), using primarily the MERN stack.
 				Of course, I have done other kinds of projects before apart from web
-				dev, such as Discord bots and Minecraft plugins. Also, anime
+				dev, such as Discord bots and Minecraft plugins.
 			</p>
 
 			<br />

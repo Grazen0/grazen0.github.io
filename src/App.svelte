@@ -33,17 +33,17 @@
 </script>
 
 <main>
-	<div id="switch" on:click="{switchTheme}">
+	<div id="switch" on:click={switchTheme}>
 		<div
-			style="{`float: ${theme === Theme.WINDOWS ? 'left' : 'right'}`}"
+			style={`float: ${theme === Theme.WINDOWS ? 'left' : 'right'}`}
 			id="switch-thumb"
-		></div>
+		/>
 	</div>
 
 	<h2 id="title">
-		<CommandPrefix theme="{theme}" /><ScrollText
+		<CommandPrefix {theme} /><ScrollText
 			text="echo &quot;Hello, world!&quot;"
-			theme="{theme}"
+			{theme}
 		/>
 	</h2>
 
@@ -61,7 +61,7 @@
 	<ul id="repos-list">
 		{#each repos as repo}
 			<li>
-				<a href="{`https://github.com/ElCholoGamer/${repo.path}`}">
+				<a href={`https://github.com/ElCholoGamer/${repo.path}`}>
 					{repo.label}
 				</a>
 			</li>

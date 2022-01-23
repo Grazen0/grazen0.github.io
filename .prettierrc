@@ -6,7 +6,7 @@
 	"jsxSingleQuote": false,
 	"tabWidth": 2,
 	"useTabs": true,
-	"svelteStrictMode": true,
+	"svelteStrictMode": false,
 	"svelteAllowShorthand": true,
 	"svelteBracketNewLine": true,
 	"svelteIndentScriptAndStyle": true,

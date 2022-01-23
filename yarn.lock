@@ -534,6 +534,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"elchologamer.github.io@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "elchologamer.github.io@workspace:."
+  dependencies:
+    "@rollup/plugin-commonjs": ^17.0.0
+    "@rollup/plugin-node-resolve": ^11.0.0
+    "@rollup/plugin-typescript": ^8.0.0
+    "@tsconfig/svelte": ^2.0.0
+    rollup: ^2.3.4
+    rollup-plugin-css-only: ^3.1.0
+    rollup-plugin-livereload: ^2.0.0
+    rollup-plugin-svelte: ^7.0.0
+    rollup-plugin-terser: ^7.0.0
+    sirv-cli: ^2.0.0
+    svelte: ^3.0.0
+    svelte-check: ^2.0.0
+    svelte-preprocess: ^4.0.0
+    tslib: ^2.0.0
+    typescript: ^4.0.0
+  languageName: unknown
+  linkType: soft
+
 "emoji-regex@npm:^8.0.0":
   version: 8.0.0
   resolution: "emoji-regex@npm:8.0.0"
@@ -1771,28 +1793,6 @@ __metadata:
   checksum: 53b1e247e68e05db7b3808b99b892bd36fb096e6fba213a06da7fab22045e97597db425c724f2bbd6c99a3c295e1e73f3e4de78592289f38431049e1277ca0ae
   languageName: node
   linkType: hard
-
-"svelte-app@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "svelte-app@workspace:."
-  dependencies:
-    "@rollup/plugin-commonjs": ^17.0.0
-    "@rollup/plugin-node-resolve": ^11.0.0
-    "@rollup/plugin-typescript": ^8.0.0
-    "@tsconfig/svelte": ^2.0.0
-    rollup: ^2.3.4
-    rollup-plugin-css-only: ^3.1.0
-    rollup-plugin-livereload: ^2.0.0
-    rollup-plugin-svelte: ^7.0.0
-    rollup-plugin-terser: ^7.0.0
-    sirv-cli: ^2.0.0
-    svelte: ^3.0.0
-    svelte-check: ^2.0.0
-    svelte-preprocess: ^4.0.0
-    tslib: ^2.0.0
-    typescript: ^4.0.0
-  languageName: unknown
-  linkType: soft
 
 "svelte-check@npm:^2.0.0":
   version: 2.3.0

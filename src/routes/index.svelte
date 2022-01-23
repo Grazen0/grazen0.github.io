@@ -19,7 +19,7 @@
 
 	onMount(() => {
 		const storedTheme = localStorage.getItem('theme');
-		if (Object.values(Theme).includes(storedTheme as any)) {
+		if (Object.values(Theme).includes(storedTheme as Theme)) {
 			theme = storedTheme as Theme;
 		}
 	});

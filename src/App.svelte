@@ -1,30 +1,74 @@
 <script lang="ts">
-	export let name: string;
+	import { onMount } from 'svelte';
+
+	import ScrollText from './components/ScrollText.svelte';
+	import CommandPrefix from './components/CommandPrefix.svelte';
+	import { getAge } from './utils';
+	import { Theme } from './constants';
+
+	const age = getAge(new Date(2006, 7, 31));
+
+	const repos = [
+		{ path: 'userlogin', label: 'UserLogin' },
+		{ path: 'dankcord', label: 'Dankcord' },
+		{ path: 'ascii-converter', label: 'Ascii Converter' },
+		{ path: 'undertale-dialogues', label: 'Undertale Dialogues' },
+	];
+
+	let theme = Theme.WINDOWS;
+
+	onMount(() => {
+		const storedTheme = localStorage.getItem('theme');
+		if (Object.values(Theme).includes(storedTheme as any)) {
+			theme = storedTheme as Theme;
+		}
+	});
+
+	function switchTheme() {
+		theme = theme === Theme.WINDOWS ? Theme.LINUX : Theme.WINDOWS;
+		localStorage.setItem('theme', theme);
+	}
+
+	$: document.body.classList.toggle('linux-theme', theme === Theme.LINUX);
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<div id="switch" on:click="{switchTheme}">
+		<div
+			style="{`float: ${theme === Theme.WINDOWS ? 'left' : 'right'}`}"
+			id="switch-thumb"
+		></div>
+	</div>
+
+	<h2 id="title">
+		<CommandPrefix theme="{theme}" /><ScrollText
+			text="echo &quot;Hello, world!&quot;"
+			theme="{theme}"
+		/>
+	</h2>
+
+	<p id="main-text">
+		I'm some {age}-year old who likes coding. <em>A lot</em>, actually.
+		Full-stack web developer too (sort of), using primarily the MERN stack. Of
+		course, I have done other kinds of projects before apart from web dev, such
+		as Discord bots and Minecraft plugins.
+	</p>
+
+	<br />
+	<p>Also, anime enthusiast and Minecraft fan.</p>
+
+	<h3>Some of my projects:</h3>
+	<ul id="repos-list">
+		{#each repos as repo}
+			<li>
+				<a href="{`https://github.com/ElCholoGamer/${repo.path}`}">
+					{repo.label}
+				</a>
+			</li>
+		{/each}
+	</ul>
+
+	<p id="social">
+		Follow me on <a href="https://github.com/ElCholoGamer">GitHub</a>!
+	</p>
 </main>
-
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-</style>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Theme } from '../constants.js';
+	import { Theme } from '$lib/constants';
 
 	export let theme: Theme;
 </script>

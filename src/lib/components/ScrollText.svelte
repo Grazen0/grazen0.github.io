@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { onDestroy } from 'svelte';
-	import { cursors, Theme } from '../constants';
+	import { onDestroy, onMount } from 'svelte';
+	import { cursors, Theme } from '$lib/constants';
 
 	export let text: string;
 	export let theme: Theme;
@@ -20,6 +20,8 @@
 	const blink = () => (cursorVisible = !cursorVisible);
 
 	function handleKeyDown(e: KeyboardEvent) {
+		if (scrolling) return;
+
 		if (['Backspace', 'Delete'].includes(e.key)) {
 			if (progress > 0) progress--;
 		} else if (e.key.length === 1 && progress < text.length) {
@@ -39,15 +41,15 @@
 		}
 	}
 
-	$: if (!scrolling) {
+	onMount(() => {
 		document.addEventListener('keydown', handleKeyDown);
-	}
+
+		return () => document.removeEventListener('keydown', handleKeyDown);
+	});
 
 	onDestroy(() => {
 		clearTimeout(progressTimer);
 		clearInterval(blinkTimer);
-
-		document.removeEventListener('keydown', handleKeyDown);
 	});
 
 	const cursor = cursors[theme];

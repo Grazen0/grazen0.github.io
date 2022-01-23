@@ -3,18 +3,11 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
 		<meta name="author" content="ElCholoGamer" />
 		<meta name="theme-color" content="#000000" />
-		<meta name="keywords" content="Code,GitHub,Web,React" />
-
-		<title>ElCholoGamer.tk</title>
-
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<link rel="stylesheet" href="/global.css" />
-		<link rel="stylesheet" href="/build/bundle.css" />
-
-		<script defer src="/build/bundle.js"></script>
+		<meta name="keywords" content="code,github,web,svelte,programming" />
 
 		<script
 			async
@@ -28,6 +21,10 @@
 			gtag('js', new Date());
 			gtag('config', 'G-58W6EWVQZW');
 		</script>
+
+		%svelte.head%
 	</head>
-	<body></body>
+	<body>
+		<div id="svelte">%svelte.body%</div>
+	</body>
 </html>

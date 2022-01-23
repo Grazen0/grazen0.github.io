@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	import ScrollText from './components/ScrollText.svelte';
-	import CommandPrefix from './components/CommandPrefix.svelte';
-	import { getAge } from './utils';
-	import { Theme } from './constants';
+	import ScrollText from '$lib/components/ScrollText.svelte';
+	import CommandPrefix from '$lib/components/CommandPrefix.svelte';
+	import { getAge } from '$lib/utils';
+	import { Theme } from '$lib/constants';
 
 	const age = getAge(new Date(2006, 7, 31));
 
@@ -24,12 +24,17 @@
 		}
 	});
 
+	function applyTheme() {
+		document.body.classList.toggle('linux-theme', theme === Theme.LINUX);
+	}
+
 	function switchTheme() {
 		theme = theme === Theme.WINDOWS ? Theme.LINUX : Theme.WINDOWS;
+		applyTheme();
 		localStorage.setItem('theme', theme);
 	}
 
-	$: document.body.classList.toggle('linux-theme', theme === Theme.LINUX);
+	onMount(applyTheme);
 </script>
 
 <main>

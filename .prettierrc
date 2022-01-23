@@ -8,7 +8,6 @@
 	"useTabs": true,
 	"svelteStrictMode": false,
 	"svelteAllowShorthand": true,
-	"svelteBracketNewLine": true,
 	"svelteIndentScriptAndStyle": true,
 	"quoteProps": "as-needed",
 	"bracketSameLine": false,

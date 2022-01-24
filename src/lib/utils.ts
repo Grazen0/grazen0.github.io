@@ -9,3 +9,6 @@ export function getAge(birthDate: Date): number {
 
 	return age;
 }
+
+export const randomRange = (min: number, max: number) =>
+	Math.floor(Math.random() * (max - min) + min);

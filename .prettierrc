@@ -11,5 +11,6 @@
 	"svelteIndentScriptAndStyle": true,
 	"quoteProps": "as-needed",
 	"bracketSameLine": true,
-	"arrowParens": "avoid"
+	"arrowParens": "avoid",
+	"printWidth": 100
 }

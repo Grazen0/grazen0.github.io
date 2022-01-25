@@ -9,3 +9,7 @@ export function getAge(birthDate: Date): number {
 
 	return age;
 }
+
+export const randomRange = (min: number, max: number) => Math.random() * (max - min) + min;
+
+export const isPowerOf2 = (value: number) => (value & (value - 1)) === 0;

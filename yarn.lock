@@ -171,6 +171,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/gl-matrix@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "@types/gl-matrix@npm:3.2.0"
+  dependencies:
+    gl-matrix: "*"
+  checksum: 1baa16f2eef299c9379e91f883b121fce97fb84975f6cf790365fb74edd2168ee06aa0cbf25425acbd63970f2b3eb6857a85fa8aa756613dcbe331b64b65e6c1
+  languageName: node
+  linkType: hard
+
 "@types/json-schema@npm:^7.0.9":
   version: 7.0.9
   resolution: "@types/json-schema@npm:7.0.9"
@@ -673,11 +682,13 @@ __metadata:
     "@beyonk/svelte-google-analytics": ^2.2.0
     "@sveltejs/adapter-static": next
     "@sveltejs/kit": ^1.0.0-next.1
+    "@types/gl-matrix": ^3.2.0
     "@typescript-eslint/eslint-plugin": ^5.10.0
     "@typescript-eslint/parser": ^5.10.0
     eslint: ^8.7.0
     eslint-config-prettier: ^8.3.0
     eslint-plugin-svelte3: ^3.4.0
+    gl-matrix: ^3.4.3
     prettier: ^2.5.1
     prettier-plugin-svelte: ^2.6.0
     sass: ^1.49.0
@@ -1223,6 +1234,13 @@ __metadata:
     strip-ansi: ^6.0.1
     wide-align: ^1.1.2
   checksum: 637b34c84f518defa89319dbef68211a24e9302182ad2a619e3be1be5b7dcf2a962c8359e889294af667440f4722e7e6e61671859e00bd8ec280a136ded89b25
+  languageName: node
+  linkType: hard
+
+"gl-matrix@npm:*, gl-matrix@npm:^3.4.3":
+  version: 3.4.3
+  resolution: "gl-matrix@npm:3.4.3"
+  checksum: c47830ba727f3d0fab635c48135af96aef66274079a3e0afd6f68b68c98eae9fc1bcfdc7312fe2301e4fd22dd24c5e0f1b5d025960a208e50d07101ed8d940f9
   languageName: node
   linkType: hard
 

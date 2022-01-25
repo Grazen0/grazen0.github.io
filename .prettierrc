@@ -10,6 +10,7 @@
 	"svelteAllowShorthand": true,
 	"svelteIndentScriptAndStyle": true,
 	"quoteProps": "as-needed",
-	"bracketSameLine": true,
-	"arrowParens": "avoid"
+	"bracketSameLine": false,
+	"arrowParens": "avoid",
+	"printWidth": 100
 }

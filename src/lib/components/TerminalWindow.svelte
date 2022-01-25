@@ -18,7 +18,7 @@
 	$: scrolling = progress <= command.length;
 
 	$: if (scrolling) {
-		const delay = progress < command.length ? randomRange(100, 160) : 400;
+		const delay = progress < command.length ? randomRange(80, 150) : 400;
 		progressTimer = setTimeout(scroll, delay);
 	} else {
 		blinkTimer = setInterval(blink, 500);
@@ -28,37 +28,48 @@
 		clearTimeout(progressTimer);
 		clearInterval(blinkTimer);
 	});
+
+	$: lineProps = {
+		username,
+		desktopName,
+	};
 </script>
 
-<div {...$$restProps} class="terminal">
-	<div class="head">
-		<div class="buttons">
-			<img src="/assets/images/x-icon.svg" alt="" />
-			<img src="/assets/images/min-icon.svg" alt="" />
-			<img src="/assets/images/sq-icon.svg" alt="" />
+<div class="container">
+	<div {...$$restProps} class="terminal">
+		<div class="head">
+			<div class="buttons">
+				<img src="/assets/images/x-icon.svg" alt="" />
+				<img src="/assets/images/min-icon.svg" alt="" />
+				<img src="/assets/images/sq-icon.svg" alt="" />
+			</div>
+			{username}@{desktopName}: ~
 		</div>
-		{username}@{desktopName}: ~
+		<!-- prettier-ignore -->
+		<pre class="content">
+<CommandLine {...lineProps} cursor={scrolling}>{command.substring(0, progress)}</CommandLine>
+{#if !scrolling}
+<slot /><br />
+<CommandLine {...lineProps} cursor={cursorVisible} />
+{/if}
+		</pre>
 	</div>
-	<pre class="content">
-<CommandLine {username} {desktopName} cursor={scrolling}
-			>{command.substring(0, progress)}</CommandLine>
-{#if !scrolling}<slot />
-
-<CommandLine
-				{username}
-				{desktopName}
-				cursor={cursorVisible} />
-		{/if}
-	</pre>
 </div>
 
 <style lang="scss">
+	$background: #300a24;
+
+	.container {
+		padding: 2rem 0;
+	}
+
 	.terminal {
+		margin: 0 auto;
 		border-radius: 10px 10px 0 0;
-		font-size: 1.4rem;
 		color: white;
+		font-size: 1.4rem;
 		font-family: 'Ubuntu Mono', Consolas, monospace;
-		box-shadow: 0 0 25px 2px #161616;
+		box-shadow: 0 0 25px 1px #161616;
 
 		width: 900px;
 		max-width: 90%;
@@ -89,8 +100,18 @@
 	.content {
 		margin: 0;
 		font-family: inherit;
-		background-color: #300a24;
+		background-color: $background;
 		min-height: 300px;
+
+		&::selection {
+			background: white;
+			color: $background;
+		}
+
+		& :global(*)::selection {
+			background: white;
+			color: $background;
+		}
 	}
 
 	@media screen and (max-width: 850px) {

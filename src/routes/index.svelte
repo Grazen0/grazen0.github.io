@@ -56,7 +56,7 @@
 			</p>
 		</section>
 		<section>
-			<h2>Some of my projects:</h2>
+			<h2>Some of my projects</h2>
 			<ul>
 				{#each projects as { label, repo, text }}
 					<li>
@@ -69,17 +69,18 @@
 			<h2>Contact</h2>
 			<p>
 				You can find me on Discord as <em class="fs-normal yellow">ElCholoGamer#8225</em>, or check
-				out my <a href={github}>GitHub profile</a>.
-			</p>
-			<p>
-				<small
-					>(Oh yeah, I also have a
-					<a href="https://twitter.com/ElCholoGamer">Twitter</a> and a
-					<a href="https://www.youtube.com/channel/UClmqXQiLYfIrvQKfr40nMyg">YouTube channel</a
-					>)</small
-				>
+				out my <a href={github}>GitHub profile</a>. (Oh yeah, I also have a
+				<a href="https://twitter.com/ElCholoGamer">Twitter</a> and a
+				<a href="https://www.youtube.com/channel/UClmqXQiLYfIrvQKfr40nMyg">YouTube channel</a>)
 			</p>
 		</section>
+		<p>
+			<small>
+				Feel free to check out this website's source code <a
+					href={`${github}/elchologamer.github.io`}>here!</a
+				>
+			</small>
+		</p>
 	</Content>
 </main>
 

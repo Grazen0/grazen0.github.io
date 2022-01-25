@@ -26,10 +26,12 @@
 
 <TerminalWindow
 	title="I don't actually use Linux, but this looks pretty cool!"
-	command="./MyWebsite.sh">
+	command="./MyWebsite.sh"
+>
 	<span class="yellow">
 		<span class="wrappedTitle">{title.wrapped.join('\n')}</span><span class="fullTitle"
-			>{title.full.join('\n')}</span>
+			>{title.full.join('\n')}</span
+		>
 	</span>
 </TerminalWindow>
 
@@ -49,7 +51,8 @@
 			</p>
 			<p>
 				Also, I think this monospace aesthetic is pretty cool. You might wanna thank <a
-					href="https://adventofcode.com">Advent of Code</a> for that.
+					href="https://adventofcode.com">Advent of Code</a
+				> for that.
 			</p>
 		</section>
 		<section>
@@ -73,7 +76,8 @@
 					>(Oh yeah, I also have a
 					<a href="https://twitter.com/ElCholoGamer">Twitter</a> and a
 					<a href="https://www.youtube.com/channel/UClmqXQiLYfIrvQKfr40nMyg">YouTube channel</a
-					>)</small>
+					>)</small
+				>
 			</p>
 		</section>
 	</Content>

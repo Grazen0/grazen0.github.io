@@ -19,7 +19,8 @@
 	bind:this={canvas}
 	on:contextmenu|preventDefault|stopPropagation
 	width="1280"
-	height="720" />
+	height="720"
+/>
 
 <style>
 	canvas {

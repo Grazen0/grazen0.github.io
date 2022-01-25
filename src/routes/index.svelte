@@ -77,8 +77,8 @@
 		<p>
 			<small>
 				Feel free to check out this website's source code <a
-					href={`${github}/elchologamer.github.io`}>here!</a
-				>
+					href={`${github}/elchologamer.github.io`}>here</a
+				>!
 			</small>
 		</p>
 	</Content>

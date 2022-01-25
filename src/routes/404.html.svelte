@@ -2,9 +2,12 @@
 	import Content from '$lib/components/Content.svelte';
 	import TerminalWindow from '$lib/components/TerminalWindow.svelte';
 	import { notFound as title } from '$lib/ascii.json';
+	import Title from '$lib/Title.svelte';
 
 	const goBack = () => history.go(-1);
 </script>
+
+<Title topic="Not Found" />
 
 <TerminalWindow command="./MyWebsite.sh --not-found">
 	<span class="red">{title.join('\n')}</span>

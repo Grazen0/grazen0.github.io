@@ -6,7 +6,7 @@
 
 <span class="hide"
 	><span class="green">{username}@{desktopName}</span>:<span class="light-blue">~</span></span
->${' '}<slot />{#if cursor}<span class="cursor">█</span>{/if}
+>${' '}<slot /><span class:transparent={!cursor} class="cursor">█</span>
 
 <style>
 	.cursor {

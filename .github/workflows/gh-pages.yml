@@ -17,6 +17,8 @@ jobs:
         run: yarn build
         env:
           VITE_GTAG_ID: 'G-58W6EWVQZW'
+      - name: Move 404 route
+        run: mv "./build/404/index.html" ./build/404.html
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:

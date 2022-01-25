@@ -60,7 +60,7 @@
 	$background: #300a24;
 
 	.container {
-		padding: 2rem 0;
+		padding: 4rem 0;
 	}
 
 	.terminal {

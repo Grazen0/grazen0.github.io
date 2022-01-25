@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { BackgroundScene } from '$lib/background/scene';
-	import { randomRange } from '$lib/utils';
 
 	let canvas: HTMLCanvasElement;
 
@@ -31,5 +30,7 @@
 		top: 0;
 		left: 0;
 		z-index: -9999;
+
+		background-color: #94baff;
 	}
 </style>

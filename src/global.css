@@ -30,3 +30,7 @@ body,
 .yellow {
 	color: #ffff70;
 }
+
+.fs-normal {
+	font-style: normal;
+}

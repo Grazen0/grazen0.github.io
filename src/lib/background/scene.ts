@@ -1,7 +1,7 @@
 import { mat4 } from 'gl-matrix';
 import type { ModelBuffers, ProgramInfo, WebGL, CirnoPrism } from './types';
 import { BACKGROUND_COLOR } from '$lib/background/constants';
-import { randomRange } from '$lib/utils';
+import { randomRange, randomSign } from '$lib/utils';
 import { indices } from './geometry';
 import { loadBuffers, loadProgramInfo, loadTexture } from './loader';
 import { fsSource, vsSource } from './shaders';
@@ -129,7 +129,7 @@ export class BackgroundScene {
 			position: [randomRange(-30, 30), 30, randomRange(-10, -40)],
 			rotation: Math.random() * Math.PI * 2,
 			fallSpeed: randomRange(0.04, 0.2),
-			rotationSpeed: randomRange(0.01, 0.05),
+			rotationSpeed: randomRange(0.01, 0.05) * randomSign(),
 		};
 
 		this.prisms.push(prism);

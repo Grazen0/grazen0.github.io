@@ -25,7 +25,6 @@
 
 		& :global(h2) {
 			margin: 1.5em 0 0 0;
-			// font-size: 1.25em;
 		}
 
 		& :global(a) {
@@ -38,6 +37,12 @@
 
 		& :global(ul) {
 			line-height: 1.5em;
+		}
+	}
+
+	@media screen and (max-width: 500px) {
+		.content {
+			font-size: 1.25em;
 		}
 	}
 </style>

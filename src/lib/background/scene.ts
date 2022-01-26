@@ -137,7 +137,10 @@ export class BackgroundScene {
 	}
 
 	public start() {
-		this.frame = requestAnimationFrame(t => this.loop(t));
+		this.frame = requestAnimationFrame(t => {
+			this.lastTick = t - this.FRAME_DURATION_MS;
+			this.loop(t);
+		});
 	}
 
 	public stop(): boolean {

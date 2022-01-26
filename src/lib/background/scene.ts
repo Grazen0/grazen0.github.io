@@ -1,6 +1,6 @@
 import { mat4 } from 'gl-matrix';
 import type { ModelBuffers, ProgramInfo, WebGL, CirnoPrism } from './types';
-import { BACKGROUND_COLOR } from '$lib/background/constants';
+import { BACKGROUND_COLOR, CIRNO_TEXTURE_URL } from '$lib/background/constants';
 import { randomRange, randomSign } from '$lib/utils';
 import { indices } from './geometry';
 import { loadBuffers, loadProgramInfo, loadTexture } from './loader';
@@ -15,13 +15,13 @@ export class BackgroundScene {
 	private lastTick = -1;
 	private spawnTimer = 0;
 
-	public constructor(public readonly gl: WebGL, private readonly texture: WebGLTexture) {
+	private constructor(public readonly gl: WebGL, private readonly texture: WebGLTexture) {
 		this.programInfo = loadProgramInfo(gl, vsSource, fsSource);
 		this.prismBuffers = loadBuffers(gl);
 	}
 
-	public static async init(gl: WebGL, textureUrl: string): Promise<BackgroundScene> {
-		const texture = await loadTexture(gl, textureUrl);
+	public static async init(gl: WebGL): Promise<BackgroundScene> {
+		const texture = await loadTexture(gl, CIRNO_TEXTURE_URL);
 		return new BackgroundScene(gl, texture);
 	}
 

@@ -8,7 +8,7 @@
 		const gl = canvas.getContext('webgl');
 		if (!gl) return;
 
-		const scene = await BackgroundScene.init(gl, '/assets/images/cirno_prism.png');
+		const scene = await BackgroundScene.init(gl);
 		scene.start();
 
 		return () => scene.stop();

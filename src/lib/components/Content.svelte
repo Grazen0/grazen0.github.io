@@ -31,7 +31,7 @@
 			color: #799fbd;
 		}
 
-		& :global(span[title]) {
+		& :global(span[title]):hover {
 			text-decoration: underline;
 		}
 

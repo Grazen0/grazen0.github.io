@@ -9,6 +9,7 @@
 	const github = 'https://github.com/ElCholoGamer';
 
 	const projects = [
+		{ repo: 'chip-8', label: 'CHIP-8', text: 'A CHIP-8 emulator written in TypeScript' },
 		{ repo: 'amazing', label: 'Amazing', text: 'The tool for all of your maze-solving needs' },
 		{
 			repo: 'undertale-dialogues',
@@ -20,7 +21,6 @@
 			label: 'Video ASCII',
 			text: 'A tool to play videos as ASCII text',
 		},
-		{ repo: 'dankcord', label: 'Dankcord', text: 'An unfinished Discord clone' },
 	];
 </script>
 

@@ -692,7 +692,7 @@ __metadata:
     prettier: ^2.5.1
     prettier-plugin-svelte: ^2.6.0
     sass: ^1.49.0
-    svelte: ^3.0.0
+    svelte: ^3.49.0
     svelte-check: ^2.0.0
     svelte-preprocess: ^4.0.0
     tslib: ^2.0.0
@@ -2420,10 +2420,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svelte@npm:^3.0.0":
-  version: 3.46.2
-  resolution: "svelte@npm:3.46.2"
-  checksum: a04688a844b4ad91f728d48441b66e4341f99119c3b972a747dbce26b5bf484b0b25fd6fa10cbc3fd992d7979d7e58bf05debf7d134aff47c48dab516d6a5122
+"svelte@npm:^3.49.0":
+  version: 3.53.1
+  resolution: "svelte@npm:3.53.1"
+  checksum: addf72d3d5daec3af0a37fcd9e1549ad2362cb631b32060674e0a6ed1e45388c459f8b7eeebf486fc411fbd9b882c5fcd70c017ddac94942d86f87888fc13102
   languageName: node
   linkType: hard
 

@@ -9,7 +9,11 @@
 	const github = 'https://github.com/ElCholoGamer';
 
 	const projects = [
-		{ repo: 'amazing', label: 'Amazing', text: 'The tool for all of your maze-solving needs' },
+		{
+			repo: 'amazing',
+			label: 'Amazing',
+			text: 'The tool for all of your maze-solving needs',
+		},
 		{
 			repo: 'undertale-dialogues',
 			label: 'Undertale Dialogues',
@@ -20,7 +24,11 @@
 			label: 'Video ASCII',
 			text: 'A tool to play videos as ASCII text',
 		},
-		{ repo: 'dankcord', label: 'Dankcord', text: 'An unfinished Discord clone' },
+		{
+			repo: 'dankcord',
+			label: 'Dankcord',
+			text: 'An unfinished Discord clone',
+		},
 	];
 </script>
 
@@ -40,8 +48,8 @@
 		<h1>Hey there! It's <em class="yellow fs-normal">ElCholoGamer</em>.</h1>
 		<section>
 			<p>
-				I'm some random {age}-year old who likes to code
-				<span title="(Maybe a bit too much?)">a lot</span>. Been programming for about 2 or 3 years
+				I'm an {age}-year old guy who likes to code
+				<span title="(Maybe a bit too much?)">a lot</span>. Been programming for about 2-3 years
 				now. Wouldn't really call most of it "experience", though, since it was mostly messing
 				around with stuff.
 			</p>

@@ -71,11 +71,12 @@ export class BackgroundScene {
 		gl.depthFunc(gl.LEQUAL);
 		gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
+		const canvas = gl.canvas as HTMLCanvasElement;
 		const projectionMatrix = mat4.create();
 		mat4.perspective(
 			projectionMatrix,
 			Math.PI / 3,
-			gl.canvas.clientWidth / gl.canvas.clientHeight,
+			canvas.clientWidth / canvas.clientHeight,
 			0.1,
 			100
 		);

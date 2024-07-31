@@ -1,18 +1,18 @@
-export function getAge(birthDate: Date): number {
-	const now = new Date();
-	let age = now.getFullYear() - birthDate.getFullYear();
+import { MY_BIRTHDATE } from './constants';
 
-	const month = now.getMonth() - birthDate.getMonth();
-	if (month < 0 || (month === 0 && now.getDate() - birthDate.getDate())) {
+export function myAge(): number {
+	const now = new Date();
+	let age = now.getFullYear() - MY_BIRTHDATE.getFullYear();
+
+	const nowMonth = now.getMonth();
+	const birthMonth = MY_BIRTHDATE.getMonth();
+
+	if (
+		nowMonth < birthMonth ||
+		(nowMonth == birthMonth && now.getDay() < MY_BIRTHDATE.getDay())
+	) {
 		age--;
 	}
 
 	return age;
 }
-
-export const randomRange = (min: number, max: number) =>
-	Math.random() * (max - min) + min;
-
-export const randomSign = () => (Math.random() > 0.5 ? 1 : -1);
-
-export const isPowerOf2 = (value: number) => (value & (value - 1)) === 0;

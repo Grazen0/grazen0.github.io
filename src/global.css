@@ -2,38 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-	box-sizing: border-box;
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url('/assets/fonts/JetBrainsMono-Medium.ttf');
 }
 
-html,
-body,
-#svelte {
-	height: 100%;
-	margin: 0;
-	padding: 0;
-}
-
-.red {
-	color: #ff4f4f;
-}
-
-.green {
-	color: #88c549;
-}
-
-.light-blue {
-	color: #648aa8;
-}
-
-.yellow {
-	color: #ffff70;
-}
-
-.fs-normal {
-	font-style: normal;
-}
-
-.transparent {
-	color: transparent;
+@layer base {
+	html,
+	body,
+	#svelte {
+		@apply bg-sumi-ink-0 text-fuji-white font-mono h-full m-0 p-0;
+	}
 }

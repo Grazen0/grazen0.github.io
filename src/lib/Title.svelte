@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let topic = '';
+	export let topic: string | null = null;
 	export let mainTitle = 'ElCholoGamer';
 
 	$: fullTitle = topic ? `${topic} | ${mainTitle}` : mainTitle;

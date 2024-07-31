@@ -5,7 +5,9 @@
 </script>
 
 <span class="hide"
-	><span class="green">{username}@{desktopName}</span>:<span class="light-blue">~</span></span
+	><span class="green">{username}@{desktopName}</span>:<span class="light-blue"
+		>~</span
+	></span
 >${' '}<slot /><span class:transparent={!cursor} class="cursor">█</span>
 
 <style>

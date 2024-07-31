@@ -15,7 +15,10 @@ export class BackgroundScene {
 	private lastTick = -1;
 	private spawnTimer = 0;
 
-	private constructor(public readonly gl: WebGL, private readonly texture: WebGLTexture) {
+	private constructor(
+		public readonly gl: WebGL,
+		private readonly texture: WebGLTexture
+	) {
 		this.programInfo = loadProgramInfo(gl, vsSource, fsSource);
 		this.prismBuffers = loadBuffers(gl);
 	}

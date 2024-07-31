@@ -3,7 +3,11 @@ import { isPowerOf2 } from '$lib/utils';
 import { indices, normals, positions, textureCoords } from './geometry';
 import { getUniformNonNull, initBuffer } from './utils';
 
-export function loadShader(gl: WebGL, type: number, source: string): WebGLShader {
+export function loadShader(
+	gl: WebGL,
+	type: number,
+	source: string
+): WebGLShader {
 	const shader = gl.createShader(type);
 	if (!shader) throw new Error(`Could not create shader with source ${source}`);
 
@@ -20,7 +24,11 @@ export function loadShader(gl: WebGL, type: number, source: string): WebGLShader
 	return shader;
 }
 
-export function loadShaderProgram(gl: WebGL, vsSource: string, fsSource: string): WebGLProgram {
+export function loadShaderProgram(
+	gl: WebGL,
+	vsSource: string,
+	fsSource: string
+): WebGLProgram {
 	const vertexShader = loadShader(gl, gl.VERTEX_SHADER, vsSource);
 	const fragmentShader = loadShader(gl, gl.FRAGMENT_SHADER, fsSource);
 
@@ -32,7 +40,9 @@ export function loadShaderProgram(gl: WebGL, vsSource: string, fsSource: string)
 	gl.linkProgram(program);
 
 	if (!gl.getProgramParameter(program, gl.LINK_STATUS))
-		throw new Error(`Could not initialize shader program: ${gl.getProgramInfoLog(program)}`);
+		throw new Error(
+			`Could not initialize shader program: ${gl.getProgramInfoLog(program)}`
+		);
 
 	return program;
 }
@@ -46,7 +56,14 @@ export function loadTexture(gl: WebGL, url: string): Promise<WebGLTexture> {
 			if (!texture) return reject('Could not create texture');
 
 			gl.bindTexture(gl.TEXTURE_2D, texture);
-			gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
+			gl.texImage2D(
+				gl.TEXTURE_2D,
+				0,
+				gl.RGBA,
+				gl.RGBA,
+				gl.UNSIGNED_BYTE,
+				image
+			);
 
 			if (isPowerOf2(image.width) && isPowerOf2(image.height)) {
 				gl.generateMipmap(gl.TEXTURE_2D);
@@ -67,7 +84,11 @@ export function loadTexture(gl: WebGL, url: string): Promise<WebGLTexture> {
 
 export function loadBuffers(gl: WebGL): ModelBuffers {
 	const posBuffer = initBuffer(gl, new Float32Array(positions));
-	const indexBuffer = initBuffer(gl, new Uint16Array(indices), gl.ELEMENT_ARRAY_BUFFER);
+	const indexBuffer = initBuffer(
+		gl,
+		new Uint16Array(indices),
+		gl.ELEMENT_ARRAY_BUFFER
+	);
 	const normalBuffer = initBuffer(gl, new Float32Array(normals));
 	const textureBuffer = initBuffer(gl, new Float32Array(textureCoords));
 
@@ -79,7 +100,11 @@ export function loadBuffers(gl: WebGL): ModelBuffers {
 	};
 }
 
-export function loadProgramInfo(gl: WebGL, vsSource: string, fsSource: string): ProgramInfo {
+export function loadProgramInfo(
+	gl: WebGL,
+	vsSource: string,
+	fsSource: string
+): ProgramInfo {
 	const program = loadShaderProgram(gl, vsSource, fsSource);
 
 	return {

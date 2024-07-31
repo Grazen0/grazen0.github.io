@@ -37,8 +37,8 @@
 	command="./MyWebsite.sh"
 >
 	<span class="yellow">
-		<span class="wrappedTitle">{title.wrapped.join('\n')}</span><span class="fullTitle"
-			>{title.full.join('\n')}</span
+		<span class="wrappedTitle">{title.wrapped.join('\n')}</span><span
+			class="fullTitle">{title.full.join('\n')}</span
 		>
 	</span>
 </TerminalWindow>
@@ -49,18 +49,17 @@
 		<section>
 			<p>
 				I'm an {age}-year old guy who likes to code
-				<span title="(Maybe a bit too much?)">a lot</span>. Been programming for about 2-3 years
-				now. Wouldn't really call most of it "experience", though, since it was mostly messing
-				around with stuff.
+				<span title="(Maybe a bit too much?)">a lot</span>. Been programming for
+				about 2-3 years now. Wouldn't really call most of it "experience",
+				though, since it was mostly messing around with stuff.
 			</p>
 			<p>
-				I've dipped into Discord bots, videogames, Minecraft plugins, Terraria modding, and web
-				development; the latter being my main focus.
+				I've dipped into Discord bots, videogames, Minecraft plugins, Terraria
+				modding, and web development; the latter being my main focus.
 			</p>
 			<p>
-				Also, I think this monospace aesthetic is pretty cool. You might wanna thank <a
-					href="https://adventofcode.com">Advent of Code</a
-				> for that.
+				Also, I think this monospace aesthetic is pretty cool. You might wanna
+				thank <a href="https://adventofcode.com">Advent of Code</a> for that.
 			</p>
 		</section>
 		<section>
@@ -76,10 +75,14 @@
 		<section>
 			<h2>Contact</h2>
 			<p>
-				You can find me on Discord as <em class="fs-normal yellow">ElCholoGamer#8225</em>, or check
-				out my <a href={github}>GitHub profile</a>. (Oh yeah, I also have a
+				You can find me on Discord as <em class="fs-normal yellow"
+					>ElCholoGamer#8225</em
+				>, or check out my <a href={github}>GitHub profile</a>. (Oh yeah, I also
+				have a
 				<a href="https://twitter.com/ElCholoGamer">Twitter</a> and a
-				<a href="https://www.youtube.com/channel/UClmqXQiLYfIrvQKfr40nMyg">YouTube channel</a>)
+				<a href="https://www.youtube.com/channel/UClmqXQiLYfIrvQKfr40nMyg"
+					>YouTube channel</a
+				>)
 			</p>
 		</section>
 		<p>

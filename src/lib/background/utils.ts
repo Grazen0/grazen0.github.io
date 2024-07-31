@@ -11,7 +11,11 @@ export function getUniformNonNull(
 	return location;
 }
 
-export function initBuffer(gl: WebGL, data: BufferSource, type = gl.ARRAY_BUFFER): WebGLBuffer {
+export function initBuffer(
+	gl: WebGL,
+	data: BufferSource,
+	type = gl.ARRAY_BUFFER
+): WebGLBuffer {
 	const buffer = gl.createBuffer();
 	if (!buffer) throw new Error('Could not create position buffer');
 

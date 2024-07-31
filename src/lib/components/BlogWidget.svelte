@@ -1,5 +1,7 @@
 <aside class="container">
-	<a class="container" href="https://blog-elchologamer.vercel.app/">Check out my blog!</a>
+	<a class="container" href="https://blog-elchologamer.vercel.app/"
+		>Check out my blog!</a
+	>
 </aside>
 
 <style lang="scss">

@@ -10,7 +10,8 @@ export function getAge(birthDate: Date): number {
 	return age;
 }
 
-export const randomRange = (min: number, max: number) => Math.random() * (max - min) + min;
+export const randomRange = (min: number, max: number) =>
+	Math.random() * (max - min) + min;
 
 export const randomSign = () => (Math.random() > 0.5 ? 1 : -1);
 

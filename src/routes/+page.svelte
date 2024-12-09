@@ -24,7 +24,7 @@
 
 	<main class="my-8">
 		<p class="my-6">
-			Hey, I'm <Em>Grazen</Em>. Just a random guy on the internet who's
+			Hey, I'm <Em>Grazen</Em>. Just a random guy on the internet who's really
 			passionate about programming. Currently majoring in Computer Science.
 		</p>
 
@@ -42,7 +42,7 @@
 			awesome FOSS tools.
 		</p>
 
-		<h2 class="text-3xl font-bold mt-8 mb-4">Cool stuff I've made</h2>
+		<h2 class="text-3xl font-semibold mt-8 mb-4">Cool stuff I've made</h2>
 
 		<ul class="list-disc list-inside my-6">
 			<li>
@@ -66,7 +66,7 @@
 			</li>
 		</ul>
 
-		<h2 class="text-3xl font-bold mt-8 mb-4">Contact me</h2>
+		<h2 class="text-3xl font-semibold mt-8 mb-4">Contact me</h2>
 
 		<p class="my-6">
 			Feel free to send me a friend request on my Discord, <Em>grazen0</Em>.

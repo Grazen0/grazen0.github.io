@@ -4,7 +4,20 @@
 
 @font-face {
 	font-family: 'JetBrains Mono';
-	src: url('/assets/fonts/JetBrainsMonoNL-Regular.ttf');
+	src: url('/assets/font/JetBrainsMonoNL-Regular.ttf');
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url('/assets/font/JetBrainsMonoNL-SemiBold.ttf');
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url('/assets/font/JetBrainsMonoNL-Bold.ttf');
+	font-weight: bold;
 }
 
 @layer base {

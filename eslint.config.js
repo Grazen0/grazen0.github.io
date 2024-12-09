@@ -30,4 +30,10 @@ export default [
 	{
 		ignores: ['build/', '.svelte-kit/', 'dist/'],
 	},
+	{
+		rules: {
+			'@typescript-eslint/explicit-function-return-type': 'error',
+			'@typescript-eslint/no-empty-object-type': 'off',
+		},
+	},
 ];

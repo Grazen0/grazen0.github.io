@@ -3,14 +3,17 @@
 	import { HOME_BANNER, HOME_BANNER_SMALL } from '$lib/ascii';
 	import Em from '$lib/components/Em.svelte';
 	import Link from '$lib/components/Link.svelte';
-	import { onMount } from 'svelte';
 
 	let useSmallAscii = $state(false);
 
-	onMount(() => {
-		useSmallAscii = window.innerWidth < 550;
-	});
+	const handleResize = (
+		ev: UIEvent & { currentTarget: EventTarget & Window }
+	): void => {
+		useSmallAscii = ev.currentTarget.innerWidth < 550;
+	};
 </script>
+
+<svelte:window on:resize={handleResize} />
 
 <div class="p-8">
 	<Terminal

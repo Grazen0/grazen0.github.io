@@ -22,8 +22,8 @@
 		cursor = '█',
 		cursorBlinkInterval = 500,
 		initialDelay = 200,
-		typingDelay = [80, 150],
-		commandEnterDelay = [1000, 1500],
+		typingDelay = [80, 120],
+		commandEnterDelay = [1000, 1200],
 		class: className,
 	}: Props = $props();
 

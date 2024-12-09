@@ -25,8 +25,9 @@
 
 	<main class="my-8">
 		<p class="my-6">
-			Hey, I'm <Em>Grazen</Em>. Just a random guy on the internet who's really
-			passionate about programming. Currently majoring in Computer Science.
+			Hey, I'm José Daniel (aka <Em>Grazen</Em>). Just a random guy on the
+			internet who's really passionate about programming. Currently majoring in
+			Computer Science.
 		</p>
 
 		<p class="my-6">

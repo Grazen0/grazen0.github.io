@@ -11,7 +11,7 @@
 	"svelteIndentScriptAndStyle": true,
 	"quoteProps": "as-needed",
 	"bracketSameLine": false,
-	"arrowParens": "avoid",
+	"arrowParens": "always",
 	"printWidth": 80,
 	"plugins": ["prettier-plugin-svelte"],
 	"overrides": [{ "files": "*.svelte", "options": { "parser": "svelte" } }]

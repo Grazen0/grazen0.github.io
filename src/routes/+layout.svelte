@@ -5,6 +5,6 @@
 
 <Title />
 
-<div class="max-w-3xl mx-auto my-10 text-md sm:text-lg">
+<div class="max-w-3xl mx-auto py-10 text-md sm:text-lg">
 	<slot />
 </div>

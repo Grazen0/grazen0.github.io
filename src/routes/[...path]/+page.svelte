@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   import { NOT_FOUND_BANNER } from '$lib/ascii';
   import Link from '$lib/components/Link.svelte';
   import Terminal from '$lib/components/Terminal.svelte';
@@ -16,7 +17,7 @@
     <p class="my-6">Maybe you misspelled something?</p>
 
     <p>
-      Since you're here, why not go around and check out the <Link href="/">homepage</Link>?
+      Since you're here, why not go around and check out the <Link href="{base}/">homepage</Link>?
     </p>
   </main>
 </div>

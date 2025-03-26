@@ -1,28 +1,9 @@
 <script lang="ts">
-  import { HOME_BANNER, HOME_BANNER_SMALL } from '$lib/ascii';
   import Link from '$lib/components/Link.svelte';
   import Stronger from '$lib/components/Stronger.svelte';
-  import Terminal from '$lib/components/Terminal.svelte';
-  import { onMount } from 'svelte';
-
-  let useSmallAscii = $state(false);
-
-  const updateSmallAscii = (window: Window): void => {
-    useSmallAscii = window.innerWidth < 550;
-  };
-
-  onMount(() => updateSmallAscii(window));
 </script>
 
-<svelte:window on:resize={(ev): void => updateSmallAscii(ev.currentTarget)} />
-
 <div class="p-8">
-  <Terminal
-    class={useSmallAscii ? 'min-h-[22rem]' : 'min-h-64'}
-    command="./awesome_website"
-    output={useSmallAscii ? HOME_BANNER_SMALL : HOME_BANNER}
-  />
-
   <main class="my-8">
     <p class="my-6">
       Hey, I'm José Daniel (aka <Stronger>Grazen</Stronger>). Just a random guy on the internet

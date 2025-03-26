@@ -6,7 +6,7 @@
   const { class: className, children, ...props }: Props = $props();
 </script>
 
-<div class={['prose font-content my-14', className]} {...props}>
+<div class={['prose font-content font-prose my-14', className]} {...props}>
   {@render children?.()}
 </div>
 

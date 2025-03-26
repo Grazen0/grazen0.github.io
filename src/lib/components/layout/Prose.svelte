@@ -51,7 +51,7 @@
     }
 
     :global(figure) {
-      @apply my-12 text-center;
+      @apply text-fg-muted my-12 text-center;
     }
 
     :global(figure img) {

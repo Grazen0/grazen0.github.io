@@ -11,7 +11,7 @@
   const { prevPost, nextPost }: Props = $props();
 </script>
 
-<nav class="my-10 grid grid-cols-2">
+<nav class="my-10 grid grid-rows-2 sm:grid-cols-2 leading-relaxed">
   <div class="text-left">
     {#if prevPost}
       <Link
@@ -20,7 +20,8 @@
         title={prevPost.title}
         class="text-link"
       >
-        Previous post
+        Previous post:<br />
+        {prevPost.title}
       </Link>
     {/if}
   </div>
@@ -32,7 +33,8 @@
         title={nextPost.title}
         class="text-link"
       >
-        Next post
+        Next post:<br />
+        {nextPost.title}
       </Link>
     {/if}
   </div>

@@ -11,11 +11,19 @@
   const { post, class: className, ...props }: Props = $props();
 </script>
 
-<!-- TODO: add tags -->
-<li class={['not-first:mt-4 bg-bg-light hover:no-underline', className]} {...props}>
+<li class={['my-2 hover:no-underline hover:bg-bg-light', className]} {...props}>
   <a href="{base}/blog/{post.slug}" class="block px-4 py-2">
     <h2 class="text-lg font-semibold">{post.title}</h2>
     <p>{post.summary}</p>
-    <p class="text-sm">{formatDatePretty(post.createdAt)}</p>
+    <p class="text-sm inline">{formatDatePretty(post.createdAt)}</p>
+
+    {#if post.tags.length !== 0}
+      &middot;
+      <ul class="inline">
+        {#each post.tags as tag (tag)}
+          <li class="px-2 py-1 text-sm bg-bg-dark inline">#{tag}</li>
+        {/each}
+      </ul>
+    {/if}
   </a>
 </li>

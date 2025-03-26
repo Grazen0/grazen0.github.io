@@ -45,7 +45,10 @@
   </form>
 
   <ul>
-    {#each filteredPosts as post (post.slug)}
+    {#each filteredPosts as post, index (post.slug)}
+      {#if index !== 0}
+        <hr class="border-t-2" />
+      {/if}
       <PostCard {post} />
     {/each}
   </ul>

@@ -1,10 +1,10 @@
 <script lang="ts">
-	export let topic: string | null = null;
-	export let mainTitle = 'Grazen';
+  export let topic: string | null = null;
+  export let mainTitle = 'Grazen';
 
-	$: fullTitle = topic ? `${topic} | ${mainTitle}` : mainTitle;
+  $: fullTitle = topic ? `${topic} | ${mainTitle}` : mainTitle;
 </script>
 
 <svelte:head>
-	<title>{fullTitle}</title>
+  <title>{fullTitle}</title>
 </svelte:head>

@@ -1,18 +1,24 @@
 {
-	"semi": true,
-	"endOfLine": "lf",
-	"trailingComma": "es5",
-	"singleQuote": true,
-	"jsxSingleQuote": false,
-	"tabWidth": 2,
-	"useTabs": true,
-	"svelteStrictMode": false,
-	"svelteAllowShorthand": true,
-	"svelteIndentScriptAndStyle": true,
-	"quoteProps": "as-needed",
-	"bracketSameLine": false,
-	"arrowParens": "always",
-	"printWidth": 80,
-	"plugins": ["prettier-plugin-svelte"],
-	"overrides": [{ "files": "*.svelte", "options": { "parser": "svelte" } }]
+  "useTabs": false,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "printWidth": 100,
+  "semi": true,
+  "arrowParens": "always",
+  "tabWidth": 2,
+  "endOfLine": "lf",
+  "importOrderSideEffects": false,
+  "plugins": [
+    "prettier-plugin-svelte",
+    "prettier-plugin-tailwindcss",
+    "@trivago/prettier-plugin-sort-imports"
+  ],
+  "overrides": [
+    {
+      "files": "*.svelte",
+      "options": {
+        "parser": "svelte"
+      }
+    }
+  ]
 }

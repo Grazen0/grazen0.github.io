@@ -1,0 +1,67 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/assets/font/JetBrainsMonoNL-Regular.ttf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/assets/font/JetBrainsMonoNL-SemiBold.ttf');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/assets/font/JetBrainsMonoNL-Bold.ttf');
+  font-weight: bold;
+}
+
+@theme {
+  --color-fuji-white: #dcd7ba;
+  --color-old-white: #c8c093;
+  --color-sumi-ink-0: #16161d;
+  --color-sumi-ink-1: #1f1f28;
+  --color-sumi-ink-2: #2a2a37;
+  --color-sumi-ink-3: #363646;
+  --color-sumi-ink-4: #16161d;
+  --color-wave-blue-1: #223249;
+  --color-wave-blue-2: #2d4f67;
+  --color-winter-green: #2b3328;
+  --color-winter-yellow: #49443c;
+  --color-winter-red: #43242b;
+  --color-winter-blue: #252535;
+  --color-autumn-green: #76946a;
+  --color-autumn-red: #c34043;
+  --color-autumn-yellow: #dca561;
+  --color-samurai-red: #e82424;
+  --color-ronin-yellow: #ff9e3b;
+  --color-wave-aqua-1: #6a9589;
+  --color-dragon-blue: #658594;
+  --color-fuji-gray: #727169;
+  --color-spring-violet-1: #938aa9;
+  --color-oni-violet: #957fb8;
+  --color-crystal-blue: #7e9cd8;
+  --color-spring-violet-2: #9cabca;
+  --color-spring-blue: #7fb4ca;
+  --color-light-blue: #a3d4d5;
+  --color-wave-aqua-2: #7aa89f;
+  --color-spring-green: #98bb6c;
+  --color-boat-yellow-1: #938056;
+  --color-boat-yellow-2: #c0a36e;
+  --color-carp-yellow: #e6c384;
+  --color-sakura-pink: #d27e99;
+  --color-wave-red: #e46876;
+  --color-peach-red: #ff5d62;
+  --color-surimi-orange: #ffa066;
+  --color-katana-gray: #717c7c;
+}
+
+@layer base {
+  html,
+  body,
+  #svelte {
+    @apply bg-sumi-ink-0 text-fuji-white m-0 h-full p-0 font-mono;
+  }
+}

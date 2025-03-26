@@ -1,22 +1,18 @@
 <script lang="ts">
-	import classNames from 'classnames';
-	import type { HTMLAnchorAttributes } from 'svelte/elements';
+  import type { HTMLAnchorAttributes } from 'svelte/elements';
 
-	interface Props extends HTMLAnchorAttributes {
-		external?: boolean;
-	}
+  interface Props extends HTMLAnchorAttributes {
+    external?: boolean;
+  }
 
-	let {
-		external = false,
-		class: className,
-		children,
-		...props
-	}: Props = $props();
+  let { external = false, class: className, children, ...props }: Props = $props();
 </script>
 
 <a
-	class={classNames(className, 'text-spring-blue hover:underline')}
-	target={classNames(external && '_blank')}
-	rel={classNames(external && 'noopener noreferrer')}
-	{...props}>{@render children?.()}</a
+  class={['text-spring-blue hover:underline', className]}
+  target={external ? '_blank' : null}
+  rel={external ? 'noopener noreferrer' : null}
+  {...props}
 >
+  {@render children?.()}
+</a>

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { HOME_BANNER, HOME_BANNER_SMALL } from '$lib/ascii';
-  import Em from '$lib/components/Em.svelte';
   import Link from '$lib/components/Link.svelte';
+  import Stronger from '$lib/components/Stronger.svelte';
   import Terminal from '$lib/components/Terminal.svelte';
   import { onMount } from 'svelte';
 
@@ -25,8 +25,8 @@
 
   <main class="my-8">
     <p class="my-6">
-      Hey, I'm José Daniel (aka <Em>Grazen</Em>). Just a random guy on the internet who's really
-      passionate about programming. Currently majoring in Computer Science.
+      Hey, I'm José Daniel (aka <Stronger>Grazen</Stronger>). Just a random guy on the internet
+      who's really passionate about programming. Currently majoring in Computer Science.
     </p>
 
     <p class="my-6">
@@ -66,7 +66,7 @@
     <h2 class="text-3xl font-semibold mt-8 mb-4">Contact me</h2>
 
     <p class="my-6">
-      Feel free to send me a friend request on my Discord, <Em>grazen0</Em>.
+      Feel free to send me a friend request on my Discord, <Stronger>grazen0</Stronger>.
     </p>
 
     <p class="my-6">Here are some other useful links:</p>

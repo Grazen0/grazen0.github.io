@@ -6,12 +6,9 @@
   let { class: className, children, ...props }: Props = $props();
 </script>
 
-<em
-  class={[
-    'text-carp-yellow not-italic drop-shadow-[0_0_0.1rem_theme(colors.carp-yellow/75%)]',
-    className,
-  ]}
+<strong
+  class={['text-fg-stronger drop-shadow-[0_0_0.1rem_theme(--color-fg-stronger/60%)] ', className]}
   {...props}
 >
   {@render children?.()}
-</em>
+</strong>

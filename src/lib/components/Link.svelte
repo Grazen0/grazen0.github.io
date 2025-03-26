@@ -9,7 +9,7 @@
 </script>
 
 <a
-  class={['text-spring-blue hover:underline', className]}
+  class={['text-fg-link hover:underline', className]}
   target={external ? '_blank' : null}
   rel={external ? 'noopener noreferrer' : null}
   {...props}

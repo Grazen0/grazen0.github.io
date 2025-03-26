@@ -1,34 +1,43 @@
 <script lang="ts">
   import Link from '$lib/components/Link.svelte';
   import Stronger from '$lib/components/Stronger.svelte';
+  import Main from '$lib/components/layout/Main.svelte';
+  import Prose from '$lib/components/layout/Prose.svelte';
+  import Title from '$lib/components/layout/Title.svelte';
+  import { asciiBanner } from '$lib/constants';
 </script>
 
-<div class="p-8">
-  <main class="my-8">
-    <p class="my-6">
-      Hey, I'm José Daniel (aka <Stronger>Grazen</Stronger>). Just a random guy on the internet
-      who's really passionate about programming. Currently majoring in Computer Science.
-    </p>
+<Main>
+  <Title class="sm:visually-hidden" />
 
-    <p class="my-6">
+  <div class="text-center">
+    <pre class="leading-snug hidden sm:inline-block">{asciiBanner}</pre>
+  </div>
+
+  <Prose>
+    <p>
+      Yo. I'm José Daniel Grayson (aka <Stronger>Grazen</Stronger>), a 18-year-old guy who lives in
+      this weird (but awesome) country called Peru. I'm currently majoring in Computer Science and
+      like to do lots of programming as a side hobby.
+    </p>
+    <p>
       I've dipped into Discord bots, a bit of game development, Minecraft plugins, Terraria modding,
       web development, and low-level programming; the latter being my current interest in
-      particular.
+      particular. I suppose that by the time I graduate I'll have dipped into a lot other stuff,
+      too.
     </p>
-
     <p>
-      Lately, I've fallen deep into the Linux rabbit hole. I currently use <Link
+      Lately, I've fallen deep into the Linux rabbit hole. I use <Link
         external
         href="https://nixos.org/">NixOS</Link
       > (btw), <Link external href="https://neovim.io/">Neovim</Link>, and other awesome FOSS tools.
     </p>
 
-    <h2 class="text-3xl font-semibold mt-8 mb-4">Cool stuff I've made</h2>
-
-    <ul class="list-disc list-inside my-6">
+    <h2>Cool stuff I've made</h2>
+    <ul>
       <li>
         <Link external href="https://github.com/Grazen0/nixos-config">nixos-config</Link>: My
-        personal NixOS configuration.
+        personal NixOS configurations.
       </li>
       <li>
         <Link external href="https://github.com/Grazen0/chip-8-rs">chip-8-rs</Link>: A portable
@@ -44,20 +53,14 @@
       </li>
     </ul>
 
-    <h2 class="text-3xl font-semibold mt-8 mb-4">Contact me</h2>
-
-    <p class="my-6">
-      Feel free to send me a friend request on my Discord, <Stronger>grazen0</Stronger>.
+    <h2>Contact me</h2>
+    <p>
+      Feel free to send me a friend request on my Discord, <Stronger>grazen0</Stronger>. You can
+      also reach out to me with these links:
     </p>
-
-    <p class="my-6">Here are some other useful links:</p>
-
-    <ul class="list-disc list-inside my-6">
+    <ul>
       <li><Link external href="https://github.com/Grazen0">GitHub</Link></li>
       <li><Link external href="https://x.com/Grazen0">Twitter</Link></li>
-      <li>
-        <Link external href="https://www.youtube.com/@grazen0">YouTube</Link>
-      </li>
     </ul>
-  </main>
-</div>
+  </Prose>
+</Main>

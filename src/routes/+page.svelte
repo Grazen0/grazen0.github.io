@@ -52,15 +52,5 @@
         Pong game for the NES.
       </li>
     </ul>
-
-    <h2>Contact me</h2>
-    <p>
-      Feel free to send me a friend request on my Discord, <Stronger>grazen0</Stronger>. You can
-      also reach out to me with these links:
-    </p>
-    <ul>
-      <li><Link external href="https://github.com/Grazen0">GitHub</Link></li>
-      <li><Link external href="https://x.com/Grazen0">Twitter</Link></li>
-    </ul>
   </Prose>
 </Main>

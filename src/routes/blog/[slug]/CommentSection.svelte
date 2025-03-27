@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { giscusRepoConfig } from '$lib/constants';
+  import { links } from '$lib/constants';
   import { getActiveTheme } from '$lib/global-state/theme.svelte';
   import Giscus from '@giscus/svelte';
 
@@ -12,7 +12,10 @@
 
 <div class="mx-auto max-w-3xl">
   <Giscus
-    {...giscusRepoConfig}
+    repo="Grazen0/grazen0.github.io"
+    repoId="MDEwOlJlcG9zaXRvcnkzMTMzNjc4MDc="
+    category="Comments"
+    categoryId="DIC_kwDOEq2c_84Cofvu"
     id="comments"
     term=""
     mapping="pathname"

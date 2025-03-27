@@ -36,16 +36,43 @@
   --color-fg-muted: #938aa9;
   --color-fg-stronger: #e6c384;
   --color-fg-link: #7fb4ca;
+  --color-hljs-base00: #1f1f28;
+  --color-hljs-base01: #2a2a37;
+  --color-hljs-base02: #223249;
+  --color-hljs-base03: #727169;
+  --color-hljs-base04: #c8c093;
+  --color-hljs-base05: #dcd7ba;
+  --color-hljs-base06: #938aa9;
+  --color-hljs-base07: #363646;
+  --color-hljs-base08: #c34043;
+  --color-hljs-base09: #ffa066;
+  --color-hljs-base0a: #dca561;
+  --color-hljs-base0b: #98bb6c;
+  --color-hljs-base0c: #7fb4ca;
+  --color-hljs-base0d: #7e9cd8;
+  --color-hljs-base0e: #957fb8;
+  --color-hljs-base0f: #d27e99;
 
   --font-mono:
     'Commit Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
     'Courier New', monospace;
+  --font-prose: var(--font-mono);
 }
 
 @layer base {
-  html,
-  body,
-  #svelte {
-    @apply bg-bg text-fg h-full font-mono;
+  body {
+    @apply bg-bg text-fg flex min-h-screen flex-col font-mono;
   }
+}
+
+@utility visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

@@ -1,42 +1,60 @@
 import { getPublicPosts } from '$lib/blog';
 import { links } from '$lib/constants';
+import { renderContentToHtml } from '$lib/render';
 import type { RequestHandler } from '@sveltejs/kit';
-import { formatRFC7231 } from 'date-fns';
+import { formatRFC3339 } from 'date-fns';
 import { XMLBuilder } from 'fast-xml-parser';
 
 export const prerender = true;
 
 export const GET: RequestHandler = async (req) => {
   const posts = await getPublicPosts();
+  const currentDate = new Date();
 
-  const obj = {
-    rss: {
-      '@_version': '2.0',
-      '@_xmlns:atom': 'http://www.w3.org/2005/Atom',
-      channel: {
-        title: "Grazen's Blog",
-        link: links.self,
-        description: 'A random collection of my thoughts and ideas',
-        language: 'en-us',
-        copyright: 'Copyright 2025, José Daniel Grayson',
-        docs: 'https://www.rssboard.org/rss-specification',
-        'atom:link': {
-          '@_href': links.self + req.url.pathname,
-          '@_rel': 'self',
-          '@_type': 'application/rss+xml',
-        },
-        item: posts.map((post) => {
-          const link = `${links.self}/blog/${post.slug}`;
-          return {
-            title: post.title,
-            link,
-            description: post.summary,
-            author: 'josedanielgrayson@proton.me (Grazen)',
-            guid: link,
-            pubDate: formatRFC7231(post.createdAt),
-          };
-        }),
+  const feedObj = {
+    '?xml': {
+      '@_version': '1.0',
+      '@_encoding': 'utf-8',
+    },
+    feed: {
+      '@_xmlns': 'http://www.w3.org/2005/Atom',
+      title: "Grazen's Blog",
+      subtitle: 'A random collection of my thoughts and ideas.',
+      updated: formatRFC3339(currentDate),
+      author: {
+        name: 'Grazen',
+        email: 'josedanielgrayson@proton.me',
+        uri: links.self,
       },
+      id: links.self + req.url.pathname,
+      link: [
+        {
+          '@_href': `${links.self}/blog`,
+        },
+        {
+          '@_rel': 'self',
+          '@_type': 'application/atom+xml',
+          '@_href': links.self + req.url.pathname,
+        },
+      ],
+      rights: 'Copyright (c) 2025, José Daniel Grayson',
+      entry: posts.map((post) => {
+        const postUrl = `${links.self}/blog/${post.slug}`;
+        return {
+          title: post.title,
+          summary: post.summary,
+          link: {
+            '@_href': postUrl,
+          },
+          id: postUrl,
+          published: formatRFC3339(post.createdAt),
+          updated: formatRFC3339(post.updatedAt ?? post.createdAt),
+          content: {
+            '@_type': 'html',
+            '#text': renderContentToHtml(post.content),
+          },
+        };
+      }),
     },
   };
 
@@ -45,9 +63,9 @@ export const GET: RequestHandler = async (req) => {
     attributeNamePrefix: '@_',
     suppressEmptyNode: true,
   });
-  const xmlContent = builder.build(obj);
+  const feedXml = builder.build(feedObj);
 
-  return new Response(xmlContent, {
+  return new Response(feedXml, {
     headers: {
       'Content-Type': 'application/xml',
     },

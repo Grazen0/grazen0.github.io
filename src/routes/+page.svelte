@@ -11,7 +11,9 @@
   <Title class="sm:visually-hidden" />
 
   <div class="text-center">
-    <pre class="leading-snug hidden sm:inline-block font-mono font-bold">{asciiBanner}</pre>
+    <pre class="leading-snug hidden sm:inline-block font-mono font-bold">
+      {asciiBanner}
+      </pre>
   </div>
 
   <Prose>

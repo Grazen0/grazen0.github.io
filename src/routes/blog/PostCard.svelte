@@ -11,7 +11,10 @@
   const { post, class: className, ...props }: Props = $props();
 </script>
 
-<li class={['my-2 hover:no-underline hover:bg-bg-light', className]} {...props}>
+<li
+  class={['my-4 hover:no-underline border border-bg-light hover:border-fg', className]}
+  {...props}
+>
   <a href="{base}/blog/{post.slug}" class="block px-4 py-2">
     <h2 class="text-lg font-semibold">{post.title}</h2>
     <p>{post.summary}</p>
@@ -21,7 +24,7 @@
       &middot;
       <ul class="inline">
         {#each post.tags as tag (tag)}
-          <li class="px-2 py-1 text-sm bg-bg-dark inline">#{tag}</li>
+          <li class="px-2 py-1 text-sm bg-bg-light inline">#{tag}</li>
         {/each}
       </ul>
     {/if}

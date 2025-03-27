@@ -41,7 +41,7 @@
     {#if post.tags.length !== 0}
       <ul class="space-x-2 my-2">
         {#each post.tags as tag (tag)}
-          <li class="bg-bg-dark inline px-2 py-1 text-sm">#{tag}</li>
+          <li class="bg-bg-light inline px-2 py-1 text-sm">#{tag}</li>
         {/each}
       </ul>
     {/if}

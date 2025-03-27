@@ -5,7 +5,7 @@
   import '../app.css';
   import { loadStylePreferences, proseFontEffect, themeEffect } from '$lib/style-prefs.svelte';
   import type { LayoutProps } from './$types';
-  import { themeInit } from './theme-init';
+  import { stylePreloadScript } from './style-preload';
 
   const { children }: LayoutProps = $props();
 
@@ -16,7 +16,7 @@
 
 <svelte:head>
   <!-- eslint-disable-next-line svelte/no-at-html-tags -->
-  {@html themeInit()}
+  {@html stylePreloadScript()}
 </svelte:head>
 
 <Header />

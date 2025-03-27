@@ -1,7 +1,7 @@
 import { FONT_TYPES } from '$lib/style-prefs.svelte';
 import themes, { themeVariables } from '$lib/themes';
 
-export const themeInit = () => {
+export const stylePreloadScript = () => {
   const lines = Object.entries(themeVariables).map(
     ([key, varName]) =>
       `window.document.documentElement.style.setProperty('${varName}', initialTheme.${key});`,

@@ -70,7 +70,7 @@ const themes = {
     bgDark: '#16161d',
     bgLight: '#2a2a37',
     fg: '#dcd7ba',
-    fgMuted: '#717C7C',
+    fgMuted: '#54546D',
     fgLink: '#7fb4ca',
     fgStronger: '#e6c384',
     hljsBase00: '#1f1f28',

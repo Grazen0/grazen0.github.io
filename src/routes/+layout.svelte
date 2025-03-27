@@ -3,11 +3,7 @@
   import Header from '$lib/components/layout/Header.svelte';
   import { onMount } from 'svelte';
   import '../app.css';
-  import {
-    loadStylePreferences,
-    proseFontEffect,
-    themeEffect,
-  } from '$lib/global-state/theme.svelte';
+  import { loadStylePreferences, proseFontEffect, themeEffect } from '$lib/style-prefs.svelte';
   import type { LayoutProps } from './$types';
   import { themeInit } from './theme-init';
 

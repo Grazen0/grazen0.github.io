@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { links } from '$lib/constants';
-  import { getActiveTheme } from '$lib/global-state/theme.svelte';
+  import { getActiveTheme } from '$lib/style-prefs.svelte';
   import Giscus from '@giscus/svelte';
 
   const theme = $derived.by(getActiveTheme);

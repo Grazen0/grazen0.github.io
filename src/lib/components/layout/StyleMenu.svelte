@@ -1,6 +1,9 @@
 <script lang="ts">
-  import globalState, { FONT_TYPES } from '$lib/global-state/index.svelte';
-  import { getActiveProseFont, getActiveThemeName } from '$lib/global-state/theme.svelte';
+  import globalState, {
+    FONT_TYPES,
+    getActiveProseFont,
+    getActiveThemeName,
+  } from '$lib/style-prefs.svelte';
   import themes from '$lib/themes';
   import { onMount } from 'svelte';
   import type { HTMLAttributes, KeyboardEventHandler, MouseEventHandler } from 'svelte/elements';

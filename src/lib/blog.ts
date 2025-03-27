@@ -19,6 +19,7 @@ export const Post = z.object({
   image: Image.optional(),
   tags: z.array(z.string()).default([]),
   createdAt: z.date(),
+  updatedAt: z.date().optional(),
   draft: z.boolean().default(false),
 });
 

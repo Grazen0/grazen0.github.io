@@ -6,31 +6,15 @@
   import type { PageProps } from './$types';
   import BottomNavigation from './BottomNavigation.svelte';
   import CommentSection from './CommentSection.svelte';
-  import markdownIt from 'markdown-it';
-  import mdHighlightJs from 'markdown-it-highlightjs';
-  import mdImplicitFigures from 'markdown-it-implicit-figures';
-  import mdTexmath from 'markdown-it-texmath';
   import readingTime from 'reading-time/lib/reading-time';
   import 'katex/dist/katex.min.css';
+  import { renderContentToHtml } from '$lib/render';
 
   const { data }: PageProps = $props();
   const { post, prevPost, nextPost } = data;
 
-  const md = markdownIt({
-    html: true,
-    linkify: true,
-    typographer: true,
-  })
-    .use(mdImplicitFigures, {
-      figcaption: 'title',
-      keepAlt: true,
-      lazyLoading: true,
-    })
-    .use(mdTexmath)
-    .use(mdHighlightJs, { inline: true, auto: false });
-
   const stats = $derived(readingTime(post.content));
-  const htmlContent = $derived(md.render(post.content));
+  const htmlContent = $derived(renderContentToHtml(post.content));
 </script>
 
 <Main>

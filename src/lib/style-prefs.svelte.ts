@@ -4,6 +4,9 @@ export const FONT_TYPES = ['serif', 'sans', 'mono'] as const;
 
 export type FontType = (typeof FONT_TYPES)[number];
 
+export const isFontType = (s: string): s is FontType =>
+  (FONT_TYPES as readonly string[]).includes(s);
+
 export interface StylePrefs {
   theme: ThemeName | null;
   proseFont: FontType | null;
@@ -38,9 +41,14 @@ export const proseFontEffect = () => {
 };
 
 export const loadStylePreferences = () => {
-  const savedThemeName = localStorage.theme;
-  if (savedThemeName !== null && isThemeName(savedThemeName)) {
-    stylePrefs.theme = savedThemeName;
+  const { theme, proseFont } = localStorage;
+
+  if (theme !== null && isThemeName(theme)) {
+    stylePrefs.theme = theme;
+  }
+
+  if (proseFont !== null && isFontType(proseFont)) {
+    stylePrefs.proseFont = proseFont;
   }
 };
 

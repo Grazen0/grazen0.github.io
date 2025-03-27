@@ -18,6 +18,20 @@
   const { class: className, ...props }: Props = $props();
 
   let showMenu = $state(false);
+  let menuElement = $state<HTMLDivElement | null>(null);
+
+  onMount(() =>
+    on(document, 'click', () => {
+      showMenu = false;
+    }),
+  );
+
+  // Auto-focus menu on open
+  $effect(() => {
+    if (showMenu) {
+      menuElement?.focus();
+    }
+  });
 
   const toggleMenu = (ev: MouseEvent) => {
     ev.stopPropagation();
@@ -34,12 +48,6 @@
       showMenu = false;
     }
   };
-
-  onMount(() =>
-    on(document, 'click', () => {
-      showMenu = false;
-    }),
-  );
 </script>
 
 <div class="relative">
@@ -61,6 +69,7 @@
       onkeydown={handleMenuKeyDown}
       role="menu"
       tabindex={-1}
+      bind:this={menuElement}
       class="bg-bg border border-fg px-4 py-4 absolute top-4/3 right-0"
     >
       <form class="space-y-4">

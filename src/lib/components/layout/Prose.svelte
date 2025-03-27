@@ -63,7 +63,7 @@
     }
 
     :global(blockquote) {
-      @apply bg-bg-light border-fg-muted my-6 border-l-3 py-1 pl-4;
+      @apply bg-bg-light border-fg-muted my-6 border-l-3 px-4 py-1;
     }
 
     :global(code) {
@@ -71,7 +71,7 @@
     }
 
     :global(pre) {
-      @apply bg-bg-light px-2 py-1;
+      @apply bg-bg-light overflow-x-scroll px-2 py-1;
     }
 
     :global(table) {

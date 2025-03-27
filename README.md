@@ -9,6 +9,6 @@ My personal website, powered by [SvelteKit](https://kit.svelte.dev/).
 - [x] Font customization
 - [x] Blog
   - [x] Word count and read time
-  - [ ] RSS feed
+  - [x] RSS feed
   - [ ] Email notifications via GitHub workflow (eventually)
   - [x] Draft posts

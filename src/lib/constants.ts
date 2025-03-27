@@ -1,5 +1,6 @@
 export const links = {
   repo: 'https://github.com/Grazen0/grazen0.github.io',
+  self: 'https://grazen0.github.io',
 } as const;
 
 export const asciiBanner = String.raw`

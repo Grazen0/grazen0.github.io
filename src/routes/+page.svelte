@@ -13,7 +13,7 @@
   <div class="text-center">
     <pre class="leading-snug hidden sm:inline-block font-mono font-bold">
       {asciiBanner}
-      </pre>
+    </pre>
   </div>
 
   <Prose>

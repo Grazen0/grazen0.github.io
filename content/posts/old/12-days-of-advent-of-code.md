@@ -1,13 +1,11 @@
 ---
 title: 12 Days of Advent of Code
-slug: 12-days-of-advent-of-code
+
 summary: Ropes, CRTs, monkeys, and hills
 tags: [aoc-2022]
 image:
   url: /img/aoc-2022/days_9_12.png
   alt: A hot air balloon made out of ASCII text next to twelve yellow stars.
-createdAt: 2022-12-14
-draft: true
 ---
 
 12 days into [Advent of Code](https://adventofcode.com), already, and things sure are getting fun.

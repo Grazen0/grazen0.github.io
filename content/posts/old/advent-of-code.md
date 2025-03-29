@@ -1,13 +1,11 @@
 ---
 title: 'Advent of Code: The Christmas-centered programming event'
-slug: advent-of-code
+
 summary: An awesome programming event that might make you enjoy December even more.
 tags: [offtopic]
 image:
   url: /img/offtopic/advent_of_code.jpeg
   alt: A christmas tree in a living room
-createdAt: 2022-11-24
-draft: true
 ---
 
 So, it looks like December is just around the corner. You know what that means?

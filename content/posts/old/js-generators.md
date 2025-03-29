@@ -1,13 +1,11 @@
 ---
 title: JavaScript Generators
-slug: js-generators
+
 summary: A dive into generator functions and iterators in JS.
 tags: [in-case-you-didnt-know]
 image:
   url: /img/in-case-you-didnt-know/js-generators.jpg
   alt: A mechanism made out of gears
-createdAt: 2022-10-14
-draft: true
 ---
 
 Heya, welcome to "In Case You didn't know"! For this first post, we'll be learning about generator functions and iterators in JavaScript. Admittedly, this is kind of a niche feature in the language, but hey, that's just what this category was made for! Let's get started, shall we? 🤖

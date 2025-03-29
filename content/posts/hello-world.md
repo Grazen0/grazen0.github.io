@@ -1,6 +1,5 @@
 ---
 title: Hello, World
-slug: hello-world
 summary: Testing things out.
 tags: [offtopic]
 createdAt: 2025-03-24
@@ -21,7 +20,7 @@ function isEven(n: number): boolean {
 
 Code blocks work too. That's important.
 
-![A kid nodding with his head](/assets/posts/thumbs_up.gif "This is a caption.")
+![A kid nodding with his head](/assets/posts/thumbs_up.gif 'This is a caption.')
 
 We got $\LaTeX$, too:
 

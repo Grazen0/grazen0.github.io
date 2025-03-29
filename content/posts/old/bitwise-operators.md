@@ -1,13 +1,11 @@
 ---
 title: Bitwise Operators
-slug: bitwise-operators
+
 summary: Manipulating numbers and their bits with bitwise operators.
 tags: [chip-8]
 image:
   url: /img/chip-8/bitwise_operators.png
   alt: I really like these guys.
-createdAt: 2022-03-06
-draft: true
 ---
 
 Following my [previoust post](/posts/chip-8/binary-and-hex) about binary and hexadecimal numbers, today we'll be learning about bit manipulation! I must say, using these techniques was one of my favorite parts of making my CHIP-8 emulator.

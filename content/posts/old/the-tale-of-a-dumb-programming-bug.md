@@ -1,13 +1,11 @@
 ---
 title: The Dumb Tale of  a Programming Bug
-slug: the-tale-of-a-dumb-programming-bug
+
 summary: A thrilling debugging journey featuring Vercel.
 tags: [web-dev]
 image:
   url: /img/web-dev/fixing-a-really-dumb-bug.jpg
   alt: A dog on a computer
-createdAt: 2022-11-17
-draft: true
 ---
 
 > "If debugging is the process of removing software bugs, then programming must be the process of putting them in."

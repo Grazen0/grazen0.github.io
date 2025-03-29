@@ -1,13 +1,11 @@
 ---
 title: Getting Into It
-slug: getting-into-it
+
 summary: Checking out the information I need to get started with the emulator.
 tags: [pac-man-emulator]
 image:
   url: /img/pac-man-emulator/getting_into_it.png
   alt: Pac-Man arcade gameplay
-createdAt: 2022-04-05
-draft: true
 ---
 
 Recently, I made a [Space Invaders emulator](https://github.com/ElCholoGamer/space-invaders/), and I really like how it turned out. However, I don't think I have much merit for it, since I pretty much followed a step-by-step guide at [Emulator101](https://emulator101.com/), though I did learn a lot of new things.

@@ -1,13 +1,11 @@
 ---
 title: Understanding Binary and Hexadecimal
-slug: binary-and-hex
+
 summary: Everything you need to know about binary and hexadecimal notation.
 tags: [chip-8]
 image:
   url: /img/chip-8/binary_and_hex.png
   alt: Don't worry, it's not as complicated as it seems.
-createdAt: 2022-03-04
-draft: true
 ---
 
 Okay, first things first. Before you start diving into all this crazy emulator stuff, you need to know about binary and hexadecimal numbers. You might already know about these, but I encourage you to take a look at this post anyway, if anything, for a quick refresh.

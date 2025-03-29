@@ -1,13 +1,11 @@
 ---
 title: Specs Overview
-slug: specs-overview
+
 summary: A quick look at the specs of the CHIP-8 and their purpose.
 tags: [chip-8]
 image:
   url: /img/chip-8/specs_overview.jpg
   alt: A random cool microchip image I found
-createdAt: 2022-03-09
-draft: true
 ---
 
 Now that you've grasped some imporant concepts, let's talk CHIP-8. The last step before making this emulator is to plan your project, and that's exactly what we'll be doing here.

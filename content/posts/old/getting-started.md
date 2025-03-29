@@ -1,13 +1,11 @@
 ---
 title: Getting Started with the CHIP-8 Emulator
-slug: getting-started
+
 summary: Getting our project set up!
 tags: [chip-8]
 image:
   url: /img/chip-8/getting_started.jpg
   alt: A kid and his dad tinkering with a COSMAC VIP
-createdAt: 2022-04-01
-draft: true
 ---
 
 It's true! We're finally getting started with the emulator. As I mentioned at the start of this guide, you can follow along in the programming language of your choice. I'll be using some pseudocode, just to make some things clearer.

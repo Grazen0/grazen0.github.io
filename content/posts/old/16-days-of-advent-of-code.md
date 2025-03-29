@@ -1,13 +1,11 @@
 ---
 title: 16 Days of Advent of Code
-slug: 16-days-of-advent-of-code
+
 summary: Packets, sand, beacons, and valves
 tags: [aoc-2022]
 image:
   url: /img/aoc-2022/days_13_16.png
   alt: A hot air balloon made out of ASCII text next to sixteen yellow stars.
-createdAt: 2022-12-18
-draft: true
 ---
 
 Already 16 days into [Advent of Code](https://adventofcode.com), and the difficulty just spiked tremendously. O_o

@@ -1,13 +1,11 @@
 ---
 title: Intro
-slug: intro
+
 summary: A short introduction to CHIP-8.
 tags: [chip-8]
 image:
   url: /img/chip-8/space_invaders.png
   alt: Space Invaders!
-createdAt: 2022-03-03
-draft: true
 ---
 
 Emulators have always fascinated me. It's thanks to them that we're able to play video-games from antique consoles like the NES and Atari on our modern devices. I guess I've always liked dissassembling and reverse-engineering things.

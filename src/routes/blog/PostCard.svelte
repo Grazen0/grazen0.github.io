@@ -1,11 +1,11 @@
 <script lang="ts">
   import { base } from '$app/paths';
-  import type { Post } from '$lib/blog';
+  import type { PublishedPost } from '$lib/blog';
   import { formatDatePretty } from '$lib/dates';
   import type { HTMLLiAttributes } from 'svelte/elements';
 
   export interface Props extends HTMLLiAttributes {
-    post: Post;
+    post: PublishedPost;
   }
 
   const { post, class: className, ...props }: Props = $props();
@@ -22,7 +22,7 @@
 
     {#if post.tags.length !== 0}
       &middot;
-      <ul class="inline">
+      <ul class="inline space-x-2">
         {#each post.tags as tag (tag)}
           <li class="px-2 py-1 text-sm bg-bg-light inline">#{tag}</li>
         {/each}

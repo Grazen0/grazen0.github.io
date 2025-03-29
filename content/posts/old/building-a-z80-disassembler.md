@@ -1,13 +1,11 @@
 ---
 title: Building a Z80 Disassembler
-slug: building-a-z80-disassembler
+
 summary: To understand Pac-Man, one must first disassemble Pac-Man.
 tags: [pac-man-emulator]
 image:
   url: /img/pac-man-emulator/building-a-z80-disassembler.png
   alt: Drawing of a stick figure thinking
-createdAt: 2022-04-10
-draft: true
 ---
 
 Right before getting started with the emulator, I thought it would be a good idea to try out making my own disassembler for Z80 machine code for a couple of reasons:

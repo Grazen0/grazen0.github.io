@@ -1,13 +1,11 @@
 ---
 title: Other CHIP-8 Concepts
-slug: other-chip-8-concepts
+
 summary: The last things you need to know before making a CHIP-8 emulator.
 tags: [chip-8]
 image:
   url: /img/chip-8/other_chip_8_concepts.png
   alt: Almost there...
-createdAt: 2022-03-19
-draft: true
 ---
 
 Okay, okay. We're almost there. In fact, this post probably won't be that long. There's just some final CHIP-8 specific concepts you need to get a decent grasp of before continuing: mainly, sprites and the font.

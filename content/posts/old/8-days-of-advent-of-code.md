@@ -1,13 +1,11 @@
 ---
 title: 8 Days of Advent of Code
-slug: 8-days-of-advent-of-code
+
 summary: Supply crates, packet makers, file systems, and tree houses.
 tags: [aoc-2022]
 image:
   url: /img/aoc-2022/days_5_8.png
   alt: A hot air balloon made out of ASCII text next to eight yellow stars
-createdAt: 2022-12-10
-draft: true
 ---
 
 8 days into December, this year's [Advent of Code](https://adventofcode.com/) continues to be a fun challenge, and it's getting a tad more interesting now!

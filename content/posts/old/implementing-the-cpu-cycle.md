@@ -1,13 +1,11 @@
 ---
 title: Implementing the CPU cycle
-slug: implementing-the-cpu-cycle
+
 summary: This is where the fun begins.
 tags: [chip-8]
 image:
   url: /img/chip-8/implementing_the_cpu_cycle.png
   alt: A render of a  CPU
-createdAt: 2022-04-14
-draft: true
 ---
 
 The next step is to implement the CHIP-8 instructions on our CPU. Remember the `cycle` method we left empty last post? We'll be implementing it here.

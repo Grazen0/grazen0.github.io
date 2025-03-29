@@ -1,13 +1,11 @@
 ---
 title: 4 Days of Advent of Code in Rust
-slug: 4-days-of-advent-of-code
+
 summary: Calories, games, rucksacks, and assignments
 tags: [aoc-2022]
 image:
   url: /img/aoc-2022/days_1_4.png
   alt: A hot air balloon made out of ASCII text next to four yellow stars.
-createdAt: 2022-12-05
-draft: true
 ---
 
 You know, I'm pretty sure there's nothing that gets me the most excited _every single_ year than counting down the days for [Advent of Code](/posts/offtopic/advent-of-code)! (Yes, not even my own birthday gets close to it). This year wasn't the exception, as it turns out.

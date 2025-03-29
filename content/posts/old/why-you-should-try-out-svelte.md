@@ -1,13 +1,11 @@
 ---
 title: Why You Should Try Out Svelte.js
-slug: why-you-should-try-out-svelte
+
 summary: A look at a very particular JavaScript framework.
 tags: [web-dev]
 image:
   url: /img/web-dev/why_you_should_try_out_svelte.png
   alt: Made for success.
-createdAt: 2022-03-12
-draft: true
 ---
 
 Ah, JavaScript frameworks. We all love and hate them. A wise man once said: "Every day, a new JS framework is born".

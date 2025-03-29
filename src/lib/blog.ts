@@ -1,7 +1,6 @@
 import matter from 'gray-matter';
-import type { PathLike } from 'node:fs';
-import fs from 'node:fs/promises';
-import path from 'node:path';
+import { readdir, readFile, stat } from 'node:fs/promises';
+import path, { basename } from 'node:path';
 import { z } from 'zod';
 
 export const Image = z.object({
@@ -18,12 +17,17 @@ export const Post = z.object({
   content: z.string(),
   image: Image.optional(),
   tags: z.array(z.string()).default([]),
-  createdAt: z.date(),
+  createdAt: z.date().optional(),
   updatedAt: z.date().optional(),
-  draft: z.boolean().default(false),
 });
 
 export type Post = z.infer<typeof Post>;
+
+export interface PublishedPost extends Post {
+  createdAt: Date;
+}
+
+export const isPublishedPost = (post: Post): post is PublishedPost => post.createdAt !== undefined;
 
 export const contentDir = path.join(process.cwd(), '/content');
 export const postsDir = path.join(contentDir, '/posts');
@@ -34,10 +38,10 @@ const readdirRecursive = async (baseDir: string): Promise<string[]> => {
   let curPath: string | undefined;
 
   while ((curPath = stack.pop())) {
-    const stat = await fs.stat(curPath);
+    const statResult = await stat(curPath);
 
-    if (stat.isDirectory()) {
-      const items = await fs.readdir(curPath);
+    if (statResult.isDirectory()) {
+      const items = await readdir(curPath);
       stack.push(...items.map((item) => path.join(curPath!, item)));
     } else {
       out.push(curPath);
@@ -46,17 +50,21 @@ const readdirRecursive = async (baseDir: string): Promise<string[]> => {
   return out;
 };
 
-export const readPostFile = async (path: PathLike): Promise<Post> => {
-  const contents = await fs.readFile(path, 'utf-8');
+const removeExtension = (file: string) => file.replace(/\.\w+$/, '');
+
+export const readPostFile = async (path: string): Promise<Post> => {
+  const contents = await readFile(path, 'utf-8');
   const { data, content } = matter(contents);
-  return await Post.parseAsync({ ...data, content });
+  const slug = removeExtension(basename(path.toString()));
+  console.log(path);
+  return await Post.parseAsync({ ...data, slug, content });
 };
 
-export const getPublicPosts = async (): Promise<Post[]> => {
+export const getPublicPosts = async (): Promise<PublishedPost[]> => {
   const files = await readdirRecursive(postsDir);
   const posts = await Promise.all(files.map(readPostFile));
 
   return posts
-    .filter((post) => !post.draft)
+    .filter(isPublishedPost)
     .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
 };

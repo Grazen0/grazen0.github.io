@@ -1,13 +1,11 @@
 ---
 title: The Best VSCode Extensions for Web Development
-slug: best-vscode-extensions
+
 summary: Handy tools that will improve your productivity!
 tags: [web-dev]
 image:
   url: /img/best-vscode-extensions.jpg
   alt: A pile of puzzle pieces
-createdAt: 2022-10-12
-draft: true
 ---
 
 Uhh... yup. It's been a while. Let's just act as if I didn't not make a single post in the last 6 months, alright?

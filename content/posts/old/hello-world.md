@@ -1,13 +1,11 @@
 ---
 title: Sup, world
-slug: hello-world-old
+
 summary: Testing my new blog.
 tags: [offtopic]
 image:
   url: /img/robots.jpg
   alt: Robots are cool
-createdAt: 2022-03-01
-draft: true
 ---
 
 Alright, let's see what we got here.

@@ -56,7 +56,6 @@ export const readPostFile = async (path: string): Promise<Post> => {
   const contents = await readFile(path, 'utf-8');
   const { data, content } = matter(contents);
   const slug = removeExtension(basename(path.toString()));
-  console.log(path);
   return await Post.parseAsync({ ...data, slug, content });
 };
 

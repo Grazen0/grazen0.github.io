@@ -13,6 +13,7 @@ export const renderContentToHtml = (content: string): string => {
       figcaption: 'title',
       keepAlt: true,
       lazyLoading: true,
+      link: true,
     })
     .use(mdTexmath)
     .use(mdHighlightJs, { inline: true, auto: false });

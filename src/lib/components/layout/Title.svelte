@@ -26,6 +26,6 @@
   {/if}
 </svelte:head>
 
-<h1 class={['my-6 text-center text-3xl font-bold', className]} {...props}>
+<h1 class={['my-6 text-center leading-normal text-3xl font-bold', className]} {...props}>
   {topic ?? mainTitle}
 </h1>

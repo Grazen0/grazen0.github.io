@@ -1,5 +1,7 @@
+import { readdirRecursive } from './util/fs';
+import { removeExtension } from './util/path';
 import matter from 'gray-matter';
-import { readdir, readFile, stat } from 'node:fs/promises';
+import { readFile } from 'node:fs/promises';
 import path, { basename } from 'node:path';
 import { z } from 'zod';
 
@@ -31,26 +33,6 @@ export const isPublishedPost = (post: Post): post is PublishedPost => post.creat
 
 export const contentDir = path.join(process.cwd(), '/content');
 export const postsDir = path.join(contentDir, '/posts');
-
-const readdirRecursive = async (baseDir: string): Promise<string[]> => {
-  const out: string[] = [];
-  const stack = [baseDir];
-  let curPath: string | undefined;
-
-  while ((curPath = stack.pop())) {
-    const statResult = await stat(curPath);
-
-    if (statResult.isDirectory()) {
-      const items = await readdir(curPath);
-      stack.push(...items.map((item) => path.join(curPath!, item)));
-    } else {
-      out.push(curPath);
-    }
-  }
-  return out;
-};
-
-const removeExtension = (file: string) => file.replace(/\.\w+$/, '');
 
 export const readPostFile = async (path: string): Promise<Post> => {
   const contents = await readFile(path, 'utf-8');

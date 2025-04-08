@@ -1,6 +1,6 @@
 import themes, { isThemeName, themeVariables, type Theme, type ThemeName } from '$lib/themes';
 
-export const FONT_TYPES = ['serif', 'sans', 'mono'] as const;
+export const FONT_TYPES = ['special', 'serif', 'sans', 'mono'] as const;
 
 export type FontType = (typeof FONT_TYPES)[number];
 

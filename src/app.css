@@ -53,10 +53,10 @@
   --color-hljs-base0e: #957fb8;
   --color-hljs-base0f: #d27e99;
 
-  --font-mono:
+  --font-special:
     'Commit Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
     'Courier New', monospace;
-  --font-prose: var(--font-mono);
+  --font-prose: var(--font-special);
 }
 
 @layer base {

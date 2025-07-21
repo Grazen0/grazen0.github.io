@@ -18,7 +18,7 @@
   <a href="{base}/blog/{post.slug}" class="block px-4 py-2">
     <h2 class="text-lg font-semibold">{post.title}</h2>
     <p>{post.summary}</p>
-    <p class="text-sm inline">{dayjs(post.createdAt).format('MMMM D, YYYY')}</p>
+    <p class="text-sm inline text-fg-muted">{dayjs(post.createdAt).format('MMMM D, YYYY')}</p>
 
     {#if post.tags.length !== 0}
       &middot;

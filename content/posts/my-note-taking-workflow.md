@@ -1,5 +1,5 @@
 ---
-title: My Workflow for Taking Class Notes at University
+title: My Workflow for Taking Class Notes
 summary: A nice note-taking setup with Obsidian, tmux and Neovim
 tags: [productivity, neovim]
 createdAt: 2025-07-20

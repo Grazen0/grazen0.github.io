@@ -14,13 +14,24 @@
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
-    "prepare": "svelte-kit sync || echo ''",
+    "prepare": "husky",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "test:unit": "vitest",
     "test": "npm run test:unit -- --run",
     "format": "prettier --write .",
     "lint": "prettier --check . && eslint ."
+  },
+  "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "date-fns": "^4.1.0",
+    "katex": "^0.16.22",
+    "markdown-it": "^14.1.0",
+    "markdown-it-highlightjs": "^4.2.0",
+    "markdown-it-implicit-figures": "^0.12.0",
+    "markdown-it-texmath": "^1.0.0",
+    "reading-time": "^1.5.0",
+    "svelte-fa": "^4.0.4"
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.8",
@@ -41,7 +52,9 @@
     "fast-xml-parser": "^5.2.1",
     "globals": "^16.0.0",
     "gray-matter": "^4.0.3",
+    "husky": "^9.1.7",
     "jsdom": "^26.1.0",
+    "lint-staged": "^16.1.2",
     "prettier": "^3.5.3",
     "prettier-plugin-svelte": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
@@ -59,15 +72,8 @@
       "esbuild"
     ]
   },
-  "dependencies": {
-    "@fortawesome/free-brands-svg-icons": "^6.7.2",
-    "date-fns": "^4.1.0",
-    "katex": "^0.16.22",
-    "markdown-it": "^14.1.0",
-    "markdown-it-highlightjs": "^4.2.0",
-    "markdown-it-implicit-figures": "^0.12.0",
-    "markdown-it-texmath": "^1.0.0",
-    "reading-time": "^1.5.0",
-    "svelte-fa": "^4.0.4"
+  "lint-staged": {
+    "**.*.{ts,svelte}": "eslint --fix",
+    "**/*": "prettier --write --ignore-unknown"
   }
 }

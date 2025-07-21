@@ -5,6 +5,11 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   plugins: [tailwindcss(), sveltekit()],
+  server: {
+    watch: {
+      ignored: ['**/Session.vim'],
+    },
+  },
   test: {
     workspace: [
       {

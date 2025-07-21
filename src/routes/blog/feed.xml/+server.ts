@@ -2,7 +2,7 @@ import { getPublicPosts } from '$lib/blog';
 import { links } from '$lib/constants';
 import { renderContentToHtml } from '$lib/render';
 import type { RequestHandler } from '@sveltejs/kit';
-import { formatRFC3339 } from 'date-fns';
+import dayjs from 'dayjs';
 import { XMLBuilder } from 'fast-xml-parser';
 
 export const prerender = true;
@@ -20,7 +20,7 @@ export const GET: RequestHandler = async (req) => {
       '@_xmlns': 'http://www.w3.org/2005/Atom',
       title: "Grazen's Blog",
       subtitle: 'A random collection of my thoughts and ideas.',
-      updated: formatRFC3339(currentDate),
+      updated: dayjs(currentDate).toISOString(),
       author: {
         name: 'Grazen',
         email: 'josedanielgrayson@proton.me',
@@ -47,8 +47,8 @@ export const GET: RequestHandler = async (req) => {
             '@_href': postUrl,
           },
           id: postUrl,
-          published: formatRFC3339(post.createdAt),
-          updated: formatRFC3339(post.updatedAt ?? post.createdAt),
+          published: dayjs(post.createdAt).toISOString(),
+          updated: dayjs(post.updatedAt ?? post.createdAt).toISOString(),
           content: {
             '@_type': 'html',
             '#text': renderContentToHtml(post.content),

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { base } from '$app/paths';
   import type { PublishedPost } from '$lib/blog';
-  import { formatDatePretty } from '$lib/dates';
+  import dayjs from 'dayjs';
   import type { HTMLLiAttributes } from 'svelte/elements';
 
   export interface Props extends HTMLLiAttributes {
@@ -18,7 +18,7 @@
   <a href="{base}/blog/{post.slug}" class="block px-4 py-2">
     <h2 class="text-lg font-semibold">{post.title}</h2>
     <p>{post.summary}</p>
-    <p class="text-sm inline">{formatDatePretty(post.createdAt)}</p>
+    <p class="text-sm inline">{dayjs(post.createdAt).format('MMMM D, YYYY')}</p>
 
     {#if post.tags.length !== 0}
       &middot;

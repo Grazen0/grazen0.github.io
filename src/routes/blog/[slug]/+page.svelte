@@ -2,13 +2,13 @@
   import Main from '$lib/components/layout/Main.svelte';
   import Prose from '$lib/components/layout/Prose.svelte';
   import Title from '$lib/components/layout/Title.svelte';
-  import { formatDatePretty } from '$lib/dates';
   import type { PageProps } from './$types';
   import BottomNavigation from './BottomNavigation.svelte';
   import CommentSection from './CommentSection.svelte';
   import readingTime from 'reading-time/lib/reading-time';
   import 'katex/dist/katex.min.css';
   import { renderContentToHtml } from '$lib/render';
+  import dayjs from 'dayjs';
 
   const { data }: PageProps = $props();
   const { post, prevPost, nextPost } = data;
@@ -20,7 +20,7 @@
 <Main>
   <Title topic={post.title} class="mb-6" />
   <div class="mb-4 text-center">
-    {formatDatePretty(post.createdAt)} &mdash; {stats.words} words, {stats.text}
+    {dayjs(post.createdAt).format('MMMM D, YYYY')} &mdash; {stats.words} words, {stats.text}
 
     {#if post.tags.length !== 0}
       <ul class="space-x-2 my-2">

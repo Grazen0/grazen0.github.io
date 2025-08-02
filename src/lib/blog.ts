@@ -1,6 +1,6 @@
 import { readdirRecursive } from './util/fs';
 import { removeExtension } from './util/path';
-import matter from 'gray-matter';
+import { default as matter } from 'gray-matter';
 import { readFile } from 'node:fs/promises';
 import path, { basename } from 'node:path';
 import { z } from 'zod';

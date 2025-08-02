@@ -18,7 +18,10 @@ export const Post = z.object({
   slug: z.string(),
   content: z.string(),
   image: Image.optional(),
-  tags: z.array(z.string()).default([]),
+  tags: z
+    .array(z.string())
+    .default([])
+    .transform((tags) => tags.toSorted()),
   createdAt: z.date().optional(),
   updatedAt: z.date().optional(),
 });

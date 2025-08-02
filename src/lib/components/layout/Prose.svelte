@@ -71,11 +71,11 @@
     }
 
     :global(code) {
-      @apply bg-bg-light font-special overflow-x-auto px-1;
+      @apply bg-bg-light font-special overflow-x-auto px-1 text-nowrap;
     }
 
     :global(pre code) {
-      @apply px-0;
+      @apply px-0 text-wrap;
     }
 
     :global(pre) {

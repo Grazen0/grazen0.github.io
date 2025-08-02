@@ -7,10 +7,10 @@
   import CommentSection from './CommentSection.svelte';
   import readingTime from 'reading-time/lib/reading-time';
   import 'katex/dist/katex.min.css';
+  import { dayjs } from '$lib/dayjs';
   import { renderContentToHtml } from '$lib/render';
   import type { IconDefinition } from '@fortawesome/free-brands-svg-icons';
   import { faCalendar, faClock } from '@fortawesome/free-solid-svg-icons';
-  import dayjs from 'dayjs';
   import Fa from 'svelte-fa';
 
   const { data }: PageProps = $props();
@@ -25,7 +25,7 @@
   <div class="mb-4 text-center">
     <div class="inline-flex items-center gap-x-3">
       <Fa icon={faCalendar as IconDefinition} />
-      {dayjs(post.createdAt).format('MMMM D, YYYY')} <span class="mx-1">&mdash;</span>
+      {dayjs.utc(post.createdAt).format('MMMM D, YYYY')} <span class="mx-1">&mdash;</span>
       <Fa icon={faClock as IconDefinition} />
       {stats.text}
     </div>

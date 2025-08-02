@@ -1,8 +1,8 @@
 import { getPublicPosts } from '$lib/blog';
 import { links } from '$lib/constants';
+import { dayjs } from '$lib/dayjs';
 import { renderContentToHtml } from '$lib/render';
 import type { RequestHandler } from '@sveltejs/kit';
-import dayjs from 'dayjs';
 import { XMLBuilder } from 'fast-xml-parser';
 
 export const prerender = true;

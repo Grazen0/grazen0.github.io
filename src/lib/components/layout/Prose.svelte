@@ -1,12 +1,14 @@
 <script lang="ts">
-  import type { HTMLAttributes } from 'svelte/elements';
+  import type { Snippet } from 'svelte';
 
-  export interface Props extends HTMLAttributes<HTMLDivElement> {}
+  export interface Props {
+    children?: Snippet<[]>;
+  }
 
-  const { class: className, children, ...props }: Props = $props();
+  const { children }: Props = $props();
 </script>
 
-<div class={['prose font-content font-prose my-14', className]} {...props}>
+<div class="prose">
   {@render children?.()}
 </div>
 
@@ -14,8 +16,10 @@
   @reference '../../../app.css';
 
   .prose {
+    @apply font-prose my-14 leading-loose;
+
     :global(> *) {
-      @apply my-4;
+      @apply my-6;
     }
 
     :global(h2, h3, h4, h5, h6) {
@@ -39,7 +43,7 @@
     }
 
     :global(ul, ol) {
-      @apply marker:text-fg-muted list-inside;
+      @apply marker:text-fg-muted list-outside pl-16;
     }
 
     :global(ul) {
@@ -67,11 +71,15 @@
     }
 
     :global(code) {
-      @apply bg-bg-light overflow-x-auto px-1;
+      @apply bg-bg-light font-special overflow-x-auto px-1;
+    }
+
+    :global(pre code) {
+      @apply px-0;
     }
 
     :global(pre) {
-      @apply bg-bg-light overflow-x-scroll px-2 py-1;
+      @apply bg-bg-light overflow-x-auto px-2 py-1 leading-normal;
     }
 
     :global(table) {

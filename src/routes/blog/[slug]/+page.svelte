@@ -8,7 +8,10 @@
   import readingTime from 'reading-time/lib/reading-time';
   import 'katex/dist/katex.min.css';
   import { renderContentToHtml } from '$lib/render';
+  import type { IconDefinition } from '@fortawesome/free-brands-svg-icons';
+  import { faCalendar, faClock } from '@fortawesome/free-solid-svg-icons';
   import dayjs from 'dayjs';
+  import Fa from 'svelte-fa';
 
   const { data }: PageProps = $props();
   const { post, prevPost, nextPost } = data;
@@ -20,10 +23,15 @@
 <Main>
   <Title topic={post.title} class="mb-6" />
   <div class="mb-4 text-center">
-    {dayjs(post.createdAt).format('MMMM D, YYYY')} &mdash; {stats.words} words, {stats.text}
+    <div class="inline-flex items-center gap-x-3">
+      <Fa icon={faCalendar as IconDefinition} />
+      {dayjs(post.createdAt).format('MMMM D, YYYY')} <span class="mx-1">&mdash;</span>
+      <Fa icon={faClock as IconDefinition} />
+      {stats.text}
+    </div>
 
     {#if post.tags.length !== 0}
-      <ul class="space-x-2 my-2">
+      <ul class="my-2 space-x-2">
         {#each post.tags as tag (tag)}
           <li class="bg-bg-light inline px-2 py-1 text-sm">#{tag}</li>
         {/each}

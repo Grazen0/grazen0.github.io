@@ -1,11 +1,13 @@
 <script lang="ts">
-  import type { HTMLAttributes } from 'svelte/elements';
+  import type { Snippet } from 'svelte';
 
-  export interface Props extends HTMLAttributes<HTMLElement> {}
+  export interface Props {
+    children?: Snippet<[]>;
+  }
 
-  const { children, class: className, ...props }: Props = $props();
+  const { children }: Props = $props();
 </script>
 
-<main class={['mx-auto max-w-3xl px-6 py-8', className]} {...props}>
+<main class="mx-auto max-w-4xl px-6 py-8">
   {@render children?.()}
 </main>

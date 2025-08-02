@@ -20,5 +20,5 @@
 </svelte:head>
 
 <Header />
-<div class="grow leading-loose">{@render children()}</div>
+<div class="grow">{@render children()}</div>
 <Footer />

@@ -5,7 +5,10 @@
   import Title from '$lib/components/layout/Title.svelte';
   import type { PageProps } from './$types';
   import PostCard from './PostCard.svelte';
+  import type { IconDefinition } from '@fortawesome/free-brands-svg-icons';
+  import { faRssSquare } from '@fortawesome/free-solid-svg-icons';
   import { onMount } from 'svelte';
+  import Fa from 'svelte-fa';
   import { on } from 'svelte/events';
 
   const { data }: PageProps = $props();
@@ -23,13 +26,16 @@
 </script>
 
 <Main>
-  <Title topic="Blog" />
+  <Title topic="My Blog" />
 
   <div class="text-right">
-    <Link external href="{base}/blog/feed.xml">feed.xml</Link>
+    <Link external href="{base}/blog/feed.xml" class="inline-flex items-center gap-x-2">
+      <Fa icon={faRssSquare as IconDefinition} />
+      <span>feed.xml</span>
+    </Link>
   </div>
 
-  <ul>
+  <ul class="my-4 space-y-4">
     {#each data.posts as post (post.slug)}
       <PostCard {post} />
     {/each}

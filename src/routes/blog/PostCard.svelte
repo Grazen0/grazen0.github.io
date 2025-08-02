@@ -1,32 +1,34 @@
 <script lang="ts">
   import { base } from '$app/paths';
   import type { PublishedPost } from '$lib/blog';
+  import type { IconDefinition } from '@fortawesome/free-brands-svg-icons';
+  import { faCalendar } from '@fortawesome/free-solid-svg-icons';
   import dayjs from 'dayjs';
-  import type { HTMLLiAttributes } from 'svelte/elements';
+  import Fa from 'svelte-fa';
 
-  export interface Props extends HTMLLiAttributes {
+  export interface Props {
     post: PublishedPost;
   }
 
-  const { post, class: className, ...props }: Props = $props();
+  const { post }: Props = $props();
 </script>
 
-<li
-  class={['my-4 hover:no-underline border border-bg-light hover:border-fg', className]}
-  {...props}
->
+<li class="border-bg-light hover:border-fg border hover:no-underline">
   <a href="{base}/blog/{post.slug}" class="block px-4 py-2">
-    <h2 class="text-lg font-semibold">{post.title}</h2>
-    <p>{post.summary}</p>
-    <p class="text-sm inline text-fg-muted">{dayjs(post.createdAt).format('MMMM D, YYYY')}</p>
+    <h2 class="mb-2 text-xl font-semibold">{post.title}</h2>
+    <p class="mb-3">{post.summary}</p>
 
-    {#if post.tags.length !== 0}
-      &middot;
-      <ul class="inline space-x-2">
-        {#each post.tags as tag (tag)}
-          <li class="px-2 py-1 text-sm bg-bg-light inline">#{tag}</li>
-        {/each}
-      </ul>
-    {/if}
+    <div class="inline-flex items-center gap-x-2 text-sm">
+      <Fa icon={faCalendar as IconDefinition} class="text-fg-muted" />
+      <span class="text-fg-muted">{dayjs(post.createdAt).format('MMM D, YYYY')}</span>
+      {#if post.tags.length !== 0}
+        &middot;
+        <ul class="inline-flex items-center gap-x-2">
+          {#each post.tags as tag (tag)}
+            <li class="bg-bg-light inline px-1.5 py-0.5 text-xs">#{tag}</li>
+          {/each}
+        </ul>
+      {/if}
+    </div>
   </a>
 </li>

@@ -1,4 +1,6 @@
+import slugify from '@sindresorhus/slugify';
 import markdownIt from 'markdown-it';
+import mdAnchor from 'markdown-it-anchor';
 import mdExternalLinks from 'markdown-it-external-links';
 import mdHighlightJs from 'markdown-it-highlightjs';
 import mdImplicitFigures from 'markdown-it-implicit-figures';
@@ -21,6 +23,10 @@ export const renderContentToHtml = (content: string): string => {
     .use(mdExternalLinks, {
       externalTarget: '_blank',
       externalRel: 'noopener noreferrer',
+    })
+    .use(mdAnchor, {
+      permalink: mdAnchor.permalink.linkInsideHeader({ placement: 'before' }),
+      slugify,
     });
 
   return md.render(content);

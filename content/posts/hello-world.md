@@ -46,12 +46,12 @@ Hmmm, and lists?
 - Bar
 - Baz
 
-## This is an h2
+## This is a h2
 
-### This is an h3
+### This is a h3
 
-#### This is an h4
+#### This is a h4
 
-##### This is an h5
+##### This is a h5
 
 Yes, it looks like everything's going good.

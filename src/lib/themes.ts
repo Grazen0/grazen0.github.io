@@ -89,7 +89,7 @@ const themes = {
     hljsBase0d: '#7e9cd8',
     hljsBase0e: '#957fb8',
     hljsBase0f: '#d27e99',
-  } as const,
+  },
   // https://github.com/dracula/dracula-theme
   dracula: {
     type: 'dark',
@@ -116,7 +116,7 @@ const themes = {
     hljsBase0d: '#62d6e8',
     hljsBase0e: '#b45bcf',
     hljsBase0f: '#00f769',
-  } as const,
+  },
   // https://github.com/catppuccin/catppuccin
   'catpuccin-latte': {
     type: 'light',
@@ -144,7 +144,7 @@ const themes = {
     hljsBase0e: '#8839ef',
     hljsBase0f: '#dd7878',
     giscusTheme: 'catppuccin_latte',
-  } as const,
+  },
   'catppucchin-frappe': {
     type: 'dark',
     bg: '#303446',
@@ -225,7 +225,7 @@ const themes = {
     hljsBase0e: '#cba6f7',
     hljsBase0f: '#f2cdcd',
     giscusTheme: 'catppuccin_mocha',
-  } as const,
+  },
   // https://github.com/morhetz/gruvbox
   'gruvbox-dark': {
     type: 'dark',
@@ -253,7 +253,7 @@ const themes = {
     hljsBase0e: '#d3869b',
     hljsBase0f: '#d65d0e',
     giscusTheme: 'gruvbox_dark',
-  } as const,
+  },
   'gruvbox-light': {
     type: 'light',
     bg: '#fbf1c7',
@@ -280,7 +280,7 @@ const themes = {
     hljsBase0e: '#8f3f71',
     hljsBase0f: '#d65d0e',
     giscusTheme: 'gruvbox_light',
-  } as const,
+  },
   // https://github.com/folke/tokyonight.nvim
   'tokyo-night': {
     type: 'dark',
@@ -307,7 +307,7 @@ const themes = {
     hljsBase0d: '#82aaff',
     hljsBase0e: '#fca7ea',
     hljsBase0f: '#c53b53',
-  } as const,
+  },
   // https://rosepinetheme.com
   'rose-pine': {
     type: 'dark',
@@ -334,7 +334,7 @@ const themes = {
     hljsBase0d: '#c4a7e7',
     hljsBase0e: '#f6c177',
     hljsBase0f: '#524f67',
-  } as const,
+  },
   // https://github.com/sainnhe/everforest
   everforest: {
     type: 'dark',
@@ -361,7 +361,7 @@ const themes = {
     hljsBase0d: '#7fbbb3',
     hljsBase0e: '#d699b6',
     hljsBase0f: '#9da9a0',
-  } as const,
+  },
 } as const satisfies Record<string, Theme>;
 
 export default themes;

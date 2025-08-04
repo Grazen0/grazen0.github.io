@@ -1,9 +1,9 @@
 <script lang="ts">
   import { base } from '$app/paths';
   import type { PublishedPost } from '$lib/blog';
+  import { dayjs } from '$lib/dayjs';
   import type { IconDefinition } from '@fortawesome/free-brands-svg-icons';
   import { faCalendar } from '@fortawesome/free-solid-svg-icons';
-  import dayjs from 'dayjs';
   import Fa from 'svelte-fa';
 
   export interface Props {

@@ -1,11 +1,10 @@
 <script lang="ts">
-  import { base } from '$app/paths';
+  import { resolve } from '$app/paths';
+  import PostCard from '$lib/blog/components/PostCard.svelte';
   import Link from '$lib/components/Link.svelte';
-  import Main from '$lib/components/layout/Main.svelte';
-  import Title from '$lib/components/layout/Title.svelte';
+  import Main from '$lib/components/Main.svelte';
+  import Title from '$lib/components/Title.svelte';
   import type { PageProps } from './$types';
-  import PostCard from './PostCard.svelte';
-  import type { IconDefinition } from '@fortawesome/free-brands-svg-icons';
   import { faRssSquare } from '@fortawesome/free-solid-svg-icons';
   import { onMount } from 'svelte';
   import Fa from 'svelte-fa';
@@ -29,8 +28,8 @@
   <Title topic="My Blog" />
 
   <div class="text-right">
-    <Link external href="{base}/blog/feed.xml" class="inline-flex items-center gap-x-2">
-      <Fa icon={faRssSquare as IconDefinition} />
+    <Link external href={resolve('/blog/feed.xml')} class="inline-flex items-center gap-x-2">
+      <Fa icon={faRssSquare} />
       <span>feed.xml</span>
     </Link>
   </div>

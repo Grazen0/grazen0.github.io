@@ -1,8 +1,8 @@
 <script lang="ts">
   import Link from '$lib/components/Link.svelte';
-  import Main from '$lib/components/layout/Main.svelte';
-  import Prose from '$lib/components/layout/Prose.svelte';
-  import Title from '$lib/components/layout/Title.svelte';
+  import Main from '$lib/components/Main.svelte';
+  import Prose from '$lib/components/Prose.svelte';
+  import Title from '$lib/components/Title.svelte';
   import { faBluesky, faDiscord, faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
   import Fa from 'svelte-fa';
 

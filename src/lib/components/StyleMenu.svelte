@@ -3,8 +3,8 @@
     FONT_TYPES,
     getActiveProseFont,
     getActiveThemeName,
-  } from '$lib/style-prefs.svelte';
-  import themes from '$lib/themes';
+  } from '$lib/style/svelte/style-prefs.svelte';
+  import themes from '$lib/style/themes';
   import { onMount } from 'svelte';
   import type { HTMLAttributes, KeyboardEventHandler, MouseEventHandler } from 'svelte/elements';
   import { on } from 'svelte/events';
@@ -70,10 +70,10 @@
       role="menu"
       tabindex={-1}
       bind:this={menuElement}
-      class="bg-bg border border-fg px-4 py-4 absolute top-4/3 right-0"
+      class="bg-bg border-fg absolute top-4/3 right-0 border px-4 py-4"
     >
       <form class="space-y-4">
-        <div class="text-nowrap text-right">
+        <div class="text-right text-nowrap">
           <label for="theme" class="text-sm">Theme:</label>
           <select
             name="theme"
@@ -95,7 +95,7 @@
           </select>
         </div>
 
-        <div class="text-nowrap text-right">
+        <div class="text-right text-nowrap">
           <label for="font-prose" class="text-sm">Prose font:</label>
           <select
             name="font-prose"

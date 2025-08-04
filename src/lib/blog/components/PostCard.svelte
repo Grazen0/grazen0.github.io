@@ -1,26 +1,33 @@
 <script lang="ts">
-  import { base } from '$app/paths';
-  import type { PublishedPost } from '$lib/blog';
-  import { dayjs } from '$lib/dayjs';
-  import type { IconDefinition } from '@fortawesome/free-brands-svg-icons';
-  import { faCalendar } from '@fortawesome/free-solid-svg-icons';
+  import { resolve } from '$app/paths';
+  import { dayjs } from '$lib/common/dayjs';
+  import type { Post } from '../schemas';
+  import { faCalendar, faPencil } from '@fortawesome/free-solid-svg-icons';
   import Fa from 'svelte-fa';
 
   export interface Props {
-    post: PublishedPost;
+    post: Post;
   }
 
   const { post }: Props = $props();
+
+  const postUrl = resolve('/blog/[slug]', { slug: post.slug });
 </script>
 
 <li class="border-bg-light hover:border-fg border hover:no-underline">
-  <a href="{base}/blog/{post.slug}" class="block px-4 py-2">
+  <a href={postUrl} class="block px-4 py-2">
     <h2 class="mb-2 text-xl font-semibold">{post.title}</h2>
     <p class="mb-3">{post.summary}</p>
 
     <div class="inline-flex items-center gap-x-2 text-sm">
-      <Fa icon={faCalendar as IconDefinition} class="text-fg-muted" />
-      <span class="text-fg-muted">{dayjs(post.createdAt).format('MMM D, YYYY')}</span>
+      {#if post.createdAt}
+        <Fa icon={faCalendar} class="text-fg-muted" />
+        <span class="text-fg-muted">{dayjs.utc(post.createdAt).format('MMM D, YYYY')}</span>
+      {:else}
+        <Fa icon={faPencil} class="text-fg-muted" />
+        <span class="text-fg-muted">Draft</span>
+      {/if}
+
       {#if post.tags.length !== 0}
         &middot;
         <ul class="inline-flex items-center gap-x-2">

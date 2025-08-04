@@ -1,37 +1,33 @@
 <script lang="ts">
-  import Main from '$lib/components/layout/Main.svelte';
-  import Prose from '$lib/components/layout/Prose.svelte';
-  import Title from '$lib/components/layout/Title.svelte';
+  import { resolve } from '$app/paths';
+  import BottomNavigation from '$lib/blog/components/BottomNavigation.svelte';
+  import CommentSection from '$lib/blog/components/CommentSection.svelte';
+  import SharePostButton from '$lib/blog/components/SharePostButton.svelte';
+  import { dayjs } from '$lib/common/dayjs';
+  import Main from '$lib/components/Main.svelte';
+  import Prose from '$lib/components/Prose.svelte';
+  import Title from '$lib/components/Title.svelte';
   import type { PageProps } from './$types';
-  import BottomNavigation from './BottomNavigation.svelte';
-  import CommentSection from './CommentSection.svelte';
-  import readingTime from 'reading-time/lib/reading-time';
-  import 'katex/dist/katex.min.css';
-  import { dayjs } from '$lib/dayjs';
-  import { renderContentToHtml } from '$lib/render';
-  import type { IconDefinition } from '@fortawesome/free-brands-svg-icons';
-  import { faCalendar, faClock } from '@fortawesome/free-solid-svg-icons';
+  import { faCalendar, faClock, faMessage, faRssSquare } from '@fortawesome/free-solid-svg-icons';
   import Fa from 'svelte-fa';
+  import 'katex/dist/katex.min.css';
 
   const { data }: PageProps = $props();
   const { post, prevPost, nextPost } = data;
-
-  const stats = $derived(readingTime(post.content));
-  const htmlContent = $derived(renderContentToHtml(post.content));
 </script>
 
 <Main>
   <Title topic={post.title} class="mb-6" />
   <div class="mb-4 text-center">
     <div class="inline-flex items-center gap-x-3">
-      <Fa icon={faCalendar as IconDefinition} />
+      <Fa icon={faCalendar} />
       {dayjs.utc(post.createdAt).format('MMMM D, YYYY')} <span class="mx-1">&mdash;</span>
-      <Fa icon={faClock as IconDefinition} />
-      {stats.text}
+      <Fa icon={faClock} />
+      {data.stats.text}
     </div>
 
     {#if post.tags.length !== 0}
-      <ul class="my-2 space-x-2">
+      <ul class="my-4 space-x-3">
         {#each post.tags as tag (tag)}
           <li class="bg-bg-light inline px-2 py-1 text-sm">#{tag}</li>
         {/each}
@@ -39,12 +35,25 @@
     {/if}
   </div>
 
-  {#if post.image}
-    <img src={post.image.url} alt={post.image.alt} class="mx-auto max-h-124" />
-  {/if}
-
   <!-- eslint-disable-next-line svelte/no-at-html-tags -->
-  <Prose>{@html htmlContent}</Prose>
+  <Prose>{@html data.htmlContent}</Prose>
+
+  <div class="text-fg-muted flex justify-center gap-x-8">
+    <SharePostButton {post} />
+    <a href={resolve('/blog')} class="hover:text-fg flex cursor-pointer items-center gap-x-2">
+      <Fa icon={faMessage} />
+      <span>See all posts</span>
+    </a>
+    <a
+      href={resolve('/blog/feed.xml')}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="hover:text-fg flex cursor-pointer items-center gap-x-2"
+    >
+      <Fa icon={faRssSquare} />
+      <span>feed.xml</span>
+    </a>
+  </div>
 
   <BottomNavigation {prevPost} {nextPost} />
 </Main>

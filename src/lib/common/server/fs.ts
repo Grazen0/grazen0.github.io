@@ -1,16 +1,16 @@
-import { readdir, stat } from 'node:fs/promises';
+import fs from 'node:fs';
 import path from 'node:path';
 
-export const readdirRecursive = async (baseDir: string): Promise<string[]> => {
+export const readdirRecursive = (baseDir: string): string[] => {
   const out: string[] = [];
   const stack = [baseDir];
   let curPath: string | undefined;
 
   while ((curPath = stack.pop())) {
-    const statResult = await stat(curPath);
+    const statResult = fs.statSync(curPath);
 
     if (statResult.isDirectory()) {
-      const items = await readdir(curPath);
+      const items = fs.readdirSync(curPath);
       stack.push(...items.map((item) => path.join(curPath!, item)));
     } else {
       out.push(curPath);

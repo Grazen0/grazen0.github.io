@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { base } from '$app/paths';
-  import type { Post } from '$lib/blog';
+  import { resolve } from '$app/paths';
   import Link from '$lib/components/Link.svelte';
+  import type { Post } from '../schemas';
 
   export interface Props {
     prevPost?: Post;
@@ -11,12 +11,12 @@
   const { prevPost, nextPost }: Props = $props();
 </script>
 
-<nav class="my-10 grid grid-rows-2 sm:grid-cols-2 leading-relaxed">
+<nav class="my-10 grid grid-rows-2 leading-relaxed not-sm:gap-y-6 sm:grid-cols-2">
   <div class="text-left">
     {#if prevPost}
       <Link
         data-sveltekit-reload
-        href="{base}/blog/{prevPost.slug}"
+        href={resolve(`/blog/[slug]`, { slug: prevPost.slug })}
         title={prevPost.title}
         class="text-link"
       >
@@ -29,7 +29,7 @@
     {#if nextPost}
       <Link
         data-sveltekit-reload
-        href="{base}/blog/{nextPost.slug}"
+        href={resolve(`/blog/[slug]`, { slug: nextPost.slug })}
         title={nextPost.title}
         class="text-link"
       >

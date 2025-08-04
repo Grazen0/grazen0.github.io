@@ -1,9 +1,13 @@
 <script lang="ts">
-  import Footer from '$lib/components/layout/Footer.svelte';
-  import Header from '$lib/components/layout/Header.svelte';
   import { onMount } from 'svelte';
   import '../app.css';
-  import { loadStylePreferences, proseFontEffect, themeEffect } from '$lib/style-prefs.svelte';
+  import Footer from '$lib/components/Footer.svelte';
+  import Header from '$lib/components/Header.svelte';
+  import {
+    loadStylePreferences,
+    proseFontEffect,
+    themeEffect,
+  } from '$lib/style/svelte/style-prefs.svelte';
   import type { LayoutProps } from './$types';
   import { stylePreloadScript } from './style-preload';
 
@@ -19,6 +23,8 @@
   {@html stylePreloadScript()}
 </svelte:head>
 
-<Header />
-<div class="grow">{@render children()}</div>
-<Footer />
+<div class="mx-auto flex min-h-full max-w-4xl flex-col">
+  <Header />
+  <div class="grow">{@render children()}</div>
+  <Footer />
+</div>

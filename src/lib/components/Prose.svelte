@@ -13,7 +13,7 @@
 </div>
 
 <style lang="postcss">
-  @reference '../../../app.css';
+  @reference '../../app.css';
 
   .prose {
     @apply font-prose my-14 leading-loose;

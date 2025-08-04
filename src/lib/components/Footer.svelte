@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { links } from '$lib/constants';
+  import { links } from '$lib/common/constants';
 </script>
 
 <footer class="py-6 text-center">

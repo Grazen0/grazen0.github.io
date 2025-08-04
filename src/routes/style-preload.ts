@@ -1,5 +1,5 @@
-import { FONT_TYPES } from '$lib/style-prefs.svelte';
-import themes, { themeVariables } from '$lib/themes';
+import { FONT_TYPES } from '$lib/style/svelte/style-prefs.svelte';
+import themes, { themeVariables } from '$lib/style/themes';
 
 export const stylePreloadScript = () => {
   const lines = Object.entries(themeVariables).map(

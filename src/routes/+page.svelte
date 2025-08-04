@@ -1,10 +1,10 @@
 <script lang="ts">
+  import { asciiBanner } from '$lib/common/constants';
   import Link from '$lib/components/Link.svelte';
+  import Main from '$lib/components/Main.svelte';
+  import Prose from '$lib/components/Prose.svelte';
   import Stronger from '$lib/components/Stronger.svelte';
-  import Main from '$lib/components/layout/Main.svelte';
-  import Prose from '$lib/components/layout/Prose.svelte';
-  import Title from '$lib/components/layout/Title.svelte';
-  import { asciiBanner } from '$lib/constants';
+  import Title from '$lib/components/Title.svelte';
 </script>
 
 <Main>

@@ -8,6 +8,6 @@
   const { children }: Props = $props();
 </script>
 
-<main class="mx-auto max-w-4xl px-6 py-8">
+<main class="mx-auto px-6 py-8">
   {@render children?.()}
 </main>

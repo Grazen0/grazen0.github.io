@@ -1,4 +1,4 @@
-import themes, { isThemeName, themeVariables, type Theme, type ThemeName } from '$lib/themes';
+import themes, { isThemeName, themeVariables, type Theme, type ThemeName } from '$lib/style/themes';
 
 export const FONT_TYPES = ['special', 'serif', 'sans', 'mono'] as const;
 

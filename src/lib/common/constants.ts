@@ -3,7 +3,8 @@ export const links = {
   self: 'https://grazen0.github.io',
 } as const;
 
-export const asciiBanner = String.raw`
+export const ascii = {
+  bannerBig: String.raw`
   /$$$$$$                                                  
  /$$__  $$                                                 
 | $$  \__/  /$$$$$$  /$$$$$$  /$$$$$$$$  /$$$$$$  /$$$$$$$ 
@@ -12,4 +13,11 @@ export const asciiBanner = String.raw`
 | $$  \ $$| $$      /$$__  $$  /$$__/  | $$_____/| $$  | $$
 |  $$$$$$/| $$     |  $$$$$$$ /$$$$$$$$|  $$$$$$$| $$  | $$
  \______/ |__/      \_______/|________/ \_______/|__/  |__/
-`.trimEnd();
+`,
+  bannerSmall: String.raw`
+   ___                           
+  / __| _ _  __ _  ___ ___  _ _  
+ | (_ || '_|/ _\` ||_ // -_)| ' \ 
+  \___||_|  \__,_|/__|\___||_||_|
+`.trimEnd(),
+};

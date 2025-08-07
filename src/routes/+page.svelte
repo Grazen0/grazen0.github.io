@@ -1,18 +1,16 @@
 <script lang="ts">
-  import { asciiBanner } from '$lib/common/constants';
+  import { ascii } from '$lib/common/constants';
   import Link from '$lib/components/Link.svelte';
   import Main from '$lib/components/Main.svelte';
   import Prose from '$lib/components/Prose.svelte';
   import Stronger from '$lib/components/Stronger.svelte';
-  import Title from '$lib/components/Title.svelte';
 </script>
 
 <Main>
-  <Title class="sm:visually-hidden" />
-
   <div class="text-center">
-    <pre class="hidden font-mono leading-snug font-bold sm:inline-block">
-      {asciiBanner}
+    <pre class="inline-block font-mono leading-snug font-bold">
+      <span class="not-sm:hidden">{ascii.bannerBig}</span>
+      <span class="sm:hidden">{ascii.bannerSmall}</span>
     </pre>
   </div>
 

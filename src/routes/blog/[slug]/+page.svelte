@@ -28,9 +28,9 @@
     </div>
 
     {#if post.tags.length !== 0}
-      <ul class="my-4 space-x-3">
+      <ul class="my-4 flex flex-wrap justify-center gap-3">
         {#each post.tags as tag (tag)}
-          <li class="bg-bg-light inline px-2 py-1 text-sm">#{tag}</li>
+          <li class="bg-bg-light inline px-3 py-1 text-sm">#{tag}</li>
         {/each}
       </ul>
     {/if}

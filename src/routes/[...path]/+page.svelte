@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Main from '$lib/components/Main.svelte';
-  import Prose from '$lib/components/Prose.svelte';
-  import Title from '$lib/components/Title.svelte';
+  import Main from '$lib/common/components/Main.svelte';
+  import Prose from '$lib/common/components/Prose.svelte';
+  import Title from '$lib/common/components/Title.svelte';
   import { faArrowLeft, faHouse, faMessage } from '@fortawesome/free-solid-svg-icons';
   import Fa from 'svelte-fa';
 </script>

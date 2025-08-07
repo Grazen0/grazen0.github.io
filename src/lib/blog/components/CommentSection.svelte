@@ -9,19 +9,21 @@
   );
 </script>
 
-<Giscus
-  repo="Grazen0/grazen0.github.io"
-  repoId="MDEwOlJlcG9zaXRvcnkzMTMzNjc4MDc="
-  category="Comments"
-  categoryId="DIC_kwDOEq2c_84Cofvu"
-  id="comments"
-  term=""
-  mapping="pathname"
-  strict="1"
-  reactionsEnabled="1"
-  emitMetadata="0"
-  inputPosition="top"
-  lang="en"
-  loading="lazy"
-  theme={giscusTheme}
-/>
+<div class="mx-6">
+  <Giscus
+    repo="Grazen0/grazen0.github.io"
+    repoId="MDEwOlJlcG9zaXRvcnkzMTMzNjc4MDc="
+    category="Comments"
+    categoryId="DIC_kwDOEq2c_84Cofvu"
+    id="comments"
+    term=""
+    mapping="pathname"
+    strict="1"
+    reactionsEnabled="1"
+    emitMetadata="0"
+    inputPosition="top"
+    lang="en"
+    loading="lazy"
+    theme={giscusTheme}
+  />
+</div>

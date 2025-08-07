@@ -1,9 +1,9 @@
 <script lang="ts">
+  import Link from '$lib/common/components/Link.svelte';
+  import Main from '$lib/common/components/Main.svelte';
+  import Prose from '$lib/common/components/Prose.svelte';
+  import Stronger from '$lib/common/components/Stronger.svelte';
   import { ascii } from '$lib/common/constants';
-  import Link from '$lib/components/Link.svelte';
-  import Main from '$lib/components/Main.svelte';
-  import Prose from '$lib/components/Prose.svelte';
-  import Stronger from '$lib/components/Stronger.svelte';
 </script>
 
 <Main>

@@ -1,9 +1,9 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
   import PostCard from '$lib/blog/components/PostCard.svelte';
-  import Link from '$lib/components/Link.svelte';
-  import Main from '$lib/components/Main.svelte';
-  import Title from '$lib/components/Title.svelte';
+  import Link from '$lib/common/components/Link.svelte';
+  import Main from '$lib/common/components/Main.svelte';
+  import Title from '$lib/common/components/Title.svelte';
   import type { PageProps } from './$types';
   import { faRssSquare } from '@fortawesome/free-solid-svg-icons';
   import { onMount } from 'svelte';

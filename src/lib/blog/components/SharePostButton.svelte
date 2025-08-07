@@ -20,7 +20,6 @@
       navigator.share({
         url: postUrl,
         title: post.title,
-        text: post.summary,
       });
     } else if (navigator.clipboard) {
       navigator.clipboard.writeText(postUrl);

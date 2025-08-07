@@ -23,6 +23,6 @@ export const postRenderer = markdownIt({
     externalRel: 'noopener noreferrer',
   })
   .use(mdAnchor, {
-    permalink: mdAnchor.permalink.linkInsideHeader({ placement: 'before' }),
+    permalink: mdAnchor.permalink.linkInsideHeader(),
     slugify,
   });

@@ -3,7 +3,7 @@
     FONT_TYPES,
     getActiveProseFont,
     getActiveThemeName,
-  } from '$lib/style/svelte/style-prefs.svelte';
+  } from '$lib/style/svelte/style-prefs.svelte.js';
   import themes from '$lib/style/themes';
   import { onMount } from 'svelte';
   import type { HTMLAttributes, KeyboardEventHandler, MouseEventHandler } from 'svelte/elements';

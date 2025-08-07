@@ -1,6 +1,6 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
-  import Link from '$lib/components/Link.svelte';
+  import Link from '$lib/common/components/Link.svelte';
   import type { Post } from '../schemas';
 
   export interface Props {

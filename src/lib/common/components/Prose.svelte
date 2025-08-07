@@ -13,7 +13,7 @@
 </div>
 
 <style lang="postcss">
-  @reference '../../app.css';
+  @reference '../../../app.css';
 
   .prose {
     @apply font-prose my-14 leading-loose;
@@ -43,7 +43,7 @@
     }
 
     :global(.header-anchor) {
-      @apply text-fg-muted absolute top-1/2 left-0 -translate-x-3/2 -translate-y-1/2 opacity-50 hover:no-underline hover:opacity-100;
+      @apply text-fg-muted opacity-50 hover:no-underline hover:opacity-100;
     }
 
     :global(ul, ol) {

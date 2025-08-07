@@ -3,10 +3,10 @@
   import BottomNavigation from '$lib/blog/components/BottomNavigation.svelte';
   import CommentSection from '$lib/blog/components/CommentSection.svelte';
   import SharePostButton from '$lib/blog/components/SharePostButton.svelte';
+  import Main from '$lib/common/components/Main.svelte';
+  import Prose from '$lib/common/components/Prose.svelte';
+  import Title from '$lib/common/components/Title.svelte';
   import { dayjs } from '$lib/common/dayjs';
-  import Main from '$lib/components/Main.svelte';
-  import Prose from '$lib/components/Prose.svelte';
-  import Title from '$lib/components/Title.svelte';
   import type { PageProps } from './$types';
   import { faCalendar, faClock, faMessage, faRssSquare } from '@fortawesome/free-solid-svg-icons';
   import Fa from 'svelte-fa';
@@ -21,7 +21,8 @@
   <div class="mb-4 text-center">
     <div class="inline-flex items-center gap-x-3">
       <Fa icon={faCalendar} />
-      {dayjs.utc(post.createdAt).format('MMMM D, YYYY')} <span class="mx-1">&mdash;</span>
+      {dayjs.utc(post.createdAt).format('MMMM D, YYYY')}
+      <span class="mx-1">&mdash;</span>
       <Fa icon={faClock} />
       {data.stats.text}
     </div>
@@ -38,7 +39,7 @@
   <!-- eslint-disable-next-line svelte/no-at-html-tags -->
   <Prose>{@html data.htmlContent}</Prose>
 
-  <div class="text-fg-muted flex justify-center gap-x-8">
+  <div class="text-fg-muted flex flex-wrap justify-center gap-x-8 gap-y-4">
     <SharePostButton {post} />
     <a href={resolve('/blog')} class="hover:text-fg flex cursor-pointer items-center gap-x-2">
       <Fa icon={faMessage} />

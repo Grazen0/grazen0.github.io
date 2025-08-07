@@ -1,8 +1,8 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import '../app.css';
-  import Footer from '$lib/components/Footer.svelte';
-  import Header from '$lib/components/Header.svelte';
+  import Footer from '$lib/common/components/Footer.svelte';
+  import Header from '$lib/common/components/Header.svelte';
   import {
     loadStylePreferences,
     proseFontEffect,

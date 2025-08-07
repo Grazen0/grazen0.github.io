@@ -54,13 +54,13 @@ I also added a `free(self->rom)` at the beginning of `GameBoy_load_rom` to free 
 
 My rationale for this was that `GameBoy` should "own" `rom`, so it should be responsible for cleaning up `rom` when destroyed.
 
-There was a clear issue with this design, however. **`GameBoy` _assumed_ that `rom` was a heap-allocated array**. Not only that, but (being 100% pragmatic) it also assumed that `rom` was an _SDL_-heap-allocated array. What if I ever wanted to load, say, a static array to `rom`? Do note that I was always calling `GameBoy_load_rom` with the result of an `SDL_LoadFile`, so this didn't cause any problems in practice, but it was still an objectively bad design choice.
+There was a clear issue with this design, however. **`GameBoy` _assumed_ that `rom` was a heap-allocated array**. Not only that, but (being 100% pragmatic) it also assumed that `rom` was an _SDL_-heap-allocated array. What if I ever wanted to load, say, a static array to `rom`? Do note that I was always calling `GameBoy_load_rom` with the result of a `SDL_LoadFile`, so this didn't cause any problems in practice, but it was still an objectively bad design choice.
 
 ## The Rust Way
 
 > Funny story, actually: I learned Rust before C. You'll see here how I used that to my advantage.
 
-So what do you know, Rust came to the rescue. _"How would I approach this in Rust, anyways?"_ I thought. This is more or less what I pictured in my mind:
+So what do you know, Rust came to the rescue. _"How would I approach this in Rust, anyway?"_ I thought. This is more or less what I pictured in my mind:
 
 ```rust
 struct GameBoy {
@@ -108,7 +108,7 @@ void GameBoy_destroy(GameBoy *self) {
 }
 ```
 
-...I had essentially created a very strange ownership model where `GameBoy` sort-of-but-not-completely owned `rom`. The data of `rom` itself was (kind of?) owned outside of `GameBoy`, but it was also being freed by `GameBoy`. Weird.
+...I had essentially created a very strange ownership model where `GameBoy` sort-of-but-not-completely owned `rom`. The data of `rom` itself was (kind of?) owned outside `GameBoy`, but it was also being freed by `GameBoy`. Weird.
 
 My solution was essentially this:
 

@@ -3,17 +3,18 @@
   import '../app.css';
   import Footer from '$lib/common/components/Footer.svelte';
   import Header from '$lib/common/components/Header.svelte';
+  import { stylePreloadScript } from '$lib/style/style-preload';
   import {
     loadStylePreferences,
     proseFontEffect,
     themeEffect,
   } from '$lib/style/svelte/style-prefs.svelte';
   import type { LayoutProps } from './$types';
-  import { stylePreloadScript } from './style-preload';
 
   const { children }: LayoutProps = $props();
 
   onMount(loadStylePreferences);
+
   $effect(themeEffect);
   $effect(proseFontEffect);
 </script>

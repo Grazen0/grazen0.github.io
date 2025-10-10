@@ -16,7 +16,7 @@
 
   <Prose>
     <p>
-      I'm José Daniel Grayson (aka <Stronger>Grazen</Stronger>), an 18-year-old guy who lives in
+      I'm José Daniel Grayson (aka <Stronger>Grazen</Stronger>), a 19 year old guy who lives in
       this weird (but awesome) country called Peru. I'm currently majoring in Computer Science and
       like to do lots of programming as a hobby.
     </p>

@@ -19,6 +19,10 @@ export const load: PageServerLoad = ({ params }) => {
   const post = posts[postIndex];
 
   return {
+    meta: {
+      title: post.title,
+      description: post.summary,
+    },
     post,
     htmlContent: postRenderer.render(post.content),
     stats: readingTime(post.content),

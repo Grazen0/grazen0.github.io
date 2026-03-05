@@ -17,9 +17,12 @@
 </script>
 
 <Main>
-  <Title topic={post.title} class="mb-6" />
+  <div class="mb-6">
+    <Title topic={post.title} class="mb-4" />
+    <p class="text-center">{post.summary}</p>
+  </div>
   <div class="mb-4 text-center">
-    <div class="inline-flex items-center gap-x-3">
+    <div class="text-fg-muted inline-flex items-center gap-x-3">
       <Fa icon={faCalendar} />
       {dayjs.utc(post.createdAt).format('MMMM D, YYYY')}
       <span class="mx-1">&mdash;</span>

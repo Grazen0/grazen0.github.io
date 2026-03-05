@@ -7,7 +7,7 @@
 </script>
 
 <Main>
-  <Title topic="404 - Page Not Found" headTopic="Page Not Found" />
+  <Title topic="404 - Page Not Found" />
   <div class="text-center text-lg">
     <Prose>Maybe you misspelled something?</Prose>
   </div>

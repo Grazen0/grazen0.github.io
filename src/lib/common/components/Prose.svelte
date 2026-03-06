@@ -16,7 +16,7 @@
   @reference '../../../app.css';
 
   .prose {
-    @apply font-prose my-14 leading-loose;
+    @apply font-prose my-14 text-justify leading-loose;
 
     :global(> *) {
       @apply my-6;

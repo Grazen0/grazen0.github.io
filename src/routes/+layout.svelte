@@ -4,6 +4,7 @@
   import { page } from '$app/state';
   import Footer from '$lib/common/components/Footer.svelte';
   import Header from '$lib/common/components/Header.svelte';
+  import { links } from '$lib/common/constants';
   import { stylePreloadScript } from '$lib/style/style-preload';
   import {
     loadStylePreferences,
@@ -15,13 +16,12 @@
   const { children }: LayoutProps = $props();
 
   const websiteName = 'Grazen';
-  const baseUrl = 'https://grazen.xyz';
 
   const {
     title,
     author = 'José Grayson',
     description = 'A cool website on the internet.',
-    image = baseUrl + '/og.png',
+    image = links.self + '/og.png',
   } = page.data.meta ?? {};
 
   const fullTitle = title ? `${title} | ${websiteName}` : websiteName;
@@ -53,7 +53,7 @@
   <meta name="twitter:image" content={image} />
 
   <meta property="og:type" content="website" />
-  <meta property="og:url" content={baseUrl + page.url.pathname} />
+  <meta property="og:url" content={links.self + page.url.pathname} />
   <meta name="twitter:card" content="summary_large_image" />
 
   <meta name="author" content={author} />

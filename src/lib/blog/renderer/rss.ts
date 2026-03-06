@@ -5,7 +5,7 @@ import { dayjs } from '$lib/common/dayjs';
 import { resolveAbsolute } from '$lib/common/paths';
 import { XMLBuilder } from 'fast-xml-parser';
 
-export const RSS_ID = 'https://grazen0.github.io';
+export const RSS_ID = 'https://grazen.xyz';
 
 const postToFeedEntry = (post: Post) => {
   const postUrl = resolveAbsolute('/blog/[slug]', { slug: post.slug });
@@ -40,7 +40,7 @@ export const generateBlogFeed = (posts: Post[]) => {
         email: 'josedanielgrayson@proton.me',
         uri: links.self,
       },
-      id: 'https://grazen0.github.io',
+      id: RSS_ID,
       link: [
         { '@_href': resolveAbsolute('/blog') },
         {

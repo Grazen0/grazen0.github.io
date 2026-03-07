@@ -128,7 +128,7 @@ and muxes.
 
 We were taught RISC-V assembly in class (which sufficed for the course,
 clearly), but I discovered that C code could compile to bare-metal RISC-V too,
-unsurprising as it may be to many. Turns out that my custom-designed hardware
+unsurprising as it may be to many. This meant that my custom-designed hardware
 was capable of running not just assembly, but also actual C code, which
 completely baffled me. This, together with the fact that our FPGA board
 contained multiple general-purpose I/O pins, meant that I could now explore

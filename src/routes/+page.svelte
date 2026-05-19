@@ -16,9 +16,9 @@
 
   <Prose>
     <p>
-      I'm José Daniel Grayson (aka <Stronger>Grazen</Stronger>), a 19 year old guy who lives in
-      this weird (but awesome) country called Peru. I'm currently majoring in Computer Science and
-      like to do lots of programming as a hobby.
+      I'm José Daniel Grayson (aka <Stronger>Grazen</Stronger>), a 19 year old guy who lives in this
+      weird (but awesome) country called Peru. I'm currently majoring in Computer Science and like
+      to do lots of programming as a hobby.
     </p>
     <p>
       I've dipped into Discord bots, a bit of game development, Minecraft plugins, Terraria modding,
@@ -38,16 +38,16 @@
         personal NixOS configurations.
       </li>
       <li>
-        <Link external href="https://github.com/Grazen0/gemu">Gemu</Link>: a Game Boy emulator
+        <Link external href="https://github.com/Grazen0/gemu">Gemu</Link>: A Game Boy emulator
         written in C.
       </li>
       <li>
         <Link external href="https://github.com/Grazen0/space-invaders">Space Invaders</Link>: A
-        Space Invaders emulator written in Rust.
+        fully functional Space Invaders emulator.
       </li>
       <li>
-        <Link external href="https://github.com/Grazen0/nes-pong">NES Pong</Link>: A really simple
-        Pong game for the NES.
+        <Link external href="https://github.com/Grazen0/logic-sim">Logic Sim</Link>: A digital logic
+        simulator written in Zig that works in the browser.
       </li>
     </ul>
   </Prose>

@@ -11,7 +11,7 @@
 
   const { post }: Props = $props();
 
-  const postUrl = resolve('/blog/[slug]', { slug: post.slug });
+  const postUrl = $derived(resolve('/blog/[slug]', { slug: post.slug }));
 </script>
 
 <li class="border-bg-light hover:border-fg border hover:no-underline">

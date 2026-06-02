@@ -13,7 +13,7 @@
   import 'katex/dist/katex.min.css';
 
   const { data }: PageProps = $props();
-  const { post, prevPost, nextPost } = data;
+  const { post, prevPost, nextPost } = $derived(data);
 </script>
 
 <Main>

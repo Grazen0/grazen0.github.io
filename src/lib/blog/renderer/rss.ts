@@ -49,7 +49,7 @@ export const generateBlogFeed = (posts: Post[]) => {
           '@_href': resolveAbsolute('/blog/feed.xml'),
         },
       ],
-      rights: 'Copyright (c) 2025, José Daniel Grayson',
+      rights: `Copyright (c) ${new Date().getFullYear()}, José Daniel Grayson`,
       entry: posts.map(postToFeedEntry),
     },
   };

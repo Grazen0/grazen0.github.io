@@ -6,7 +6,7 @@
 
 <footer class="py-6 text-center">
   <small>
-    &copy; 2025 José Daniel Grayson -
+    &copy; {new Date().getFullYear()} José Daniel Grayson -
     <a href={links.repo} class="inline-flex items-center gap-x-2 hover:underline">
       <Fa icon={faGithub} />
       source

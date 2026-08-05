@@ -10,5 +10,4 @@ My personal website, powered by [SvelteKit](https://kit.svelte.dev/).
 - [x] Blog
   - [x] Word count and read time
   - [x] RSS feed
-  - [ ] Email notifications via GitHub workflow (eventually)
   - [x] Draft posts

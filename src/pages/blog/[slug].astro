@@ -16,6 +16,7 @@ import {
 import RootLayout from '@/layouts/RootLayout.astro';
 import readingTime from 'reading-time';
 import { getVisiblePosts } from '@/posts';
+import Figure from '@/components/Figure.astro';
 
 export async function getStaticPaths() {
   const posts = await getVisiblePosts();
@@ -75,7 +76,7 @@ const stats = readingTime(post.body);
       }
     </div>
 
-    <Prose><Content /></Prose>
+    <Prose><Content components={{ img: Figure }} /></Prose>
 
     <div class="text-fg-muted flex flex-wrap justify-center gap-x-12 gap-y-4">
       <a

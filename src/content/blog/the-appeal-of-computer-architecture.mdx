@@ -5,10 +5,6 @@ tags: [arch, hardware, c]
 pubDate: 2026-03-05
 ---
 
-import Figure from '@/components/Figure.astro';
-import z80Computer from '@/assets/posts/the-appeal-of-computer-architecture/z80_computer.jpeg';
-import snake from '@/assets/posts/the-appeal-of-computer-architecture/snake.png';
-
 I discovered computer architecture all the way back in high-school, mostly
 thanks to Ben Eater's [6502 computer series][6502-series]. I was fascinated at
 how an actual computer could be assembled from a few chips on a breadboard, and
@@ -21,11 +17,7 @@ electronics in general, too. Despite all the fun I had, I did end up leaving all
 of this behind after a year or so, probably due to focusing on other
 school-related activities.
 
-<Figure
-  src={z80Computer}
-  alt="My Z80 computer"
-  title="(I did accidentally place the LCD screen upside-down)."
-/>
+![My Z80 computer](@/assets/posts/the-appeal-of-computer-architecture/z80_computer.jpeg '(I did accidentally place the LCD screen upside-down).')
 
 Last semester, I finally took Computer Architecture (a class dreaded by many in
 my university, apparently). This class not only re-lit that spark in me that I
@@ -171,11 +163,7 @@ our group's final class project: a [Snake game]. It used custom-made modules for
 VGA and audio output and to read a NES Classic Mini controller via I2C. All of
 these were used by the RISC-V core, which was [programmed in C][snake-c].
 
-<Figure
-  src={snake}
-  alt="A picture of the Snake game"
-  title="This is what the game looked like."
-/>
+![A picture of the Snake game](@/assets/posts/the-appeal-of-computer-architecture/snake.png 'This is what the game looked like.')
 
 > Interestingly, I managed to borrow some programming techniques from the NES
 > itself, namely the use of VBlanks and _draw buffering_. I knew these

@@ -9,10 +9,10 @@ interface Props extends HTMLAttributes<'figure'> {
   title: string;
 }
 
-const { src, alt, title } = Astro.props;
+const { src, alt, title, ...props } = Astro.props;
 ---
 
-<figure {...Astro.props}>
+<figure {...props}>
   <Image {src} {alt} />
   <figcaption>{title}</figcaption>
 </figure>

@@ -1,0 +1,47 @@
+---
+import Fa from 'svelte-fa';
+import { faCalendar, faPencil } from '@fortawesome/free-solid-svg-icons';
+import FormattedDate from './FormattedDate.astro';
+
+interface Props {
+  post: CollectionEntry<'blog'>['data'];
+}
+
+const { post } = Astro.props;
+---
+
+<li class="border-bg-light hover:border-fg border hover:no-underline">
+  <a href={`/blog/${post.id}`} class="block px-4 py-2">
+    <h2 class="mb-2 text-xl font-semibold">{post.data.title}</h2>
+    <p class="mb-2">{post.data.description}</p>
+
+    <div
+      class="divide-fg-muted inline-flex gap-x-4 gap-y-3 text-sm not-sm:flex-col"
+    >
+      <div class="inline-flex items-center gap-x-2">
+        {
+          post.data.pubDate ? (
+            <>
+              <Fa icon={faCalendar} class="text-fg-muted" />
+              <FormattedDate class="text-fg-muted" date={post.data.pubDate} />
+            </>
+          ) : (
+            <>
+              <Fa icon={faPencil} class="text-fg-muted" />
+              <span class="text-fg-muted">Draft</span>
+            </>
+          )
+        }
+      </div>
+      {
+        post.data.tags.length !== 0 && (
+          <ul class="inline-flex flex-wrap items-center gap-2">
+            {post.data.tags.map((tag) => (
+              <li class="bg-bg-light inline px-1.5 py-0.5 text-xs">#{tag}</li>
+            ))}
+          </ul>
+        )
+      }
+    </div>
+  </a>
+</li>

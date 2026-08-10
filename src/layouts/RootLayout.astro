@@ -1,0 +1,37 @@
+---
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import BaseHead from '../components/BaseHead.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = SITE_TITLE, description = SITE_DESCRIPTION }: Props =
+  Astro.props;
+---
+
+<script is:inline>
+  // https://tailwindcss.com/docs/dark-mode
+  document.documentElement.classList.toggle(
+    'dark',
+    localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches),
+  );
+</script>
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body class="bg-bg text-fg font-special h-full">
+    <div class="mx-auto flex min-h-full max-w-4xl flex-col">
+      <Header />
+      <div class="grow"><slot /></div>
+      <Footer />
+    </div>
+  </body>
+</html>

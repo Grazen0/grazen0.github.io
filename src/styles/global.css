@@ -1,0 +1,36 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-bg: #f2ecbc;
+  --color-bg-dark: #d5cea3;
+  --color-bg-light: #e7dba0;
+  --color-fg: #545464;
+  --color-fg-muted: #a09cac;
+  --color-fg-link: #4d699b;
+  --color-fg-stronger: #77713f;
+  --font-mono: var(--font-commit-mono);
+  --font-sans: var(--font-commit-mono);
+}
+
+@variant dark {
+  --color-bg: #1f1f28;
+  --color-bg-dark: #16161d;
+  --color-bg-light: #2a2a37;
+  --color-fg: #dcd7ba;
+  --color-fg-muted: #938aa9;
+  --color-fg-stronger: #e6c384;
+  --color-fg-link: #7fb4ca;
+}
+
+html {
+  /* For some reason, classes on a layout's <html> tag don't show up */
+  height: 100%;
+}
+
+html.dark .astro-code,
+html.dark .astro-code span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+}

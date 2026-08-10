@@ -1,0 +1,17 @@
+---
+import { type HTMLAttributes } from 'astro/types';
+
+type Props = HTMLAttributes<'strong'>;
+
+const { class: className, ...props } = Astro.props;
+---
+
+<strong
+  class:list={[
+    'text-fg-stronger drop-shadow-[0_0_0.1rem_theme(--color-fg-stronger 60%)',
+    className,
+  ]}
+  {...props}
+>
+  <slot />
+</strong>

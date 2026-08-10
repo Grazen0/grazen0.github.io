@@ -1,0 +1,103 @@
+---
+import { type CollectionEntry, render } from 'astro:content';
+import Main from '../../components/Main.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
+import Prose from '../../components/Prose.astro';
+import Title from '../../components/Title.astro';
+import Comments from '../../components/Comments.astro';
+import Fa from 'svelte-fa';
+import {
+  faCalendar,
+  faPencil,
+  faClock,
+  faRssSquare,
+  faLeftLong,
+} from '@fortawesome/free-solid-svg-icons';
+import RootLayout from '../../layouts/RootLayout.astro';
+import readingTime from 'reading-time';
+import { getVisiblePosts } from '../../posts';
+
+export async function getStaticPaths() {
+  const posts = await getVisiblePosts();
+
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: post,
+  }));
+}
+
+type Props = CollectionEntry<'blog'>;
+
+const post = Astro.props;
+const { data } = post;
+
+if (post.body === undefined) throw new Error('undefined post body');
+
+const { Content } = await render(post);
+
+const stats = readingTime(post.body);
+---
+
+<RootLayout title={data.title}>
+  <Main>
+    <div class="mb-6">
+      <Title class="mb-4">{data.title}</Title>
+      <p class="text-center text-lg">{data.description}</p>
+    </div>
+    <div class="mb-4 text-center">
+      <div class="text-fg-muted text-sm inline-flex items-center gap-x-3">
+        {
+          data.pubDate ? (
+            <>
+              <Fa icon={faCalendar} />
+              <FormattedDate date={data.pubDate} />
+            </>
+          ) : (
+            <>
+              <Fa icon={faPencil} />
+              <span>Draft</span>
+            </>
+          )
+        }
+        <span class="mx-1">&mdash;</span>
+        <Fa icon={faClock} />
+        {stats.text}
+      </div>
+
+      {
+        data.tags.length !== 0 && (
+          <ul class="my-4 flex flex-wrap justify-center gap-3">
+            {data.tags.map((tag) => (
+              <li class="bg-bg-light inline px-3 py-1 text-sm">#{tag}</li>
+            ))}
+          </ul>
+        )
+      }
+    </div>
+
+    <Prose><Content /></Prose>
+
+    <div class="text-fg-muted flex flex-wrap justify-center gap-x-12 gap-y-4">
+      <a
+        href="/blog"
+        class="hover:text-fg flex cursor-pointer items-center gap-x-2"
+      >
+        <Fa icon={faLeftLong} />
+        <span>All posts</span>
+      </a>
+      <a
+        href="/blog/feed.xml"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:text-fg flex cursor-pointer items-center gap-x-2"
+      >
+        <Fa icon={faRssSquare} />
+        <span>feed.xml</span>
+      </a>
+    </div>
+
+    <!-- <BottomNavigation {prevPost} {nextPost} /> -->
+  </Main>
+
+  <Comments />
+</RootLayout>

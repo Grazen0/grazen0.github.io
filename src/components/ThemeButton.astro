@@ -1,0 +1,20 @@
+---
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import Fa from 'svelte-fa';
+---
+
+<script>
+  const buttons = document.querySelectorAll('[data-theme-button]');
+
+  for (const button of buttons) {
+    button.addEventListener('click', () => {
+      const nowDark = document.documentElement.classList.toggle('dark');
+      localStorage.theme = nowDark ? 'dark' : 'light';
+    });
+  }
+</script>
+
+<button class="cursor-pointer text-fg-muted" data-theme-button>
+  <Fa icon={faMoon} class="dark:hidden" />
+  <Fa icon={faSun} class="not-dark:hidden" />
+</button>

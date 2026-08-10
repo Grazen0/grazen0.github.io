@@ -1,0 +1,66 @@
+---
+import RootLayout from '../layouts/RootLayout.astro';
+import Main from '../components/Main.astro';
+import Stronger from '../components/Stronger.astro';
+import Prose from '../components/Prose.astro';
+import ExternalLink from '../components/ExternalLink.astro';
+import { ASCII_BANNER, ASCII_BANNER_SMALL } from '../consts';
+---
+
+<RootLayout>
+  <Main>
+    <div class="text-center">
+      <h1 aria-label="Grazen"></h1>
+      <pre
+        class="inline-block font-mono leading-tight font-extrabold text-left">
+        <span class="not-sm:hidden">{ASCII_BANNER}</span>
+        <span class="sm:hidden">{ASCII_BANNER_SMALL}</span>
+      </pre>
+    </div>
+
+    <Prose>
+      <p>
+        I'm José Daniel Grayson (aka <Stronger>Grazen</Stronger>), a 19 year old
+        guy who lives in this weird (but awesome) country called Peru. I'm
+        currently majoring in Computer Science and like to do lots of
+        programming as a hobby.
+      </p>
+      <p>
+        I've dipped into Discord bots, a bit of game development, Minecraft
+        plugins, Terraria modding, web development, but my main interest is
+        currently low-level programming. I suppose that by the time I graduate
+        I'll have dipped into a lot of other stuff, too.
+      </p>
+      <p>
+        Lately, I've fallen <em>deep</em> into the Linux rabbit hole. I use <ExternalLink
+          href="https://nixos.org/">NixOS</ExternalLink
+        > (btw), <a href="https://neovim.io/">Neovim</a>, and other awesome FOSS
+        tools.
+      </p>
+
+      <h2>Cool stuff I've made</h2>
+      <ul>
+        <li>
+          <ExternalLink href="https://github.com/Grazen0/nixos-config"
+            >NixOS Config</ExternalLink
+          >: My personal NixOS configurations.
+        </li>
+        <li>
+          <ExternalLink href="https://github.com/Grazen0/gemu"
+            >Gemu</ExternalLink
+          >: A Game Boy emulator written in C.
+        </li>
+        <li>
+          <ExternalLink href="https://github.com/Grazen0/space-invaders"
+            >Space Invaders</ExternalLink
+          >: A fully functional Space Invaders emulator.
+        </li>
+        <li>
+          <ExternalLink href="https://github.com/Grazen0/logic-sim"
+            >Logic Sim</ExternalLink
+          >: A digital logic simulator written in Zig that works in the browser.
+        </li>
+      </ul>
+    </Prose>
+  </Main>
+</RootLayout>

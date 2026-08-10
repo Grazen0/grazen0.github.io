@@ -1,0 +1,23 @@
+---
+import ThemeButton from './ThemeButton.astro';
+
+const links = [
+  { to: '/blog', label: 'Blog' },
+  { to: '/contact', label: 'Contact' },
+] as const;
+---
+
+<header class="mx-auto flex w-full px-6 py-4">
+  <a href="/" class="mr-4 text-xl font-bold hover:underline sm:mr-10">Grazen</a>
+
+  <nav class="mx-4 flex grow items-center space-x-6 sm:space-x-10">
+    {
+      links.map((link) => (
+        <a href={link.to} class="my-auto hover:underline">
+          {link.label}
+        </a>
+      ))
+    }
+  </nav>
+  <ThemeButton />
+</header>

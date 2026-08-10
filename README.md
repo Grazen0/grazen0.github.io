@@ -1,4 +1,4 @@
-# grazen0.github.io · [![Deploy](https://github.com/Grazen0/grazen0.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/Grazen0/grazen0.github.io/actions/workflows/deploy.yml)
+# grazen0.github.io &middot; [![Deploy](https://github.com/Grazen0/grazen0.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/Grazen0/grazen0.github.io/actions/workflows/deploy.yml)
 
 My personal website, powered by [SvelteKit](https://kit.svelte.dev/).
 
@@ -6,7 +6,6 @@ My personal website, powered by [SvelteKit](https://kit.svelte.dev/).
 
 - [x] Nice themes
 - [x] No FOUC
-- [x] Font customization
 - [x] Blog
   - [x] Word count and read time
   - [x] RSS feed

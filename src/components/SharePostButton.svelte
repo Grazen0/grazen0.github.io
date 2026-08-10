@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Post } from '../posts';
+  import type { Post } from '@/posts';
   import { faShareAlt } from '@fortawesome/free-solid-svg-icons';
   import Fa from 'svelte-fa';
 

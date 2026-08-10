@@ -1,10 +1,10 @@
 ---
 import { type CollectionEntry, render } from 'astro:content';
-import Main from '../../components/Main.astro';
-import FormattedDate from '../../components/FormattedDate.astro';
-import Prose from '../../components/Prose.astro';
-import Title from '../../components/Title.astro';
-import Comments from '../../components/Comments.astro';
+import Main from '@/components/Main.astro';
+import FormattedDate from '@/components/FormattedDate.astro';
+import Prose from '@/components/Prose.astro';
+import Title from '@/components/Title.astro';
+import Comments from '@/components/Comments.astro';
 import Fa from 'svelte-fa';
 import {
   faCalendar,
@@ -13,9 +13,9 @@ import {
   faRssSquare,
   faLeftLong,
 } from '@fortawesome/free-solid-svg-icons';
-import RootLayout from '../../layouts/RootLayout.astro';
+import RootLayout from '@/layouts/RootLayout.astro';
 import readingTime from 'reading-time';
-import { getVisiblePosts } from '../../posts';
+import { getVisiblePosts } from '@/posts';
 
 export async function getStaticPaths() {
   const posts = await getVisiblePosts();

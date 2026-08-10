@@ -2,12 +2,12 @@
 import { getCollection } from 'astro:content';
 import Fa from 'svelte-fa';
 import { faRssSquare } from '@fortawesome/free-solid-svg-icons';
-import RootLayout from '../../layouts/RootLayout.astro';
-import ExternalLink from '../../components/ExternalLink.astro';
-import Main from '../../components/Main.astro';
-import PostCard from '../../components/PostCard.astro';
-import Title from '../../components/Title.astro';
-import { getVisiblePosts, comparePosts } from '../../posts';
+import RootLayout from '@/layouts/RootLayout.astro';
+import ExternalLink from '@/components/ExternalLink.astro';
+import Main from '@/components/Main.astro';
+import PostCard from '@/components/PostCard.astro';
+import Title from '@/components/Title.astro';
+import { getVisiblePosts, comparePosts } from '@/posts';
 
 const posts = (await getVisiblePosts()).sort(comparePosts);
 ---

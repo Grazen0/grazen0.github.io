@@ -1,7 +1,7 @@
-import type { APIContext } from 'astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import { SITE_DESCRIPTION, SITE_TITLE } from '@/consts';
+import { getVisiblePosts } from '@/posts';
 import rss from '@astrojs/rss';
-import { getVisiblePosts } from '../../posts';
+import type { APIContext } from 'astro';
 
 export async function GET(context: APIContext) {
   const posts = await getVisiblePosts();

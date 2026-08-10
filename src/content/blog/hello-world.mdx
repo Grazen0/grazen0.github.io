@@ -5,6 +5,9 @@ tags: [offtopic]
 pubDate: 2025-03-24
 ---
 
+import Figure from '@/components/Figure.astro';
+import thumbsUp from '@/assets/posts/thumbs_up.gif';
+
 Yo! This is just a post to test out my blog, mostly the Markdown rendering part. We got **bold text**, [links](https://www.youtube.com/watch?v=dQw4w9WgXcQ), `code snippets`, and _italics_, it seems.
 
 > This is a block quote, by the way.
@@ -20,7 +23,11 @@ function isEven(n: number): boolean {
 
 Code blocks work too. That's important.
 
-![A kid nodding with his head](/assets/posts/thumbs_up.gif 'This is a caption.')
+<Figure
+  src={thumbsUp}
+  alt="A kid nodding with his head"
+  title="This is a caption."
+/>
 
 We got $\LaTeX$, too:
 

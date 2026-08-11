@@ -13,6 +13,6 @@ const { src, alt, title, ...props } = Astro.props;
 ---
 
 <figure {...props}>
-  <Image {src} {alt} />
+  <Image {src} {alt} class="max-h-148 w-auto" />
   <figcaption>{title}</figcaption>
 </figure>

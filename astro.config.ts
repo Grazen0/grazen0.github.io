@@ -29,9 +29,8 @@ export default defineConfig({
       },
       transformers: [
         transformerNotationHighlight(),
-        transformerRenderIndentGuides(),
+        transformerRenderIndentGuides({ indent: 4 }),
       ],
-      // defaultColor: false,
     },
     processor: unified({
       remarkPlugins: [remarkMath],

@@ -2,6 +2,10 @@ import { unified } from '@astrojs/markdown-remark';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import svelte from '@astrojs/svelte';
+import {
+  transformerNotationHighlight,
+  transformerRenderIndentGuides,
+} from '@shikijs/transformers';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig, fontProviders } from 'astro/config';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
@@ -23,6 +27,11 @@ export default defineConfig({
         light: 'kanagawa-lotus',
         dark: 'kanagawa-wave',
       },
+      transformers: [
+        transformerNotationHighlight(),
+        transformerRenderIndentGuides(),
+      ],
+      // defaultColor: false,
     },
     processor: unified({
       remarkPlugins: [remarkMath],

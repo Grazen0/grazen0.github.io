@@ -9,7 +9,7 @@ const { class: className, ...props } = Astro.props;
 
 <div
   class:list={[
-    'prose prose-kanagawa md:prose-lg max-w-none prose-figure:text-center prose-img:mx-auto font-sans prose-pre:border prose-pre:border-border my-16',
+    'prose prose-kanagawa md:prose-lg max-w-none prose-figure:text-center prose-img:mx-auto font-sans prose-pre:border prose-pre:border-border my-16 prose-pre:prose-code:block',
     className,
   ]}
   {...props}
@@ -28,7 +28,7 @@ const { class: className, ...props } = Astro.props;
       }
     }
 
-    code {
+    code:not(pre code) {
       @apply bg-bg-alt;
       &::before,
       &::after {

@@ -4,7 +4,7 @@ import Main from '@/components/Main.astro';
 import FormattedDate from '@/components/FormattedDate.astro';
 import Prose from '@/components/Prose.astro';
 import Title from '@/components/Title.astro';
-import Comments from '@/components/Comments.astro';
+import Comments from '@/components/Comments.svelte';
 import Fa from 'svelte-fa';
 import {
   faCalendar,
@@ -41,7 +41,7 @@ const stats = readingTime(post.body);
 
 <RootLayout title={data.title}>
   <Main>
-    <div class="mb-6">
+    <div class="mb-8">
       <Title class="mb-4">{data.title}</Title>
       <p class="text-center text-lg">{data.description}</p>
     </div>
@@ -69,14 +69,16 @@ const stats = readingTime(post.body);
         data.tags.length !== 0 && (
           <ul class="my-4 flex flex-wrap justify-center gap-3">
             {data.tags.map((tag) => (
-              <li class="bg-bg-light inline px-3 py-1 text-sm">#{tag}</li>
+              <li class="bg-bg-alt inline px-3 py-1 text-sm">#{tag}</li>
             ))}
           </ul>
         )
       }
     </div>
 
+    <hr class="my-12 border-border" />
     <Prose><Content components={{ img: Figure }} /></Prose>
+    <hr class="my-12 border-border" />
 
     <div class="text-fg-muted flex flex-wrap justify-center gap-x-12 gap-y-4">
       <a
@@ -100,5 +102,5 @@ const stats = readingTime(post.body);
     <!-- <BottomNavigation {prevPost} {nextPost} /> -->
   </Main>
 
-  <Comments />
+  <Comments client:load class="mx-6" />
 </RootLayout>

@@ -1,93 +1,58 @@
 ---
+import { type HTMLAttributes } from 'astro/types';
 import 'katex/dist/katex.min.css';
+
+type Props = HTMLAttributes<'div'>;
+
+const { class: className, ...props } = Astro.props;
 ---
 
-<div class="prose">
-  <slot class="prose" />
+<div
+  class:list={[
+    'prose prose-kanagawa md:prose-lg max-w-none prose-figure:text-center prose-img:mx-auto font-sans prose-pre:border prose-pre:border-border my-16',
+    className,
+  ]}
+  {...props}
+>
+  <slot />
 </div>
 
 <style>
   @reference '@/styles/global.css';
 
   .prose {
-    @apply my-14 text-justify leading-loose;
-
-    :global(> *) {
-      @apply my-6;
-    }
-
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      @apply relative mt-10 mb-6 font-semibold;
-
-      a {
-        @apply text-fg-muted opacity-50 hover:no-underline hover:opacity-100;
+    blockquote p {
+      &::before,
+      &::after {
+        content: none;
       }
     }
 
-    h2 {
-      @apply text-3xl;
+    code {
+      @apply bg-bg-alt;
+      &::before,
+      &::after {
+        content: none;
+      }
     }
 
-    h3 {
-      @apply text-2xl;
-    }
-
+    h1,
+    h2,
+    h3,
     h4 {
-      @apply text-xl;
-    }
+      a {
+        text-decoration: none;
+        color: var(--color-fg-muted);
 
-    a {
-      @apply text-fg-link hover:underline;
-    }
+        &:hover {
+          filter: brightness(1.25);
+        }
 
-    ul,
-    ol {
-      @apply marker:text-fg-muted list-outside pl-16;
-    }
-
-    ul {
-      @apply list-disc;
-    }
-
-    ol {
-      @apply list-decimal;
-    }
-
-    figure {
-      @apply text-fg-muted my-12 text-center;
-    }
-
-    figure img {
-      @apply mx-auto mb-4 max-h-124;
-    }
-
-    figure figcaption {
-      @apply text-fg-muted;
-    }
-
-    blockquote {
-      @apply bg-bg-light border-fg-muted border-l-3 px-4 py-1;
-    }
-
-    .astro-code {
-      @apply border-fg-muted border px-4 py-3 leading-normal;
-    }
-
-    table {
-      @apply mx-auto my-10;
-    }
-
-    table th {
-      @apply bg-bg-dark;
-    }
-
-    table td,
-    table th {
-      @apply border-bg-light border-2 px-4 py-1;
+        .icon-link::before {
+          @apply ml-3;
+          content: '#';
+        }
+      }
     }
   }
 </style>

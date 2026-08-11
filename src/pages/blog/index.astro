@@ -1,5 +1,4 @@
 ---
-import { getCollection } from 'astro:content';
 import Fa from 'svelte-fa';
 import { faRssSquare } from '@fortawesome/free-solid-svg-icons';
 import RootLayout from '@/layouts/RootLayout.astro';
@@ -19,7 +18,7 @@ const posts = (await getVisiblePosts()).sort(comparePosts);
     <div class="text-right">
       <ExternalLink
         href="/blog/feed.xml"
-        class="inline-flex items-center gap-x-2"
+        class="inline-flex items-center gap-x-2 text-fg-link underline"
       >
         <Fa icon={faRssSquare} />
         <span>feed.xml</span>

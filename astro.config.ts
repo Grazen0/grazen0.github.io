@@ -1,4 +1,3 @@
-// @ts-check
 import { unified } from '@astrojs/markdown-remark';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
@@ -28,12 +27,9 @@ export default defineConfig({
     processor: unified({
       remarkPlugins: [remarkMath],
       rehypePlugins: [
-        rehypeSlug,
         rehypeKatex,
-        [
-          rehypeAutolinkHeadings,
-          { behavior: 'append', content: [{ type: 'text', value: ' #' }] },
-        ],
+        rehypeSlug,
+        [rehypeAutolinkHeadings, { behavior: 'append' }],
         [
           rehypeExternalLinks,
           {

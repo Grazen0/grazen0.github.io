@@ -1,27 +1,158 @@
 @import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-bg: #f2ecbc;
-  --color-bg-dark: #d5cea3;
-  --color-bg-light: #e7dba0;
-  --color-fg: #545464;
-  --color-fg-muted: #a09cac;
-  --color-fg-link: #4d699b;
-  --color-fg-stronger: #77713f;
+  --color-*: initial;
+
+  /* Source: https://github.com/rebelot/kanagawa.nvim/blob/master/lua/kanagawa/colors.lua */
+  --color-fuji-white: #dcd7ba;
+  --color-old-white: #c8c093;
+  --color-sumi-ink-0: #16161d;
+  --color-sumi-ink-1: #181820;
+  --color-sumi-ink-2: #1a1a22;
+  --color-sumi-ink-3: #1f1f28;
+  --color-sumi-ink-4: #2a2a37;
+  --color-sumi-ink-5: #363646;
+  --color-sumi-ink-6: #54546d;
+  --color-wave-blue-1: #223249;
+  --color-wave-blue-2: #2d4f67;
+  --color-winter-green: #2b3328;
+  --color-winter-yellow: #49443c;
+  --color-winter-red: #43242b;
+  --color-winter-blue: #252535;
+  --color-autumn-green: #76946a;
+  --color-autumn-red: #c34043;
+  --color-autumn-yellow: #dca561;
+  --color-samurai-red: #e82424;
+  --color-ronin-yellow: #ff9e3b;
+  --color-wave-aqua-1: #6a9589;
+  --color-dragon-blue: #658594;
+  --color-fuji-gray: #727169;
+  --color-spring-violet-1: #938aa9;
+  --color-oni-violet: #957fb8;
+  --color-crystal-blue: #7e9cd8;
+  --color-spring-violet-2: #9cabca;
+  --color-spring-blue: #7fb4ca;
+  --color-light-blue: #a3d4d5;
+  --color-wave-aqua-2: #7aa89f;
+  --color-spring-green: #98bb6c;
+  --color-boat-yellow-1: #938056;
+  --color-boat-yellow-2: #c0a36e;
+  --color-carp-yellow: #e6c384;
+  --color-sakura-pink: #d27e99;
+  --color-wave-red: #e46876;
+  --color-peach-red: #ff5d62;
+  --color-surimi-orange: #ffa066;
+  --color-katana-gray: #717c7c;
+  --color-dragon-black-0: #0d0c0c;
+  --color-dragon-black-1: #12120f;
+  --color-dragon-black-2: #1d1c19;
+  --color-dragon-black-3: #181616;
+  --color-dragon-black-4: #282727;
+  --color-dragon-black-5: #393836;
+  --color-dragon-black-6: #625e5a;
+  --color-dragon-white: #c5c9c5;
+  --color-dragon-green: #87a987;
+  --color-dragon-green-2: #8a9a7b;
+  --color-dragon-pink: #a292a3;
+  --color-dragon-orange: #b6927b;
+  --color-dragon-orange-2: #b98d7b;
+  --color-dragon-gray: #a6a69c;
+  --color-dragon-gray-2: #9e9b93;
+  --color-dragon-gray-3: #7a8382;
+  --color-dragon-blue-2: #8ba4b0;
+  --color-dragon-violet: #8992a7;
+  --color-dragon-red: #c4746e;
+  --color-dragon-aqua: #8ea4a2;
+  --color-dragon-ash: #737c73;
+  --color-dragon-teal: #949fb5;
+  --color-dragon-yellow: #c4b28a;
+  --color-lotus-ink-1: #545464;
+  --color-lotus-ink-2: #43436c;
+  --color-lotus-gray: #dcd7ba;
+  --color-lotus-gray-2: #716e61;
+  --color-lotus-gray-3: #8a8980;
+  --color-lotus-white-0: #d5cea3;
+  --color-lotus-white-1: #dcd5ac;
+  --color-lotus-white-2: #e5ddb0;
+  --color-lotus-white-3: #f2ecbc;
+  --color-lotus-white-4: #e7dba0;
+  --color-lotus-white-5: #e4d794;
+  --color-lotus-violet-1: #a09cac;
+  --color-lotus-violet-2: #766b90;
+  --color-lotus-violet-3: #c9cbd1;
+  --color-lotus-violet-4: #624c83;
+  --color-lotus-blue-1: #c7d7e0;
+  --color-lotus-blue-2: #b5cbd2;
+  --color-lotus-blue-3: #9fb5c9;
+  --color-lotus-blue-4: #4d699b;
+  --color-lotus-blue-5: #5d57a3;
+  --color-lotus-green: #6f894e;
+  --color-lotus-green-2: #6e915f;
+  --color-lotus-green-3: #b7d0ae;
+  --color-lotus-pink: #b35b79;
+  --color-lotus-orange: #cc6d00;
+  --color-lotus-orange-2: #e98a00;
+  --color-lotus-yellow: #77713f;
+  --color-lotus-yellow-2: #836f4a;
+  --color-lotus-yellow-3: #de9800;
+  --color-lotus-yellow-4: #f9d791;
+  --color-lotus-red: #c84053;
+  --color-lotus-red-2: #d7474b;
+  --color-lotus-red-3: #e82424;
+  --color-lotus-red-4: #d9a594;
+  --color-lotus-aqua: #597b75;
+  --color-lotus-aqua-2: #5e857a;
+  --color-lotus-teal-1: #4e8ca2;
+  --color-lotus-teal-2: #6693bf;
+  --color-lotus-teal-3: #5a7785;
+  --color-lotus-cyan: #d7e3d8;
+
+  --color-bg: var(--color-lotus-white-3);
+  --color-bg-alt: var(--color-lotus-white-2);
+
+  --color-fg: var(--color-lotus-ink-2);
+  --color-fg-muted: var(--color-lotus-gray-3);
+  --color-fg-link: var(--color-lotus-teal-2);
+  --color-fg-stronger: var(--color-lotus-yellow-2);
+
+  --color-border: var(--color-lotus-white-0);
+
   --font-mono: var(--font-commit-mono);
-  --font-sans: var(--font-commit-mono);
+  --font-commit-mono: var(--font-commit-mono);
 }
 
 @variant dark {
-  --color-bg: #1f1f28;
-  --color-bg-dark: #16161d;
-  --color-bg-light: #2a2a37;
-  --color-fg: #dcd7ba;
-  --color-fg-muted: #938aa9;
-  --color-fg-stronger: #e6c384;
-  --color-fg-link: #7fb4ca;
+  --color-bg: var(--color-sumi-ink-3);
+  --color-bg-alt: var(--color-sumi-ink-2);
+
+  --color-fg: var(--color-fuji-white);
+  --color-fg-muted: var(--color-sumi-ink-6);
+  --color-fg-stronger: var(--color-carp-yellow);
+  --color-fg-link: var(--color-spring-blue);
+
+  --color-border: var(--color-sumi-ink-5);
+}
+
+@utility prose-kanagawa {
+  --tw-prose-body: var(--color-fg);
+  --tw-prose-headings: var(--color-fg);
+  --tw-prose-lead: red;
+  --tw-prose-links: var(--color-fg-link);
+  --tw-prose-bold: var(--color-fg);
+  --tw-prose-counters: var(--color-fg-muted);
+  --tw-prose-bullets: var(--color-fg-muted);
+  --tw-prose-hr: var(--color-border);
+  --tw-prose-quotes: var(--color-fg);
+  --tw-prose-quote-borders: var(--color-fg-muted);
+  --tw-prose-captions: var(--color-fg-muted);
+  --tw-prose-code: var(--color-fg);
+  --tw-prose-pre-code: var(--color-fg);
+  --tw-prose-pre-bg: red;
+  --tw-prose-th-borders: var(--color-border);
+  --tw-prose-td-borders: var(--color-border);
 }
 
 html {
